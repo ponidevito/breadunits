@@ -1,0 +1,211 @@
+// ---------- calculator card ----------
+.calc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(1.3rem, 1rem + 1.5vw, 2rem);
+}
+.calc-card__title {
+  font-size: 1.15rem;
+  margin-bottom: 0.55rem;
+}
+
+// ---------- mode tabs ----------
+.calc-tabs {
+  display: flex;
+  gap: 0.3rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem;
+  margin-bottom: 0.65rem;
+}
+.calc-tab {
+  flex: 1;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.calc-tab:hover {
+  color: var(--text);
+}
+.calc-tab.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+:root[data-theme="dark"] .calc-tab.is-active {
+  background: var(--accent);
+  color: #062621;
+}
+
+.calc-card[data-mode="food"] .field--manual,
+.calc-card[data-mode="manual"] .field--food {
+  display: none;
+}
+
+.field {
+  margin-bottom: 0.5rem;
+}
+.field > label,
+.field__legend {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.field input[type="number"],
+.field input[type="text"],
+.field select {
+  width: 100%;
+  font: inherit;
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.field select {
+  appearance: none;
+  padding-right: 2.2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2356655d' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.field input[type="number"]::-webkit-outer-spin-button,
+.field input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.field input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.field__hint {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  margin-top: 0.4rem;
+}
+
+.input-suffix {
+  position: relative;
+}
+.input-suffix input {
+  padding-right: 3.4rem;
+}
+.input-suffix span {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  pointer-events: none;
+}
+
+.norm-toggle {
+  display: flex;
+  gap: 0.4rem;
+}
+.norm-toggle .chip {
+  flex: 1;
+}
+
+.calc-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+.calc-actions .btn:first-child {
+  flex: 1;
+}
+
+.form-error {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+}
+
+.result {
+  margin-top: 0.6rem;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.result.is-empty .result__value,
+.result.is-empty .result__unit {
+  opacity: 0.4;
+}
+.result__display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.result__value {
+  font-size: clamp(2.6rem, 2rem + 3vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--accent-strong);
+  font-variant-numeric: tabular-nums;
+}
+.result__unit {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.result__caption {
+  margin-top: 0.35rem;
+  font-size: 0.88rem;
+}
+.result__formula {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-soft);
+  border-top: 1px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+  padding-top: 0.6rem;
+}
+.result.pop {
+  animation: result-pop 0.32s ease;
+}
+@keyframes result-pop {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

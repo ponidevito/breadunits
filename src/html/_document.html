@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="@@htmlLang" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор хлібних одиниць (ХО) — розрахунок XE онлайн</title>
+  <meta name="description"
+    content="Безкоштовний онлайн-калькулятор хлібних одиниць (ХО / XE). Рахуйте хлібні одиниці для порцій їжі та дивіться просту таблицю продуктів.">
+  <meta name="theme-color" content="#0f9d8f">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="canonical" href="@@canonical">
+  <link rel="alternate" hreflang="uk" href="https://YOUR-DOMAIN.com/">
+  <link rel="alternate" hreflang="en" href="https://YOUR-DOMAIN.com/en/">
+  <link rel="alternate" hreflang="es" href="https://YOUR-DOMAIN.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://YOUR-DOMAIN.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Diabetes Calculator">
+  <meta property="og:title" content="Калькулятор хлібних одиниць (ХО) — розрахунок XE онлайн">
+  <meta property="og:description"
+    content="Безкоштовний онлайн-калькулятор хлібних одиниць (ХО / XE). Рахуйте хлібні одиниці для порцій їжі та дивіться просту таблицю продуктів.">
+  <meta property="og:url" content="@@canonical">
+  <meta property="og:locale" content="@@ogLocale">
+  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bread Units Calculator – Calculate XE Online">
+  <meta name="twitter:description"
+    content="Free online bread units (XE) calculator. Calculate bread units for food portions and browse a simple bread units food table.">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN.com/og-image.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/style.min.css">
+
+  <script>
+    // Set theme before first paint to avoid a flash. The page language is fixed
+    // by the URL (/, /en/, /es/) and rendered into <html lang> at build time.
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("buc-theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Bread Units Calculator",
+    "url": "https://YOUR-DOMAIN.com/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": ["uk", "en", "es"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online bread units (XE) calculator. Calculate bread units for food portions and browse a simple bread units food table."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is a bread unit (XE)?", "acceptedAnswer": { "@type": "Answer", "text": "It is a rough measure for estimating the carbohydrates in a food portion. One XE corresponds to roughly 10-12 g of carbohydrates according to common reference tables." } },
+      { "@type": "Question", "name": "How is a bread unit calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The calculator takes the carbohydrates per 100 g, multiplies by the portion weight, divides by 100 and then by the chosen norm (10 or 12 g). For example (60 / 100) x 40 / 12 = 2.0 XE." } },
+      { "@type": "Question", "name": "How many grams are one bread unit?", "acceptedAnswer": { "@type": "Answer", "text": "One XE is roughly 10-12 g of carbohydrates. In grams of the food itself it depends on how much carbohydrate that food contains." } },
+      { "@type": "Question", "name": "Can I calculate XE for different foods?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the food from the list or enter the carbohydrate content manually - the formula is the same for any food." } },
+      { "@type": "Question", "name": "Can I use the calculator on my phone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The site is mobile friendly and works in the browser on a phone, tablet or desktop." } },
+      { "@type": "Question", "name": "Is the Bread Units Calculator a medical device?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is an informational and educational tool that only performs an arithmetic calculation from the values you enter." } },
+      { "@type": "Question", "name": "Can the calculator replace medical advice?", "acceptedAnswer": { "@type": "Answer", "text": "No. The results are estimates and do not replace advice from a qualified healthcare professional." } }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <a class="skip-link" href="#calculator" data-i18n="nav.skip">До калькулятора</a>
+
+    @@include('_header.html')
+
+    <main class="main">
+      @@include('_hero.html')
+      @@include('_how-it-works.html')
+      @@include('_what-is-xe.html')
+      @@include('_food-table.html')
+      @@include('_why.html')
+      <!-- App promotion is hidden for now. To re-enable when the Android app is
+           published, add an include of _app-promo.html here. -->
+      @@include('_disclaimer.html')
+      @@include('_faq.html')
+
+    </main>
+
+    @@include('_footer.html')
+  </div>
+
+  <script src="/js/scripts.min.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!-- Calculator card. Logic: build/js -> foods.js + i18n.js + main.js
+     Formula (unchanged from the original project):
+         XE = (carbohydrates per 100 g / 100) * portion weight / norm   (norm = 10 or 12) -->
+<div class="calc-card" id="calculator" data-mode="food">
+  <h2 class="calc-card__title" data-i18n="calc.title">Калькулятор хлібних одиниць</h2>
+
+  <div class="calc-tabs" role="tablist" data-i18n-attr="aria-label:calc.tab.aria" aria-label="Режим розрахунку">
+    <button type="button" class="calc-tab is-active" data-calc-tab="food"
+            role="tab" aria-selected="true" data-i18n="calc.tab.food">За продуктом</button>
+    <button type="button" class="calc-tab" data-calc-tab="manual" tabindex="-1"
+            role="tab" aria-selected="false" data-i18n="calc.tab.manual">Вручну</button>
+  </div>
+
+  <form id="calc-form" novalidate>
+    <div class="field field--food">
+      <label for="calc-food" data-i18n="calc.food">Продукт</label>
+      <select id="calc-food" name="food">
+        <option value="" data-i18n="calc.food.placeholder">Оберіть продукт зі списку…</option>
+      </select>
+      <p class="field__hint" data-i18n="calc.food.hint">Для обраного продукту використовується орієнтовне довідкове значення вуглеводів.</p>
+    </div>
+
+    <div class="field field--manual">
+      <label for="calc-carbs" data-i18n="calc.carbs">Вуглеводи в 100 г продукту</label>
+      <div class="input-suffix">
+        <input type="number" id="calc-carbs" name="carbs" inputmode="decimal"
+               min="1" max="100" step="0.1" placeholder="60" autocomplete="off">
+        <span data-i18n="calc.carbs.suffix">г</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="calc-weight" data-i18n="calc.weight">Загальна вага порції</label>
+      <div class="input-suffix">
+        <input type="number" id="calc-weight" name="weight" inputmode="numeric"
+               min="0" max="9999" step="1" maxlength="4" placeholder="40" autocomplete="off">
+        <span data-i18n="calc.weight.suffix">г / мл</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="field__legend" data-i18n="calc.norm">1 ХО дорівнює</span>
+      <div class="norm-toggle" role="group" aria-label="1 XE = grams of carbohydrates">
+        <button type="button" class="chip" data-set-norm="10" aria-pressed="false">10 г</button>
+        <button type="button" class="chip" data-set-norm="12" aria-pressed="true">12 г</button>
+      </div>
+      <p class="field__hint" data-i18n="calc.norm.hint">Різні джерела використовують 10 або 12 г вуглеводів на одну ХО.</p>
+    </div>
+
+    <p class="form-error" id="calc-error" role="alert" hidden></p>
+
+    <div class="calc-actions">
+      <button type="submit" class="btn" data-i18n="calc.calculate">Порахувати</button>
+      <button type="button" class="btn btn--ghost" id="calc-reset" data-i18n="calc.reset">Скинути</button>
+    </div>
+
+    <div class="result is-empty" id="calc-result" aria-live="polite">
+      <div class="result__display">
+        <span class="result__value" id="calc-result-value">0.0</span>
+        <span class="result__unit" data-i18n="calc.result.unit">ХО</span>
+      </div>
+      <p class="result__caption" data-i18n="calc.result.caption">Приблизна кількість хлібних одиниць для цієї порції</p>
+      <p class="result__formula" id="calc-formula" hidden></p>
+    </div>
+  </form>
+</div>

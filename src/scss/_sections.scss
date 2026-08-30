@@ -1,0 +1,226 @@
+// ---------- how it works ----------
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+  counter-reset: step;
+}
+@media (min-width: 700px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 980px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.steps li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  box-shadow: var(--shadow-sm);
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+.steps h3 {
+  margin-bottom: 0.35rem;
+}
+.steps p {
+  font-size: 0.92rem;
+}
+
+.example {
+  margin-top: 1.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem;
+}
+.example h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+.example p {
+  color: var(--text);
+}
+
+// ---------- why cards ----------
+.cards {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  margin-bottom: 0.9rem;
+}
+.card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+.card h3 {
+  margin-bottom: 0.3rem;
+}
+.card p {
+  font-size: 0.9rem;
+}
+
+// ---------- app promo ----------
+.app-promo {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1rem + 3vw, 3rem);
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 860px) {
+  .app-promo {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+.app-promo__text p {
+  margin-top: 0.7rem;
+}
+.app-promo__cta {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+.app-promo__note {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+.app-shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.app-shot {
+  margin: 0;
+  aspect-ratio: 9 / 17;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--accent-soft), var(--surface-2));
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 0.8rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+}
+.app-shot svg {
+  width: 26px;
+  height: 26px;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+}
+
+// ---------- FAQ ----------
+.faq {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.faq-container {
+  max-width: 1200px;
+}
+.faq details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  margin-bottom: 0.35rem;
+  overflow: hidden;
+}
+.faq summary {
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  font-size: 1.8rem;
+  color: var(--accent-strong);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq details > p {
+  padding: 0 1.1rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+// ---------- disclaimer ----------
+.disclaimer {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.3rem, 1rem + 2vw, 2rem);
+}
+.disclaimer h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.disclaimer h2 svg {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-strong);
+  flex: none;
+}
+.disclaimer p {
+  font-size: 0.9rem;
+}
+.disclaimer p + p {
+  margin-top: 0.35rem;
+}
