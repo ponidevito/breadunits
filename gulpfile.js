@@ -13,13 +13,14 @@ const path = {
     fonts: `${projectFolder}/fonts/`,
   },
   src: {
-    html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
+    html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`, `!${sourceFolder}/google*.html`],
     css: `${sourceFolder}/scss/style.scss`,
     js: `${sourceFolder}/js/scripts.js`,
     img: `${sourceFolder}/img/**/*.{png,jpg,jpeg,ico,svg,webp,gif}`,
     fonts: `${sourceFolder}/fonts/**/*.{woff,woff2,ttf,eot,svg}`,
-    // static files copied to the site root: favicon, robots.txt, sitemap.xml, manifest
-    misc: `${sourceFolder}/*.{txt,xml,webmanifest,png,ico}`,
+    // static files copied to the site root: favicon, robots.txt, sitemap.xml, manifest,
+    // Google Search Console verification file (google*.html, served verbatim at root)
+    misc: [`${sourceFolder}/*.{txt,xml,webmanifest,png,ico}`, `${sourceFolder}/google*.html`],
   },
   watch: {
     html: `${sourceFolder}/**/*.html`,
@@ -27,7 +28,7 @@ const path = {
     js: `${sourceFolder}/js/**/*.js`,
     img: `${sourceFolder}/img/**/*.{png,jpg,jpeg,ico,svg,webp,gif}`,
     fonts: `${sourceFolder}/fonts/**/*.{woff,woff2,ttf,eot,svg}`,
-    misc: `${sourceFolder}/*.{txt,xml,webmanifest,png,ico}`,
+    misc: [`${sourceFolder}/*.{txt,xml,webmanifest,png,ico}`, `${sourceFolder}/google*.html`],
   },
   clean: `./${projectFolder}/`,
 };
