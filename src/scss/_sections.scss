@@ -1,46 +1,14 @@
 // ---------- how it works ----------
-.steps {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 0.6rem;
-  counter-reset: step;
+.how-infographic {
+  margin: 1.6rem 0 0;
 }
-@media (min-width: 700px) {
-  .steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 980px) {
-  .steps {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.steps li {
-  background: var(--surface);
+.how-infographic img {
+  display: block;
+  width: 100%;
+  height: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.3rem;
   box-shadow: var(--shadow-sm);
-}
-.steps li::before {
-  counter-increment: step;
-  content: counter(step);
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-  font-weight: 800;
-  margin-bottom: 0.4rem;
-}
-.steps h3 {
-  margin-bottom: 0.35rem;
-}
-.steps p {
-  font-size: 0.92rem;
 }
 
 .example {
@@ -62,42 +30,14 @@
   color: var(--text);
 }
 
-// ---------- why cards ----------
-.cards {
-  display: grid;
-  gap: 0.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+.why-infographic {
+  margin: 1.6rem 0 0;
 }
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+.why-infographic img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: var(--radius);
-  padding: 1.4rem;
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
-}
-
-.card__icon {
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: 11px;
-  background: var(--accent-soft);
-  color: var(--accent-strong);
-  margin-bottom: 0.9rem;
-}
-.card__icon svg {
-  width: 20px;
-  height: 20px;
-}
-.card h3 {
-  margin-bottom: 0.3rem;
-}
-.card p {
-  font-size: 0.9rem;
 }
 
 // ---------- app promo ----------

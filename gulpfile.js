@@ -18,7 +18,7 @@ const path = {
     js: `${sourceFolder}/js/scripts.js`,
     img: `${sourceFolder}/img/**/*.{png,jpg,jpeg,ico,svg,webp,gif}`,
     fonts: `${sourceFolder}/fonts/**/*.{woff,woff2,ttf,eot,svg}`,
-    // static files copied to the site root: favicon, robots.txt, sitemap.xml, manifest, og-image
+    // static files copied to the site root: favicon, robots.txt, sitemap.xml, manifest
     misc: `${sourceFolder}/*.{txt,xml,webmanifest,png,ico}`,
   },
   watch: {
