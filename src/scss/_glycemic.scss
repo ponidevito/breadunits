@@ -1,0 +1,103 @@
+// ---------- glycemic index ----------
+
+// GI filter chips sit under the category filter; a hairline separates them
+.table-gi-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+}
+
+// coloured pill used in the table cell, the table note and the info section
+.gi-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.28rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.gi-badge--low {
+  color: var(--gi-low);
+  background: var(--gi-low-bg);
+}
+.gi-badge--mid {
+  color: var(--gi-mid);
+  background: var(--gi-mid-bg);
+}
+.gi-badge--high {
+  color: var(--gi-high);
+  background: var(--gi-high-bg);
+}
+.gi-badge--na {
+  color: var(--text-soft);
+  background: var(--surface-2);
+  font-weight: 600;
+}
+
+// GI line under the calculator result
+.result__gi {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  &--low {
+    color: var(--gi-low);
+  }
+  &--mid {
+    color: var(--gi-mid);
+  }
+  &--high {
+    color: var(--gi-high);
+  }
+}
+.result__gi[hidden] {
+  display: none;
+}
+
+// bands list in the "What is the glycemic index" section
+.gi-bands {
+  margin: 1.4rem 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.gi-band {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius-sm);
+
+  p {
+    font-size: 0.95rem;
+  }
+  strong {
+    text-transform: capitalize;
+  }
+}
+.gi-band .gi-badge {
+  justify-content: center;
+}
+.gi-band--low {
+  border-left-color: var(--gi-low);
+}
+.gi-band--mid {
+  border-left-color: var(--gi-mid);
+}
+.gi-band--high {
+  border-left-color: var(--gi-high);
+}
+
+@media (max-width: 480px) {
+  .gi-band {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}

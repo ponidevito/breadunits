@@ -7,20 +7,21 @@
   var DEFAULT_LANG = "uk";
   var TABLE_PREVIEW_ROWS = 8;        // rows shown before "show more" on desktop
   var TABLE_PREVIEW_ROWS_MOBILE = 3; // ... and on small screens
+  var TABLE_EXPAND_STEP = 8;         // each "show more" click reveals this many extra rows
   var MOBILE_MQ = window.matchMedia
     ? window.matchMedia("(max-width: 640px)")
     : { matches: false, addEventListener: function () {}, addListener: function () {} };
   function tablePreviewRows() { return MOBILE_MQ.matches ? TABLE_PREVIEW_ROWS_MOBILE : TABLE_PREVIEW_ROWS; }
   var I18N = window.BUC_I18N || {};
   var FOODS = window.BUC_FOODS || [];
-  var CATS = ["bakery", "cereals", "pasta", "fruits", "legumes", "other"];
+  var CATS = ["bakery", "cereals", "pasta", "veggies", "legumes", "fruits", "juices", "dairy", "nuts", "fastfood", "other"];
 
   var state = {
     lang: DEFAULT_LANG,
     theme: "light",
     norm: 12, // grams of carbohydrates per 1 XE - original calculator used 10 or 12
     mode: "food", // "food" = pick from list, "manual" = type carbs per 100 g
-    tableExpanded: false
+    tableLimit: null // null = show the initial preview; otherwise the max rows to render
   };
 
   function $(s, c) { return (c || document).querySelector(s); }
@@ -277,6 +278,20 @@
       .replace("{norm}", state.norm)
       .replace("{result}", fmt(xe));
     f.hidden = false;
+
+    showGiForSelectedFood();
+  }
+
+  // GI note under the result, shown only when a listed food with a GI is selected
+  function showGiForSelectedFood() {
+    var el = $("#calc-gi");
+    if (!el) return;
+    var food = state.mode === "food" ? getFood((($("#calc-food") || {}).value)) : null;
+    var band = food ? giBand(food.gi) : null;
+    if (!band) { el.hidden = true; return; }
+    el.className = "result__gi result__gi--" + band;
+    el.textContent = t("calc.gi.label") + " " + food.gi + " · " + t("gi." + band);
+    el.hidden = false;
   }
 
   function recalcIfActive() {
@@ -317,6 +332,7 @@
     if (card) { card.classList.add("is-empty"); card.classList.remove("is-active"); }
     var val = $("#calc-result-value"); if (val) val.textContent = "0.0";
     var f = $("#calc-formula"); if (f) f.hidden = true;
+    var gi = $("#calc-gi"); if (gi) gi.hidden = true;
     var food = $("#calc-food"); if (food) food.focus();
   }
 
@@ -326,15 +342,32 @@
     return Math.round((state.norm * 100) / food.carbs);
   }
 
-  function rebuildTable() {
-    var tbody = $("#food-tbody");
-    if (!tbody) return;
+  /* ---------------- glycemic index ---------------- */
+  // band for a numeric GI: "low" (<=55) | "mid" (56-69) | "high" (>=70) | null
+  function giBand(gi) {
+    if (gi == null || isNaN(gi)) return null;
+    if (gi <= 55) return "low";
+    if (gi <= 69) return "mid";
+    return "high";
+  }
+  // coloured pill for the food table; "—" when GI is not meaningful
+  function giBadge(f) {
+    var band = giBand(f.gi);
+    if (!band) return '<span class="gi-badge gi-badge--na">—</span>';
+    return '<span class="gi-badge gi-badge--' + band + '" title="' + f.gi + " · " + t("gi." + band) + '">' +
+      f.gi + '<span class="visually-hidden"> — ' + t("gi." + band) + "</span></span>";
+  }
+
+  // rows for the current category filter + search query, sorted for display
+  function currentTableRows() {
     var q = (($("#table-search") || {}).value || "").trim().toLowerCase();
     var active = $(".table-filter .is-active");
     var cat = active ? active.getAttribute("data-cat") : "all";
-
-    var rows = FOODS
+    var giActive = $(".table-gi-filter .is-active");
+    var giKey = giActive ? giActive.getAttribute("data-gi") : "all";
+    return FOODS
       .filter(function (f) { return cat === "all" || f.cat === cat; })
+      .filter(function (f) { return giKey === "all" || giBand(f.gi) === giKey; })
       .filter(function (f) {
         if (!q) return true;
         return LANGS.some(function (l) { return (f.name[l] || "").toLowerCase().indexOf(q) > -1; });
@@ -343,59 +376,83 @@
         if (a.cat !== b.cat) return CATS.indexOf(a.cat) - CATS.indexOf(b.cat);
         return foodName(a).localeCompare(foodName(b), state.lang);
       });
+  }
+
+  function rebuildTable() {
+    var tbody = $("#food-tbody");
+    if (!tbody) return;
+
+    var rows = currentTableRows();
 
     var preview = tablePreviewRows();
+    // how many rows are visible right now: the preview, or the accumulated limit
+    var visible = Math.min(state.tableLimit == null ? preview : state.tableLimit, rows.length);
+    var allShown = visible >= rows.length;
     var toggle = $("#table-toggle");
     var toggleWrap = toggle ? toggle.parentElement : null;
     var isExpandable = rows.length > preview;
     if (toggleWrap) toggleWrap.hidden = !isExpandable;
     if (toggle) {
-      toggle.setAttribute("aria-expanded", state.tableExpanded ? "true" : "false");
-      toggle.setAttribute("data-i18n", state.tableExpanded ? "table.collapse" : "table.expand");
-      toggle.textContent = t(state.tableExpanded ? "table.collapse" : "table.expand");
+      var key = allShown ? "table.collapse" : "table.expand";
+      toggle.setAttribute("aria-expanded", allShown ? "true" : "false");
+      toggle.setAttribute("data-i18n", key);
+      toggle.textContent = t(key);
     }
 
     tbody.innerHTML = "";
     if (!rows.length) {
       var tr = document.createElement("tr");
-      tr.innerHTML = '<td colspan="4" class="food-table__empty">' + t("table.empty") + "</td>";
+      tr.innerHTML = '<td colspan="5" class="food-table__empty">' + t("table.empty") + "</td>";
       tbody.appendChild(tr);
       return;
     }
 
-    (state.tableExpanded ? rows : rows.slice(0, preview)).forEach(function (f) {
+    rows.slice(0, visible).forEach(function (f) {
       var unit = f.liquid ? t("calc.weight.suffix").split("/")[1].trim() : t("calc.carbs.suffix");
       var tr = document.createElement("tr");
       tr.innerHTML =
         '<td data-label="' + t("table.col.product") + '"><span class="food-table__cat">' + t("cat." + f.cat) + "</span>" + foodName(f) + "</td>" +
         '<td data-label="' + t("table.col.amount") + '">' + amountFor1XE(f) + " " + unit + "</td>" +
         '<td data-label="' + t("table.col.carbs") + '">' + f.carbs + " " + t("calc.carbs.suffix") + "</td>" +
+        '<td data-label="' + t("table.col.gi") + '">' + giBadge(f) + "</td>" +
         '<td class="food-table__action"><button type="button" class="link-btn" data-use="' + f.id + '">' + t("table.use") + "</button></td>";
       tbody.appendChild(tr);
     });
   }
 
-  function buildTableFilters() {
-    var wrap = $(".table-filter");
+  // build a row of single-select filter chips inside `selector`
+  function buildFilterChips(selector, attr, entries) {
+    var wrap = $(selector);
     if (!wrap) return;
     wrap.innerHTML = "";
-    function mk(catKey, label) {
+    entries.forEach(function (e, i) {
       var b = document.createElement("button");
       b.type = "button";
       b.className = "chip";
-      b.setAttribute("data-cat", catKey);
-      b.textContent = label;
-      if (catKey === "all") b.classList.add("is-active");
+      b.setAttribute(attr, e.key);
+      b.textContent = e.label;
+      if (i === 0) b.classList.add("is-active");
       b.addEventListener("click", function () {
-        $all(".table-filter .chip").forEach(function (c) { c.classList.remove("is-active"); });
+        $all(".chip", wrap).forEach(function (c) { c.classList.remove("is-active"); });
         b.classList.add("is-active");
-        state.tableExpanded = false;
+        state.tableLimit = null;
         rebuildTable();
       });
       wrap.appendChild(b);
-    }
-    mk("all", t("table.filter.all"));
-    CATS.forEach(function (c) { mk(c, t("cat." + c)); });
+    });
+  }
+
+  function buildTableFilters() {
+    buildFilterChips(".table-filter", "data-cat",
+      [{ key: "all", label: t("table.filter.all") }].concat(
+        CATS.map(function (c) { return { key: c, label: t("cat." + c) }; })));
+
+    buildFilterChips(".table-gi-filter", "data-gi", [
+      { key: "all", label: t("table.gi.all") },
+      { key: "low", label: t("gi.low") },
+      { key: "mid", label: t("gi.mid") },
+      { key: "high", label: t("gi.high") }
+    ]);
   }
 
   function useFoodInCalculator(id) {
@@ -550,13 +607,16 @@
 
     var search = $("#table-search");
     if (search) search.addEventListener("input", function () {
-      state.tableExpanded = false;
+      state.tableLimit = null;
       rebuildTable();
     });
 
     var tableToggle = $("#table-toggle");
     if (tableToggle) tableToggle.addEventListener("click", function () {
-      state.tableExpanded = !state.tableExpanded;
+      var total = currentTableRows().length;
+      var current = state.tableLimit == null ? tablePreviewRows() : state.tableLimit;
+      // reveal TABLE_EXPAND_STEP more rows, or collapse back once everything is visible
+      state.tableLimit = current >= total ? null : current + TABLE_EXPAND_STEP;
       rebuildTable();
     });
 

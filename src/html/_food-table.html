@@ -4,6 +4,8 @@
     <p data-i18n="table.lead">Орієнтовна кількість продукту, що містить одну хлібну одиницю, та вуглеводи на 100 г.</p>
     <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися
       залежно від сорту та способу приготування продукту.</p>
+    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55,
+      середній 56–69, високий ≥ 70. «—» означає, що продукт майже не містить вуглеводів.</p>
   </div>
 
   <div class="table-controls" data-reveal>
@@ -18,6 +20,8 @@
         aria-label="Пошук продукту в таблиці">
     </div>
     <div class="table-filter" role="group" aria-label="Categories"></div>
+    <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
+      aria-label="Фільтр за глікемічним індексом"></div>
   </div>
 
   <div class="table-wrap" data-reveal>
@@ -27,6 +31,7 @@
           <th scope="col" data-i18n="table.col.product">Продукт</th>
           <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
           <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
+          <th scope="col" data-i18n="table.col.gi">ГІ</th>
           <th scope="col"><span class="visually-hidden">Actions</span></th>
         </tr>
       </thead>
