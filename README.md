@@ -31,7 +31,7 @@ Demo >>>  <a href="https://breadunits.top/" target="_blank">https://breadunits.t
 | Категорія | Стек |
 |-----------|------|
 | Мова | Vanilla JavaScript (ES6+) |
-| Стили | SCSS (Sass), Autoprefixer |
+| Стилi | SCSS (Sass), Autoprefixer |
 | Збірка | Gulp 4, Browser Sync |
 | Оптимізація | CleanCSS, Terser, Imagemin |
 | Деплой | Netlify |
