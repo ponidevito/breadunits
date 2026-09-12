@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="/css/style.min.css?v=2">
+  <link rel="stylesheet" href="/css/style.min.css?v=3">
 
   <script>
     // Set theme before first paint to avoid a flash. The page language is fixed
@@ -132,7 +132,7 @@
   <div class="wrapper">
     <a class="skip-link" href="#calculator" data-i18n="nav.skip">До калькулятора</a>
 
-    @@include('_header.html')
+    @@include('_header.html', {"legal": false, "root": "@@root"})
 
     <main class="main">
       @@include('_hero.html')
@@ -145,13 +145,14 @@
            published, add an include of _app-promo.html here. -->
       @@include('_disclaimer.html')
       @@include('_faq.html')
+      @@include('_author-sources.html')
 
     </main>
 
-    @@include('_footer.html')
+    @@include('_footer.html', {"root": "@@root"})
   </div>
 
-  <script src="/js/scripts.min.js?v=2" defer></script>
+  <script src="/js/scripts.min.js?v=3" defer></script>
 </body>
 
 </html>

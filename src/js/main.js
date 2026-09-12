@@ -48,13 +48,18 @@
       });
     });
 
+    updateLangSwitch();
+
+    // Pages without the calculator (legal / static pages) keep their own
+    // static SEO <title> and meta description in the document head.
+    if (!$("#calculator")) return;
+
     document.title = t("meta.title");
     setMeta('meta[name="description"]', "content", t("meta.description"));
     setMeta('meta[property="og:title"]', "content", t("meta.title"));
     setMeta('meta[property="og:description"]', "content", t("meta.description"));
     setMeta('meta[property="og:locale"]', "content", { uk: "uk_UA", en: "en_US", es: "es_ES" }[state.lang]);
 
-    updateLangSwitch();
     rebuildFoodOptions();
     rebuildTable();
   }
@@ -135,16 +140,18 @@
     });
   }
 
-  // Language lives in the URL path: "/" (uk), "/en/", "/es/".
+  // Language lives in the URL path: "/" (uk) or "/en/", "/es/" as the first
+  // segment, either flat ("/en/") or nested ("/en/about/").
   function detectLangFromPath() {
-    var seg = window.location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "").split("/").pop();
+    var seg = window.location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "").split("/").filter(Boolean)[0];
     return (seg === "en" || seg === "es") ? seg : DEFAULT_LANG;
   }
   function urlForLang(lang) {
-    var parts = window.location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "").split("/");
-    if (parts[parts.length - 1] === "en" || parts[parts.length - 1] === "es") parts.pop();
-    var base = parts.join("/") + "/";
-    return base + (lang === DEFAULT_LANG ? "" : lang + "/");
+    var path = window.location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "");
+    var segs = path.split("/").filter(Boolean);
+    var rest = (segs[0] === "en" || segs[0] === "es") ? segs.slice(1) : segs;
+    var out = (lang === DEFAULT_LANG ? [] : [lang]).concat(rest).join("/");
+    return "/" + (out ? out + "/" : "");
   }
   function setLang(lang) {
     if (LANGS.indexOf(lang) === -1 || lang === state.lang) return;

@@ -1,16 +1,23 @@
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand" href="/">
+    <a class="brand" href="@@root/">
       <img src="/img/logo.png" alt="Logo">
       <span>Diabetes Calculator</span>
     </a>
     <div class="site-header__spacer"></div>
 
     <nav class="nav" id="primary-nav" aria-label="Main">
+      @@if (legal) {
+      <a href="@@root/" data-i18n="nav.calculator">Калькулятор</a>
+      <a href="@@root/about/" data-i18n="footer.about">Про сайт</a>
+      <a href="@@root/contact/" data-i18n="footer.contact">Контакти</a>
+      }
+      @@if (!legal) {
       <a href="#calculator" data-i18n="nav.calculator">Калькулятор</a>
       <a href="#how-it-works" data-i18n="nav.how">Як це працює</a>
       <a href="#food-table" data-i18n="nav.table">Таблиця продуктів</a>
       <a href="#faq" data-i18n="nav.faq">Питання</a>
+      }
     </nav>
 
     <div class="header-tools">

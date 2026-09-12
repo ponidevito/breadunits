@@ -13,7 +13,15 @@ const path = {
     fonts: `${projectFolder}/fonts/`,
   },
   src: {
-    html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`, `!${sourceFolder}/google*.html`],
+    // Top-level and nested pages: about.html -> about/index.html (uk),
+    // en/about.html -> en/about/index.html, es/about.html -> es/about/index.html.
+    html: [
+      `${sourceFolder}/**/*.html`,
+      `!${sourceFolder}/html/**/*.html`,       // include partials
+      `!${sourceFolder}/components/**/*.html`, // unused template components
+      `!${sourceFolder}/**/_*.html`,           // underscore-prefixed partials
+      `!${sourceFolder}/**/google*.html`,      // GSC verification is copied verbatim by `misc`
+    ],
     css: `${sourceFolder}/scss/style.scss`,
     js: `${sourceFolder}/js/scripts.js`,
     img: `${sourceFolder}/img/**/*.{png,jpg,jpeg,ico,svg,webp,gif}`,

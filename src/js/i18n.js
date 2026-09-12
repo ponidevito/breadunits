@@ -146,7 +146,17 @@ window.BUC_I18N = {
     "footer.disclaimer": "Медичне застереження",
     "footer.rights": "Усі права захищені.",
     "footer.resources": "Ресурси",
-    "footer.diabetInfo": "Про діабет — diabet-info.top"
+    "footer.diabetInfo": "Про діабет — diabet-info.top",
+    "footer.about": "Про сайт",
+    "footer.contact": "Контакти",
+    "footer.privacy": "Політика конфіденційності",
+    "trust.reviewed": "Автор контенту",
+    "trust.name": "Олег Кравчук",
+    "trust.role": "Автор і редактор медичного контенту · Diabetes Calculator",
+    "trust.bio": "Автор і редактор інформаційного проєкту DiabetInfo. Матеріали мають освітній характер і регулярно перевіряються на зрозумілість та відповідність указаним джерелам.",
+    "trust.sources": "Джерела",
+    "trust.sourcesLead": "Для довідкових матеріалів на цій сторінці використано такі авторитетні ресурси:",
+    "trust.updated": "Оновлено: вересень 2026. Значення для продуктів є орієнтовними та можуть відрізнятися залежно від сорту й способу приготування."
   },
 
   en: {
@@ -290,7 +300,17 @@ window.BUC_I18N = {
     "footer.disclaimer": "Medical disclaimer",
     "footer.rights": "All rights reserved.",
     "footer.resources": "Resources",
-    "footer.diabetInfo": "About diabetes — diabet-info.top"
+    "footer.diabetInfo": "About diabetes — diabet-info.top",
+    "footer.about": "About",
+    "footer.contact": "Contact",
+    "footer.privacy": "Privacy policy",
+    "trust.reviewed": "Content author",
+    "trust.name": "Oleg Kravchuk",
+    "trust.role": "Author and medical content editor · Diabetes Calculator",
+    "trust.bio": "Author and editor of the DiabetInfo information project. Materials are educational and are reviewed for clarity and consistency with the sources listed below.",
+    "trust.sources": "Sources",
+    "trust.sourcesLead": "The following authoritative resources were used for the reference material on this page:",
+    "trust.updated": "Updated: September 2026. Food values are estimates and may differ by variety and preparation method."
   },
 
   es: {
@@ -434,6 +454,16 @@ window.BUC_I18N = {
     "footer.disclaimer": "Aviso médico",
     "footer.rights": "Todos los derechos reservados.",
     "footer.resources": "Recursos",
-    "footer.diabetInfo": "Sobre la diabetes — diabet-info.top"
+    "footer.diabetInfo": "Sobre la diabetes — diabet-info.top",
+    "footer.about": "Acerca del sitio",
+    "footer.contact": "Contacto",
+    "footer.privacy": "Política de privacidad",
+    "trust.reviewed": "Autor del contenido",
+    "trust.name": "Oleg Kravchuk",
+    "trust.role": "Autor y editor de contenido médico · Diabetes Calculator",
+    "trust.bio": "Autor y editor del proyecto informativo DiabetInfo. Los materiales son educativos y se revisan por claridad y coherencia con las fuentes indicadas.",
+    "trust.sources": "Fuentes",
+    "trust.sourcesLead": "Para el material de referencia de esta página se utilizaron los siguientes recursos autorizados:",
+    "trust.updated": "Actualizado: septiembre de 2026. Los valores de los alimentos son estimaciones y pueden variar según la variedad y el método de preparación."
   }
 };
