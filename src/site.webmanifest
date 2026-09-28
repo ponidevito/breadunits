@@ -1,7 +1,7 @@
 {
   "name": "Bread Units Calculator",
-  "short_name": "XE Calculator",
-  "description": "Free online bread units (XE) calculator for food portions.",
+  "short_name": "BU Calculator",
+  "description": "Free online bread units (BU) calculator for food portions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7faf8",
