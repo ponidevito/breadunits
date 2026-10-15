@@ -528,6 +528,45 @@
     io.observe(calc);
   }
 
+  /* ---------------- bottom "get the app" bar ---------------- */
+  var APP_BANNER_KEY = "buc-app-banner";
+  var APP_BANNER_DELAY = 3200;
+
+  function initAppBanner() {
+    var bar = $("#app-banner");
+    if (!bar || read(APP_BANNER_KEY) === "closed") return;
+
+    // Reserve space under the footer so the bar never covers its last line.
+    function syncPadding() {
+      document.body.style.paddingBottom = bar.classList.contains("is-open") ? bar.offsetHeight + "px" : "";
+    }
+
+    function close() {
+      store(APP_BANNER_KEY, "closed");
+      bar.classList.remove("is-open");
+      syncPadding();
+      var done = function () { bar.hidden = true; };
+      bar.addEventListener("transitionend", done, { once: true });
+      setTimeout(done, 700); // fallback when transitions are disabled
+    }
+
+    setTimeout(function () {
+      bar.hidden = false;
+      // next frame, so the slide-in transition starts from the hidden state
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          bar.classList.add("is-open");
+          syncPadding();
+        });
+      });
+    }, APP_BANNER_DELAY);
+
+    $("#app-banner-close").addEventListener("click", close);
+    // Going to the store counts as "seen" — don't nag afterwards.
+    $("#app-banner-link").addEventListener("click", close);
+    window.addEventListener("resize", syncPadding);
+  }
+
   /* ---------------- init ---------------- */
   function init() {
     var savedTheme = read("buc-theme");
@@ -642,6 +681,7 @@
     initMenu();
     initReveal();
     initBackToCalc();
+    initAppBanner();
     applyI18n();
 
     var y = $("#year");
