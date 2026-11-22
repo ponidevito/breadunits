@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@@metaTitle</title>
   <meta name="description" content="@@metaDescription">
-  <meta name="theme-color" content="#0f9d8f">
+  <meta name="theme-color" content="#f3f0e7">
   <meta name="color-scheme" content="light dark">
 
   <link rel="canonical" href="@@canonical">
@@ -48,7 +48,7 @@
   @@if (htmlLang === 'uk') {
   <link rel="preload" href="/fonts/inter-cyrillic-var.woff2" as="font" type="font/woff2" crossorigin>
   }
-  <link rel="stylesheet" href="/css/style.min.css?v=6">
+  <link rel="stylesheet" href="/css/style.min.css?v=7">
 
   <script>
     // Set theme before first paint to avoid a flash. The page language is fixed
@@ -141,17 +141,18 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7MV3MPJ"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div class="wrapper">
-    <a class="skip-link" href="#calculator" data-i18n="nav.skip">До калькулятора</a>
+  <a class="skip-link" href="#calculator" data-i18n="nav.skip">До калькулятора</a>
 
+  <div class="wrapper">
     @@include('_header.html', {"legal": false, "root": "@@root"})
 
     <main class="main">
       @@include('_hero.html')
-      @@include('_how-it-works.html')
       @@include('_what-is-xe.html')
+      @@include('_how-it-works.html')
       @@include('_glycemic-index.html')
       @@include('_food-table.html')
+      @@include('_carb-control.html')
       @@include('_why.html')
       @@include('_app-promo.html')
       @@include('_disclaimer.html')
@@ -165,7 +166,7 @@
 
   @@include('_app-banner.html')
 
-  <script src="/js/scripts.min.js?v=6" defer></script>
+  <script src="/js/scripts.min.js?v=7" defer></script>
 </body>
 
 </html>

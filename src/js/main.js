@@ -437,11 +437,16 @@
       b.type = "button";
       b.className = "chip";
       b.setAttribute(attr, e.key);
+      b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
       b.textContent = e.label;
       if (i === 0) b.classList.add("is-active");
       b.addEventListener("click", function () {
-        $all(".chip", wrap).forEach(function (c) { c.classList.remove("is-active"); });
+        $all(".chip", wrap).forEach(function (c) {
+          c.classList.remove("is-active");
+          c.setAttribute("aria-pressed", "false");
+        });
         b.classList.add("is-active");
+        b.setAttribute("aria-pressed", "true");
         state.tableLimit = null;
         rebuildTable();
       });
@@ -479,24 +484,42 @@
     var toggle = $(".nav__toggle");
     var menu = $("#primary-nav");
     if (!toggle || !menu) return;
+
+    function close(restoreFocus) {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-locked");
+      if (restoreFocus) toggle.focus();
+    }
+
     toggle.addEventListener("click", function () {
-      var open = menu.classList.toggle("is-open");
+      var open = !menu.classList.contains("is-open");
+      menu.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.body.classList.toggle("nav-locked", open);
+      if (open) {
+        var first = $("a", menu);
+        if (first) first.focus();
+      }
     });
+
     menu.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        menu.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-locked");
+      if (e.target.closest("a")) close(false);
+    });
+
+    document.addEventListener("pointerdown", function (e) {
+      if (menu.classList.contains("is-open") && !menu.contains(e.target) && !toggle.contains(e.target)) close(false);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) {
+        e.preventDefault();
+        close(true);
       }
     });
+
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 800 && menu.classList.contains("is-open")) {
-        menu.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-locked");
-      }
+      if (window.innerWidth > 860 && menu.classList.contains("is-open")) close(false);
     });
   }
 
