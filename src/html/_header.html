@@ -9,13 +9,31 @@
       @@if (legal) {
       <a href="@@root/" data-i18n="nav.calculator">Калькулятор</a>
       <a href="@@root/about/" data-i18n="footer.about">Про сайт</a>
+      @@if (root === '/en') {
+      <a href="/en/bread-unit-table/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
+      @@if (root === '/es') {
+      <a href="/es/tabla-unidades-de-pan/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
+      @@if (root !== '/en' && root !== '/es') {
+      <a href="/tablytsia-khlibnykh-odynyts/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
       <a href="@@root/contact/" data-i18n="footer.contact">Контакти</a>
       }
       @@if (!legal) {
-      <a href="#calculator" data-i18n="nav.calculator">Калькулятор</a>
-      <a href="#how-it-works" data-i18n="nav.how">Як це працює</a>
-      <a href="#food-table" data-i18n="nav.table">Таблиця продуктів</a>
-      <a href="#faq" data-i18n="nav.faq">Питання</a>
+      <a href="@@root/#calculator" data-i18n="nav.calculator">Калькулятор</a>
+      <a href="@@root/#how-it-works" data-i18n="nav.how">Як це працює</a>
+      <a href="@@root/#food-table" data-i18n="nav.table">Таблиця продуктів</a>
+      @@if (root === '/en') {
+      <a href="/en/bread-unit-table/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
+      @@if (root === '/es') {
+      <a href="/es/tabla-unidades-de-pan/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
+      @@if (root !== '/en' && root !== '/es') {
+      <a href="/tablytsia-khlibnykh-odynyts/" data-i18n="nav.tableFull">Повна таблиця ХО</a>
+      }
+      <a href="@@root/#faq" data-i18n="nav.faq">Питання</a>
       }
     </nav>
 

@@ -1,0 +1,116 @@
+.print-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  border-color: var(--amber);
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .site-header,
+  .site-footer,
+  .app-banner,
+  .skip-link,
+  .table-controls,
+  .table-more,
+  .print-button,
+  .breadcrumbs__print-hide {
+    display: none !important;
+  }
+
+  .wrapper,
+  .main,
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .legal-page,
+  .table-page {
+    font-size: 9pt;
+  }
+
+  h1 {
+    font-size: 18pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+    margin-top: 14pt;
+  }
+
+  .table-wrap {
+    border: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .food-table {
+    min-width: 0 !important;
+    font-size: 8pt;
+  }
+
+  .food-table thead {
+    display: table-header-group;
+  }
+
+  .food-table tr,
+  .food-table td,
+  .food-table th {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .food-table th {
+    background: #fff !important;
+    color: #000 !important;
+    border-bottom: 1px solid #000 !important;
+  }
+
+  .food-table td {
+    border-bottom: 1px solid #ddd !important;
+    padding: 2pt 4pt !important;
+  }
+
+  .food-table__action,
+  .food-table th:last-child,
+  .food-table td:last-child,
+  .gi-badge {
+    display: none !important;
+  }
+
+  .food-table th:nth-child(n),
+  .food-table td:nth-child(n) {
+    width: auto;
+  }
+
+  .table-note,
+  .disclaimer {
+    color: #333 !important;
+  }
+}

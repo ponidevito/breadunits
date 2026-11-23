@@ -75,9 +75,24 @@
   font-size: 0.9rem;
 }
 
+.food-table th:nth-child(1),
+.food-table td:nth-child(1) { width: 44%; }
+
+.food-table th:nth-child(2),
+.food-table td:nth-child(2) { width: 16%; }
+
+.food-table th:nth-child(3),
+.food-table td:nth-child(3) { width: 16%; }
+
+.food-table th:nth-child(4),
+.food-table td:nth-child(4) { width: 9%; }
+
+.food-table th:nth-child(5),
+.food-table td:nth-child(5) { width: 15%; }
+
 @media (min-width: 641px) {
   .food-table {
-    min-width: 660px;
+    min-width: 620px;
   }
 }
 
@@ -91,7 +106,6 @@
   background: var(--surface-2);
   padding: 0.75rem 0.9rem;
   border-bottom: 1px solid var(--line-strong);
-  white-space: nowrap;
 }
 
 .food-table td {
@@ -114,7 +128,8 @@
   white-space: nowrap;
 }
 
-.food-table__cat {
+.food-table td.food-table__product::before {
+  content: attr(data-cat-label);
   display: block;
   font-size: 0.64rem;
   font-weight: 700;
@@ -124,9 +139,53 @@
   margin-bottom: 0.15rem;
 }
 
+.food-table__piece {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+
 .food-table__action {
   text-align: right;
   white-space: nowrap;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.breadcrumbs a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--amber);
+}
+
+.breadcrumbs__sep {
+  color: var(--line-strong);
+}
+
+.table-hero {
+  padding-top: clamp(2rem, 5vw, 4rem);
+  padding-bottom: 1rem;
+}
+
+.table-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 .food-table__empty {
@@ -142,16 +201,45 @@
 }
 
 .table-more {
+  padding-top: 1.25rem;
+}
+
+.table-full-link {
   display: flex;
-  justify-content: center;
-  padding-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 64px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--amber);
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.16s ease, background 0.16s ease;
 }
 
-.table-more__button {
-  min-width: min(100%, 14rem);
+.table-full-link:hover {
+  border-color: var(--amber);
+  text-decoration: none;
 }
 
-.table-more[hidden] {
+.table-full-link svg {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: var(--amber);
+  transition: transform 0.16s ease;
+}
+
+.table-full-link:hover svg {
+  transform: translateX(4px);
+}
+
+.table-more[hidden],
+.food-table tr[hidden] {
   display: none;
 }
 
@@ -172,6 +260,11 @@
     width: 100%;
   }
 
+  .food-table th:nth-child(n),
+  .food-table td:nth-child(n) {
+    width: auto;
+  }
+
   .food-table tr {
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--line);
@@ -182,14 +275,21 @@
   }
 
   .food-table td {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
     border: 0;
-    padding: 0.25rem 0.9rem;
+    padding: 0.3rem 0.9rem;
+    text-align: right;
   }
 
   .food-table td[data-label]::before {
     content: attr(data-label);
-    display: inline-block;
-    min-width: 8.5rem;
+    display: block;
+    flex: 0 1 auto;
+    min-width: 0;
+    text-align: left;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -197,17 +297,31 @@
     color: var(--ink-faint);
   }
 
-  .food-table__cat {
-    display: inline;
-    margin-right: 0.4rem;
+  .food-table td.food-table__product {
+    display: block;
+    text-align: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.35rem;
   }
 
-  .food-table__action {
-    text-align: left;
+  .food-table td.food-table__product::before {
+    content: attr(data-label) " · " attr(data-cat-label);
+    min-width: 0;
+    color: var(--ink-faint);
+  }
+
+  .food-table td.food-table__empty {
+    display: block;
+    text-align: center;
+  }
+
+  .food-table td.food-table__action {
+    justify-content: flex-end;
     margin-top: 0.35rem;
   }
 
-  .table-more__button {
-    width: 100%;
+  .table-full-link {
+    padding: 0.9rem 1rem;
+    font-size: 0.88rem;
   }
 }

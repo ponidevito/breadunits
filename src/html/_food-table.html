@@ -1,11 +1,11 @@
-<section id="food-table" class="container" aria-labelledby="table-title">
+<section id="food-table" class="container" @@FULL_ATTR@@ aria-labelledby="table-title">
   <div class="section-head" data-reveal>
     <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
-    <p data-i18n="table.lead">Орієнтовна кількість продукту, що містить одну хлібну одиницю, та вуглеводи на 100 г.</p>
+    <p data-i18n="@@LEAD_KEY@@">@@LEAD@@</p>
     <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися
       залежно від сорту та способу приготування продукту.</p>
     <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55,
-      середній 56–69, високий ≥ 70. «—» означає, що продукт майже не містить вуглеводів.</p>
+      середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
   </div>
 
   <div class="table-controls" data-reveal>
@@ -24,7 +24,7 @@
       aria-label="Фільтр за глікемічним індексом"></div>
   </div>
 
-  <div class="table-wrap" data-reveal>
+  <div class="table-wrap"@@WRAP_REVEAL_ATTR@@>
     <table class="food-table">
       <thead>
         <tr>
@@ -35,12 +35,14 @@
           <th scope="col"><span class="visually-hidden">Actions</span></th>
         </tr>
       </thead>
-      <tbody id="food-tbody"></tbody>
+      <tbody id="food-tbody">
+@@ROWS@@
+        <tr class="food-table__empty-row" hidden>
+          <td colspan="5" class="food-table__empty">@@EMPTY@@</td>
+        </tr>
+      </tbody>
     </table>
   </div>
-  <div class="table-more" data-reveal>
-    <button class="btn btn--ghost table-more__button" id="table-toggle" type="button" aria-controls="food-tbody"
-      aria-expanded="false" data-i18n="table.expand">Показати більше</button>
-  </div>
+@@MORE@@
 
 </section>

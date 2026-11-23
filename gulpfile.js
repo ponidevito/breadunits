@@ -55,6 +55,8 @@ const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
+const { execFileSync } = require("child_process");
+const nodePath = require("path");
 
 // ─── helper ─────────────────────────────────────────────────
 const onError = (taskName) =>
@@ -74,6 +76,11 @@ function browserSync() {
     notify: false,
     open: true,
   });
+}
+
+function generateSeo() {
+  execFileSync(process.execPath, [nodePath.join(__dirname, "tools", "generate-seo.js")], { stdio: "inherit" });
+  return Promise.resolve();
 }
 
 // ─── HTML ─────────────────────────────────────────────────────────────────────
@@ -193,14 +200,21 @@ function watchFiles() {
   watch(path.watch.img, images);
   watch(path.watch.fonts, fonts);
   watch(path.watch.misc, misc);
+  watch([
+    `${sourceFolder}/js/foods.js`,
+    `${sourceFolder}/js/i18n.js`,
+    `${sourceFolder}/html/_food-table.html`,
+    "tools/generate-seo.js",
+  ], series(generateSeo, html));
 }
 
 // ─── Експорт задач ───────────────────────────────────────────────────────────
-const build = series(clean, parallel(html, css, js, images, fonts, misc));
-const buildProd = series(clean, parallel(html, css, js, imgOptimize, fonts, misc));
+const build = series(clean, generateSeo, parallel(html, css, js, images, fonts, misc));
+const buildProd = series(clean, generateSeo, parallel(html, css, js, imgOptimize, fonts, misc));
 const dev = parallel(build, watchFiles, browserSync);
 
-exports.html = html;
+exports.generateSeo = generateSeo;
+exports.html = series(generateSeo, html);
 exports.css = css;
 exports.js = js;
 exports.images = images;
