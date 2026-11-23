@@ -1,0 +1,192 @@
+<section id="food-table" class="container"  aria-labelledby="table-title">
+  <div class="section-head" data-reveal>
+    <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
+    <p data-i18n="table.leadPreview">20 популярних продуктів: скільки грамів або мл містить 1 ХО (12 г вуглеводів), вуглеводи на 100 г (напої — на 100 мл) і ГІ.</p>
+    <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися залежно від сорту та способу приготування продукту.</p>
+    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55, середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
+  </div>
+
+  <div class="table-controls" data-reveal>
+    <div class="table-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m21 21-4.3-4.3" />
+      </svg>
+      <input type="search" id="table-search" autocomplete="off"
+        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Пошук продукту…"
+        aria-label="Пошук продукту в таблиці">
+    </div>
+    <div class="table-filter" role="group" aria-label="Categories"></div>
+    <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
+      aria-label="Фільтр за глікемічним індексом"></div>
+  </div>
+
+  <div class="table-wrap" data-reveal>
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th scope="col" data-i18n="table.col.product">Продукт</th>
+          <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
+          <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
+          <th scope="col" data-i18n="table.col.gi">ГІ</th>
+          <th scope="col"><span class="visually-hidden" data-i18n="table.col.action">Дія</span></th>
+        </tr>
+      </thead>
+      <tbody id="food-tbody">
+        <tr data-food="white-bread" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Білий хліб</td>
+          <td data-label="Кількість на 1 ХО">24.5 г</td>
+          <td data-label="Вуглеводи / 100 г">49 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="75 · високий" aria-label="75 · високий">75</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="white-bread">У калькулятор</button></td>
+        </tr>
+        <tr data-food="rye-bread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Житній хліб</td>
+          <td data-label="Кількість на 1 ХО">28.6 г</td>
+          <td data-label="Вуглеводи / 100 г">42 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="58 · середній" aria-label="58 · середній">58</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="rye-bread">У калькулятор</button></td>
+        </tr>
+        <tr data-food="borodino-bread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Бородінський хліб</td>
+          <td data-label="Кількість на 1 ХО">30 г</td>
+          <td data-label="Вуглеводи / 100 г">40 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="65 · середній" aria-label="65 · середній">65</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="borodino-bread">У калькулятор</button></td>
+        </tr>
+        <tr data-food="bran-bread" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Хліб із висівками</td>
+          <td data-label="Кількість на 1 ХО">30 г</td>
+          <td data-label="Вуглеводи / 100 г">40 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="bran-bread">У калькулятор</button></td>
+        </tr>
+        <tr data-food="crispbread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Хлібці хрусткі</td>
+          <td data-label="Кількість на 1 ХО">16 г</td>
+          <td data-label="Вуглеводи / 100 г">75 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="65 · середній" aria-label="65 · середній">65</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="crispbread">У калькулятор</button></td>
+        </tr>
+        <tr data-food="buckwheat-dry" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Гречка (сухою вагою)</td>
+          <td data-label="Кількість на 1 ХО">19.4 г</td>
+          <td data-label="Вуглеводи / 100 г">62 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="buckwheat-dry">У калькулятор</button></td>
+        </tr>
+        <tr data-food="rice-dry" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Рис (сухою вагою)</td>
+          <td data-label="Кількість на 1 ХО">16.2 г</td>
+          <td data-label="Вуглеводи / 100 г">74 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="70 · високий" aria-label="70 · високий">70</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="rice-dry">У калькулятор</button></td>
+        </tr>
+        <tr data-food="rice-cooked" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Рис відварений</td>
+          <td data-label="Кількість на 1 ХО">48 г</td>
+          <td data-label="Вуглеводи / 100 г">25 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="70 · високий" aria-label="70 · високий">70</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="rice-cooked">У калькулятор</button></td>
+        </tr>
+        <tr data-food="oatmeal-dry" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Вівсянка (сухою вагою)</td>
+          <td data-label="Кількість на 1 ХО">20 г</td>
+          <td data-label="Вуглеводи / 100 г">60 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="oatmeal-dry">У калькулятор</button></td>
+        </tr>
+        <tr data-food="potato-boiled" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля відварена</td>
+          <td data-label="Кількість на 1 ХО">75 г</td>
+          <td data-label="Вуглеводи / 100 г">16 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="78 · високий" aria-label="78 · високий">78</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="potato-boiled">У калькулятор</button></td>
+        </tr>
+        <tr data-food="potato-jacket" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля в мундирі<span class="food-table__piece"> — 1 шт ≈ 1 ХО (75 г)</span></td>
+          <td data-label="Кількість на 1 ХО">75 г</td>
+          <td data-label="Вуглеводи / 100 г">16 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="75 · високий" aria-label="75 · високий">75</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="potato-jacket">У калькулятор</button></td>
+        </tr>
+        <tr data-food="mashed-potato" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопляне пюре</td>
+          <td data-label="Кількість на 1 ХО">85.7 г</td>
+          <td data-label="Вуглеводи / 100 г">14 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="83 · високий" aria-label="83 · високий">83</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="mashed-potato">У калькулятор</button></td>
+        </tr>
+        <tr data-food="french-fries" data-cat="pasta" data-gi="mid">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля фрі<span class="food-table__piece"> — 1 шт ≈ 3.3 ХО (115 г)</span></td>
+          <td data-label="Кількість на 1 ХО">35.3 г</td>
+          <td data-label="Вуглеводи / 100 г">34 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="63 · середній" aria-label="63 · середній">63</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="french-fries">У калькулятор</button></td>
+        </tr>
+        <tr data-food="apple" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Яблуко<span class="food-table__piece"> — 1 шт ≈ 1.4 ХО (150 г)</span></td>
+          <td data-label="Кількість на 1 ХО">109.1 г</td>
+          <td data-label="Вуглеводи / 100 г">11 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="apple">У калькулятор</button></td>
+        </tr>
+        <tr data-food="pear" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Груша<span class="food-table__piece"> — 1 шт ≈ 1.1 ХО (135 г)</span></td>
+          <td data-label="Кількість на 1 ХО">120 г</td>
+          <td data-label="Вуглеводи / 100 г">10 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="38 · низький" aria-label="38 · низький">38</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="pear">У калькулятор</button></td>
+        </tr>
+        <tr data-food="banana" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Банан<span class="food-table__piece"> — 1 шт ≈ 2.1 ХО (120 г)</span></td>
+          <td data-label="Кількість на 1 ХО">57.1 г</td>
+          <td data-label="Вуглеводи / 100 г">21 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="51 · низький" aria-label="51 · низький">51</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="banana">У калькулятор</button></td>
+        </tr>
+        <tr data-food="orange" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Апельсин<span class="food-table__piece"> — 1 шт ≈ 1.2 ХО (180 г)</span></td>
+          <td data-label="Кількість на 1 ХО">150 г</td>
+          <td data-label="Вуглеводи / 100 г">8 г</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="43 · низький" aria-label="43 · низький">43</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="orange">У калькулятор</button></td>
+        </tr>
+        <tr data-food="milk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Молоко</td>
+          <td data-label="Кількість на 1 ХО">240 мл</td>
+          <td data-label="Вуглеводи / 100 мл">5 г / 100 мл</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="39 · низький" aria-label="39 · низький">39</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="milk">У калькулятор</button></td>
+        </tr>
+        <tr data-food="kefir" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Кефір</td>
+          <td data-label="Кількість на 1 ХО">300 мл</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="25 · низький" aria-label="25 · низький">25</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="kefir">У калькулятор</button></td>
+        </tr>
+        <tr data-food="plain-yogurt" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Йогурт без цукру</td>
+          <td data-label="Кількість на 1 ХО">200 мл</td>
+          <td data-label="Вуглеводи / 100 мл">6 г / 100 мл</td>
+          <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
+          <td class="food-table__action"><button type="button" class="link-btn" data-use="plain-yogurt">У калькулятор</button></td>
+        </tr>
+        <tr class="food-table__empty-row" hidden>
+          <td colspan="5" class="food-table__empty">Нічого не знайдено. Спробуйте інший запит.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-more" data-reveal>
+    <a class="table-full-link" href="https://breadunits.top/tablytsia-khlibnykh-odynyts/" data-i18n-attr="aria-label:table.viewFull" aria-label="Повна таблиця хлібних одиниць — 167 продуктів">
+      <span data-i18n="table.viewFull">Повна таблиця хлібних одиниць — 167 продуктів</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
+    </a>
+  </div>
+
+</section>
+

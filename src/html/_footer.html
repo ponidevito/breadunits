@@ -3,7 +3,7 @@
     <div class="site-footer__grid">
       <div>
         <a class="brand" href="@@root/"><img src="/img/logo.png" alt="logo" width="30" height="30"><span>Diabetes Calculator</span></a>
-        <p class="site-footer__tagline" data-i18n="footer.tagline">Інформаційний калькулятор хлібних одиниць (ХО / XE).</p>
+        <p class="site-footer__tagline" data-i18n="footer.tagline">Інформаційний калькулятор хлібних одиниць (ХО).</p>
       </div>
       <div>
         <h3 data-i18n="footer.nav">Навігація</h3>
@@ -12,6 +12,15 @@
           <li><a href="@@root/#how-it-works" data-i18n="nav.how">Як це працює</a></li>
           <li><a href="@@root/#glycemic-index" data-i18n="nav.gi">Глікемічний індекс</a></li>
           <li><a href="@@root/#food-table" data-i18n="nav.table">Таблиця продуктів</a></li>
+          @@if (root === '/en') {
+          <li><a href="/en/bread-unit-table/" data-i18n="nav.tableFull">Повна таблиця ХО</a></li>
+          }
+          @@if (root === '/es') {
+          <li><a href="/es/tabla-unidades-de-pan/" data-i18n="nav.tableFull">Повна таблиця ХО</a></li>
+          }
+          @@if (root !== '/en' && root !== '/es') {
+          <li><a href="/tablytsia-khlibnykh-odynyts/" data-i18n="nav.tableFull">Повна таблиця ХО</a></li>
+          }
           <li><a href="@@root/#android-app" data-i18n="nav.app">Android-додаток</a></li>
           <li><a href="@@root/#faq" data-i18n="nav.faq">Питання</a></li>
         </ul>

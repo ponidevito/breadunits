@@ -1,0 +1,1257 @@
+<section class="container table-hero" aria-labelledby="page-title">
+  <ul class="breadcrumbs breadcrumbs__print-hide" aria-label="Home">
+    <li><a href="https://breadunits.top/en/" data-i18n="breadcrumb.home">Home</a></li>
+    <li class="breadcrumbs__sep" aria-hidden="true">/</li>
+    <li aria-current="page">BU table</li>
+  </ul>
+  <div class="section-head">
+    <h1 id="page-title" data-i18n="tablePage.h1">Bread Unit Table: 167 Foods</h1>
+    <p data-i18n="tablePage.lead">Complete reference: grams (or ml for drinks) per 1 unit of bread (12 g carbs), carbohydrates per 100 g (per 100 ml for drinks) and glycemic index. Use search and filters or print the table.</p>
+    <div class="table-hero__actions">
+      <button class="btn print-button" id="table-print" type="button" data-i18n="tablePage.print">Print table</button>
+      <a class="btn btn--ghost" href="https://breadunits.top/en/" data-i18n="tablePage.back">To calculator</a>
+    </div>
+  </div>
+</section>
+
+<section id="food-table" class="container" data-table-full aria-labelledby="table-title">
+  <div class="section-head" data-reveal>
+    <h2 id="table-title" data-i18n="table.h2">Bread Units Food Table</h2>
+    <p data-i18n="table.lead">All 167 foods: grams (or ml for drinks) per 1 bread unit (unit of bread = 12 g carbs), carbs per 100 g (per 100 ml for drinks) and GI.</p>
+    <p class="table-note" data-i18n="table.note">*The values in the table are approximate reference figures and can vary with the variety and preparation of the food.</p>
+    <p class="table-note" data-i18n="table.gi.note">The “GI” column is an approximate glycemic index: low ≤ 55, medium 56–69, high ≥ 70. “no data” means the database has no reliable value for this food.</p>
+  </div>
+
+  <div class="table-controls" data-reveal>
+    <div class="table-search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m21 21-4.3-4.3" />
+      </svg>
+      <input type="search" id="table-search" autocomplete="off"
+        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Search food…"
+        aria-label="Search food in the table">
+    </div>
+    <div class="table-filter" role="group" aria-label="Categories"></div>
+    <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
+      aria-label="Filter by glycemic index"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th scope="col" data-i18n="table.col.product">Product</th>
+          <th scope="col" data-i18n="table.col.amount">Amount for 1 BU</th>
+          <th scope="col" data-i18n="table.col.carbs">Carbs / 100 g</th>
+          <th scope="col" data-i18n="table.col.gi">GI</th>
+          <th scope="col"><span class="visually-hidden" data-i18n="table.col.action">Action</span></th>
+        </tr>
+      </thead>
+      <tbody id="food-tbody">
+        <tr data-food="white-bread" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">White bread</td>
+          <td data-label="Amount for 1 BU">24.5 g</td>
+          <td data-label="Carbs / 100 g">49 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="75 · high" aria-label="75 · high">75</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=white-bread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="rye-bread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Rye bread</td>
+          <td data-label="Amount for 1 BU">28.6 g</td>
+          <td data-label="Carbs / 100 g">42 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="58 · medium" aria-label="58 · medium">58</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=rye-bread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="borodino-bread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Borodinsky bread</td>
+          <td data-label="Amount for 1 BU">30 g</td>
+          <td data-label="Carbs / 100 g">40 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=borodino-bread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="bran-bread" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Bran bread</td>
+          <td data-label="Amount for 1 BU">30 g</td>
+          <td data-label="Carbs / 100 g">40 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=bran-bread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="rusks" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Rusks / dried bread</td>
+          <td data-label="Amount for 1 BU">17.1 g</td>
+          <td data-label="Carbs / 100 g">70 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=rusks#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="crispbread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Crispbread</td>
+          <td data-label="Amount for 1 BU">16 g</td>
+          <td data-label="Carbs / 100 g">75 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=crispbread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="crackers" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Plain crackers</td>
+          <td data-label="Amount for 1 BU">17.6 g</td>
+          <td data-label="Carbs / 100 g">68 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=crackers#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="bread-sticks" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Bread sticks</td>
+          <td data-label="Amount for 1 BU">16.7 g</td>
+          <td data-label="Carbs / 100 g">72 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=bread-sticks#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="bagel" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Bagel<span class="food-table__piece"> — 1 pc ≈ 2.3 BU (50 g)</span></td>
+          <td data-label="Amount for 1 BU">21.4 g</td>
+          <td data-label="Carbs / 100 g">56 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="72 · high" aria-label="72 · high">72</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=bagel#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="lavash" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Lavash flatbread</td>
+          <td data-label="Amount for 1 BU">25.5 g</td>
+          <td data-label="Carbs / 100 g">47 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="68 · medium" aria-label="68 · medium">68</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=lavash#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="wheat-flour" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Wheat flour</td>
+          <td data-label="Amount for 1 BU">16.4 g</td>
+          <td data-label="Carbs / 100 g">73 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=wheat-flour#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="breadcrumbs" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Breadcrumbs</td>
+          <td data-label="Amount for 1 BU">16.7 g</td>
+          <td data-label="Carbs / 100 g">72 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="74 · high" aria-label="74 · high">74</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=breadcrumbs#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="puff-pastry" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Puff pastry (raw)</td>
+          <td data-label="Amount for 1 BU">35.3 g</td>
+          <td data-label="Carbs / 100 g">34 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=puff-pastry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="yeast-dough" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Yeast dough (raw)</td>
+          <td data-label="Amount for 1 BU">27.9 g</td>
+          <td data-label="Carbs / 100 g">43 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=yeast-dough#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pancake" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Thin pancake<span class="food-table__piece"> — 1 pc ≈ 0.9 BU (40 g)</span></td>
+          <td data-label="Amount for 1 BU">42.9 g</td>
+          <td data-label="Carbs / 100 g">28 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="66 · medium" aria-label="66 · medium">66</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pancake#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="oladki" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Thick pancakes (oladki)<span class="food-table__piece"> — 1 pc ≈ 0.8 BU (30 g)</span></td>
+          <td data-label="Amount for 1 BU">36.4 g</td>
+          <td data-label="Carbs / 100 g">33 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="62 · medium" aria-label="62 · medium">62</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=oladki#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="dumplings-curd" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Curd dumplings<span class="food-table__piece"> — 1 pc ≈ 0.2 BU (13 g)</span></td>
+          <td data-label="Amount for 1 BU">63.2 g</td>
+          <td data-label="Carbs / 100 g">19 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=dumplings-curd#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pelmeni" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Pelmeni (meat dumplings)<span class="food-table__piece"> — 1 pc ≈ 0.2 BU (13 g)</span></td>
+          <td data-label="Amount for 1 BU">54.5 g</td>
+          <td data-label="Carbs / 100 g">22 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pelmeni#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="vatrushka" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Vatrushka (curd bun)<span class="food-table__piece"> — 1 pc ≈ 1.7 BU (50 g)</span></td>
+          <td data-label="Amount for 1 BU">30 g</td>
+          <td data-label="Carbs / 100 g">40 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=vatrushka#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="raisin-bun" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Raisin bun<span class="food-table__piece"> — 1 pc ≈ 1 BU (25 g)</span></td>
+          <td data-label="Amount for 1 BU">25.5 g</td>
+          <td data-label="Carbs / 100 g">47 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=raisin-bun#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="gingerbread" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Gingerbread<span class="food-table__piece"> — 1 pc ≈ 2.5 BU (40 g)</span></td>
+          <td data-label="Amount for 1 BU">16.2 g</td>
+          <td data-label="Carbs / 100 g">74 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=gingerbread#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="waffles" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Waffles</td>
+          <td data-label="Amount for 1 BU">18.5 g</td>
+          <td data-label="Carbs / 100 g">65 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="76 · high" aria-label="76 · high">76</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=waffles#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="butter-cookies" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Butter cookies</td>
+          <td data-label="Amount for 1 BU">18.2 g</td>
+          <td data-label="Carbs / 100 g">66 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=butter-cookies#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="muesli" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Muesli (no sugar)</td>
+          <td data-label="Amount for 1 BU">19.4 g</td>
+          <td data-label="Carbs / 100 g">62 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="57 · medium" aria-label="57 · medium">57</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=muesli#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cornflakes" data-cat="bakery" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Cornflakes</td>
+          <td data-label="Amount for 1 BU">14.5 g</td>
+          <td data-label="Carbs / 100 g">83 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="81 · high" aria-label="81 · high">81</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cornflakes#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="wheat-bran" data-cat="bakery" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Wheat bran</td>
+          <td data-label="Amount for 1 BU">54.5 g</td>
+          <td data-label="Carbs / 100 g">22 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="43 · low" aria-label="43 · low">43</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=wheat-bran#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="popcorn" data-cat="bakery" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Bread &amp; Bakery">Popcorn (unsweetened)</td>
+          <td data-label="Amount for 1 BU">15.4 g</td>
+          <td data-label="Carbs / 100 g">78 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=popcorn#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="buckwheat-dry" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Buckwheat (dry)</td>
+          <td data-label="Amount for 1 BU">19.4 g</td>
+          <td data-label="Carbs / 100 g">62 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=buckwheat-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="rice-dry" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Rice (dry)</td>
+          <td data-label="Amount for 1 BU">16.2 g</td>
+          <td data-label="Carbs / 100 g">74 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=rice-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="rice-cooked" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Rice (cooked)</td>
+          <td data-label="Amount for 1 BU">48 g</td>
+          <td data-label="Carbs / 100 g">25 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=rice-cooked#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="oatmeal-dry" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Oatmeal (dry)</td>
+          <td data-label="Amount for 1 BU">20 g</td>
+          <td data-label="Carbs / 100 g">60 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=oatmeal-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="semolina-dry" data-cat="cereals" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Semolina (dry)</td>
+          <td data-label="Amount for 1 BU">17.1 g</td>
+          <td data-label="Carbs / 100 g">70 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=semolina-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="millet-dry" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Millet (dry)</td>
+          <td data-label="Amount for 1 BU">18.2 g</td>
+          <td data-label="Carbs / 100 g">66 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=millet-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="barley-dry" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Pearl barley (dry)</td>
+          <td data-label="Amount for 1 BU">17.9 g</td>
+          <td data-label="Carbs / 100 g">67 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="28 · low" aria-label="28 · low">28</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=barley-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="porridge-cooked" data-cat="cereals" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Porridge (cooked)</td>
+          <td data-label="Amount for 1 BU">80 g</td>
+          <td data-label="Carbs / 100 g">15 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=porridge-cooked#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="starch" data-cat="cereals" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Starch</td>
+          <td data-label="Amount for 1 BU">14.1 g</td>
+          <td data-label="Carbs / 100 g">85 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="85 · high" aria-label="85 · high">85</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=starch#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="sprouted-grain" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Sprouted grain</td>
+          <td data-label="Amount for 1 BU">38.7 g</td>
+          <td data-label="Carbs / 100 g">31 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=sprouted-grain#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="corn-cob" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Corn on the cob<span class="food-table__piece"> — 1 pc ≈ 4.6 BU (250 g)</span></td>
+          <td data-label="Amount for 1 BU">54.5 g</td>
+          <td data-label="Carbs / 100 g">22 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="52 · low" aria-label="52 · low">52</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=corn-cob#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="corn-boiled" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Corn (boiled)</td>
+          <td data-label="Amount for 1 BU">57.1 g</td>
+          <td data-label="Carbs / 100 g">21 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="52 · low" aria-label="52 · low">52</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=corn-boiled#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="corn-canned" data-cat="cereals" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Cereals">Sweet corn (canned)</td>
+          <td data-label="Amount for 1 BU">60 g</td>
+          <td data-label="Carbs / 100 g">20 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=corn-canned#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pasta-dry" data-cat="pasta" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Pasta (dry)</td>
+          <td data-label="Amount for 1 BU">16.9 g</td>
+          <td data-label="Carbs / 100 g">71 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pasta-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pasta-cooked" data-cat="pasta" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Pasta (cooked)</td>
+          <td data-label="Amount for 1 BU">48 g</td>
+          <td data-label="Carbs / 100 g">25 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pasta-cooked#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="potato-raw" data-cat="pasta" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Potato (raw)<span class="food-table__piece"> — 1 pc ≈ 1.3 BU (90 g)</span></td>
+          <td data-label="Amount for 1 BU">70.6 g</td>
+          <td data-label="Carbs / 100 g">17 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=potato-raw#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="potato-boiled" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Boiled potato</td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="78 · high" aria-label="78 · high">78</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=potato-boiled#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="potato-jacket" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Jacket potato<span class="food-table__piece"> — 1 pc ≈ 1 BU (75 g)</span></td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="75 · high" aria-label="75 · high">75</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=potato-jacket#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="mashed-potato" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Mashed potato</td>
+          <td data-label="Amount for 1 BU">85.7 g</td>
+          <td data-label="Carbs / 100 g">14 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="83 · high" aria-label="83 · high">83</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=mashed-potato#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="fried-potato" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Fried potato</td>
+          <td data-label="Amount for 1 BU">40 g</td>
+          <td data-label="Carbs / 100 g">30 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="75 · high" aria-label="75 · high">75</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=fried-potato#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="french-fries" data-cat="pasta" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">French fries<span class="food-table__piece"> — 1 pc ≈ 3.3 BU (115 g)</span></td>
+          <td data-label="Amount for 1 BU">35.3 g</td>
+          <td data-label="Carbs / 100 g">34 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="63 · medium" aria-label="63 · medium">63</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=french-fries#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="potato-pancakes" data-cat="pasta" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Potato pancakes</td>
+          <td data-label="Amount for 1 BU">60 g</td>
+          <td data-label="Carbs / 100 g">20 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="75 · high" aria-label="75 · high">75</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=potato-pancakes#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="potato-chips" data-cat="pasta" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Pasta &amp; Potatoes">Potato chips</td>
+          <td data-label="Amount for 1 BU">24 g</td>
+          <td data-label="Carbs / 100 g">50 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="56 · medium" aria-label="56 · medium">56</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=potato-chips#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="carrot" data-cat="veggies" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Carrot<span class="food-table__piece"> — 1 pc ≈ 0.4 BU (75 g)</span></td>
+          <td data-label="Amount for 1 BU">171.4 g</td>
+          <td data-label="Carbs / 100 g">7 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="39 · low" aria-label="39 · low">39</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=carrot#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="beetroot" data-cat="veggies" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Beetroot<span class="food-table__piece"> — 1 pc ≈ 1 BU (130 g)</span></td>
+          <td data-label="Amount for 1 BU">133.3 g</td>
+          <td data-label="Carbs / 100 g">9 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="64 · medium" aria-label="64 · medium">64</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=beetroot#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pumpkin" data-cat="veggies" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Pumpkin</td>
+          <td data-label="Amount for 1 BU">200 g</td>
+          <td data-label="Carbs / 100 g">6 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="75 · high" aria-label="75 · high">75</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pumpkin#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="jerusalem-artichoke" data-cat="veggies" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Jerusalem artichoke</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=jerusalem-artichoke#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="sauerkraut" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Sauerkraut</td>
+          <td data-label="Amount for 1 BU">400 g</td>
+          <td data-label="Carbs / 100 g">3 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=sauerkraut#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cauliflower" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Cauliflower</td>
+          <td data-label="Amount for 1 BU">300 g</td>
+          <td data-label="Carbs / 100 g">4 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cauliflower#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="white-cabbage" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">White cabbage</td>
+          <td data-label="Amount for 1 BU">240 g</td>
+          <td data-label="Carbs / 100 g">5 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=white-cabbage#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="red-cabbage" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Red cabbage</td>
+          <td data-label="Amount for 1 BU">200 g</td>
+          <td data-label="Carbs / 100 g">6 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=red-cabbage#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="brussels-sprouts" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Brussels sprouts</td>
+          <td data-label="Amount for 1 BU">200 g</td>
+          <td data-label="Carbs / 100 g">6 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=brussels-sprouts#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="bell-pepper" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Bell pepper<span class="food-table__piece"> — 1 pc ≈ 0.5 BU (120 g)</span></td>
+          <td data-label="Amount for 1 BU">240 g</td>
+          <td data-label="Carbs / 100 g">5 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=bell-pepper#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cucumber" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Cucumber</td>
+          <td data-label="Amount for 1 BU">600 g</td>
+          <td data-label="Carbs / 100 g">2 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cucumber#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="tomato" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Tomato</td>
+          <td data-label="Amount for 1 BU">400 g</td>
+          <td data-label="Carbs / 100 g">3 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=tomato#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="radish" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Radish</td>
+          <td data-label="Amount for 1 BU">400 g</td>
+          <td data-label="Carbs / 100 g">3 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=radish#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="spinach" data-cat="veggies" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Vegetables">Spinach</td>
+          <td data-label="Amount for 1 BU">600 g</td>
+          <td data-label="Carbs / 100 g">2 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=spinach#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="green-peas" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Green peas</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="48 · low" aria-label="48 · low">48</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=green-peas#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="beans-dry" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Beans (dry)</td>
+          <td data-label="Amount for 1 BU">21.8 g</td>
+          <td data-label="Carbs / 100 g">55 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=beans-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="beans-boiled" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Beans (boiled)</td>
+          <td data-label="Amount for 1 BU">54.5 g</td>
+          <td data-label="Carbs / 100 g">22 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=beans-boiled#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="lentils-dry" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Lentils (dry)</td>
+          <td data-label="Amount for 1 BU">21.1 g</td>
+          <td data-label="Carbs / 100 g">57 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=lentils-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="lentils-boiled" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Lentils (boiled)</td>
+          <td data-label="Amount for 1 BU">60 g</td>
+          <td data-label="Carbs / 100 g">20 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=lentils-boiled#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="chickpeas-dry" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Chickpeas (dry)</td>
+          <td data-label="Amount for 1 BU">21.1 g</td>
+          <td data-label="Carbs / 100 g">57 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=chickpeas-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="soybeans-dry" data-cat="legumes" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Legumes">Soybeans (dry)</td>
+          <td data-label="Amount for 1 BU">60 g</td>
+          <td data-label="Carbs / 100 g">20 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="16 · low" aria-label="16 · low">16</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=soybeans-dry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="apple" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Apple<span class="food-table__piece"> — 1 pc ≈ 1.4 BU (150 g)</span></td>
+          <td data-label="Amount for 1 BU">109.1 g</td>
+          <td data-label="Carbs / 100 g">11 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=apple#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pear" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Pear<span class="food-table__piece"> — 1 pc ≈ 1.1 BU (135 g)</span></td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="38 · low" aria-label="38 · low">38</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pear#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="quince" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Quince<span class="food-table__piece"> — 1 pc ≈ 1.2 BU (140 g)</span></td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=quince#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="banana" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Banana<span class="food-table__piece"> — 1 pc ≈ 2.1 BU (120 g)</span></td>
+          <td data-label="Amount for 1 BU">57.1 g</td>
+          <td data-label="Carbs / 100 g">21 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="51 · low" aria-label="51 · low">51</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=banana#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="orange" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Orange<span class="food-table__piece"> — 1 pc ≈ 1.2 BU (180 g)</span></td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="43 · low" aria-label="43 · low">43</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=orange#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="tangerine" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Tangerine<span class="food-table__piece"> — 1 pc ≈ 0.5 BU (70 g)</span></td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=tangerine#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="grapefruit" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Grapefruit<span class="food-table__piece"> — 1 pc ≈ 2 BU (350 g)</span></td>
+          <td data-label="Amount for 1 BU">171.4 g</td>
+          <td data-label="Carbs / 100 g">7 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=grapefruit#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="lemon" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Lemon<span class="food-table__piece"> — 1 pc ≈ 0.2 BU (90 g)</span></td>
+          <td data-label="Amount for 1 BU">400 g</td>
+          <td data-label="Carbs / 100 g">3 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="20 · low" aria-label="20 · low">20</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=lemon#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pomegranate" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Pomegranate<span class="food-table__piece"> — 1 pc ≈ 2.3 BU (200 g)</span></td>
+          <td data-label="Amount for 1 BU">85.7 g</td>
+          <td data-label="Carbs / 100 g">14 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pomegranate#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="grapes" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Grapes</td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="46 · low" aria-label="46 · low">46</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=grapes#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="watermelon" data-cat="fruits" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Watermelon</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="72 · high" aria-label="72 · high">72</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=watermelon#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="melon" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Melon</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=melon#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pineapple" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Pineapple</td>
+          <td data-label="Amount for 1 BU">100 g</td>
+          <td data-label="Carbs / 100 g">12 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="59 · medium" aria-label="59 · medium">59</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pineapple#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="mango" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Mango<span class="food-table__piece"> — 1 pc ≈ 2.5 BU (200 g)</span></td>
+          <td data-label="Amount for 1 BU">80 g</td>
+          <td data-label="Carbs / 100 g">15 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="51 · low" aria-label="51 · low">51</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=mango#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="papaya" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Papaya</td>
+          <td data-label="Amount for 1 BU">109.1 g</td>
+          <td data-label="Carbs / 100 g">11 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="59 · medium" aria-label="59 · medium">59</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=papaya#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="kiwi" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Kiwi<span class="food-table__piece"> — 1 pc ≈ 0.6 BU (75 g)</span></td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=kiwi#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="peach" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Peach<span class="food-table__piece"> — 1 pc ≈ 1 BU (120 g)</span></td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="42 · low" aria-label="42 · low">42</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=peach#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="nectarine" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Nectarine<span class="food-table__piece"> — 1 pc ≈ 1.2 BU (120 g)</span></td>
+          <td data-label="Amount for 1 BU">100 g</td>
+          <td data-label="Carbs / 100 g">12 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="43 · low" aria-label="43 · low">43</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=nectarine#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="apricot" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Apricot<span class="food-table__piece"> — 1 pc ≈ 0.2 BU (30 g)</span></td>
+          <td data-label="Amount for 1 BU">133.3 g</td>
+          <td data-label="Carbs / 100 g">9 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="34 · low" aria-label="34 · low">34</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=apricot#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="plum" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Plum<span class="food-table__piece"> — 1 pc ≈ 0.4 BU (40 g)</span></td>
+          <td data-label="Amount for 1 BU">109.1 g</td>
+          <td data-label="Carbs / 100 g">11 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="39 · low" aria-label="39 · low">39</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=plum#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cherry-plum" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Cherry plum</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cherry-plum#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="persimmon" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Persimmon<span class="food-table__piece"> — 1 pc ≈ 2.4 BU (170 g)</span></td>
+          <td data-label="Amount for 1 BU">70.6 g</td>
+          <td data-label="Carbs / 100 g">17 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=persimmon#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="fig-fresh" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Fig (fresh)<span class="food-table__piece"> — 1 pc ≈ 0.7 BU (50 g)</span></td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=fig-fresh#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="avocado" data-cat="fruits" data-gi="na">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Avocado<span class="food-table__piece"> — 1 pc ≈ 1 BU (200 g)</span></td>
+          <td data-label="Amount for 1 BU">200 g</td>
+          <td data-label="Carbs / 100 g">6 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--na">no data</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=avocado#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cherry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Sweet cherry</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="22 · low" aria-label="22 · low">22</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cherry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="sour-cherry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Sour cherry</td>
+          <td data-label="Amount for 1 BU">109.1 g</td>
+          <td data-label="Carbs / 100 g">11 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="22 · low" aria-label="22 · low">22</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=sour-cherry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="strawberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Strawberry</td>
+          <td data-label="Amount for 1 BU">171.4 g</td>
+          <td data-label="Carbs / 100 g">7 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="40 · low" aria-label="40 · low">40</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=strawberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="raspberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Raspberry</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="32 · low" aria-label="32 · low">32</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=raspberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="blackberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Blackberry</td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=blackberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="blueberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Blueberry</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="53 · low" aria-label="53 · low">53</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=blueberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="lingonberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Lingonberry</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=lingonberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cranberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Cranberry</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cranberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="gooseberry" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Gooseberry</td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=gooseberry#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="blackcurrant" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Blackcurrant</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=blackcurrant#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="redcurrant" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Redcurrant</td>
+          <td data-label="Amount for 1 BU">150 g</td>
+          <td data-label="Carbs / 100 g">8 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=redcurrant#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="feijoa" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Feijoa</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=feijoa#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="dried-apricots" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Dried apricots</td>
+          <td data-label="Amount for 1 BU">19.4 g</td>
+          <td data-label="Carbs / 100 g">62 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=dried-apricots#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="prunes" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Prunes</td>
+          <td data-label="Amount for 1 BU">20 g</td>
+          <td data-label="Carbs / 100 g">60 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="40 · low" aria-label="40 · low">40</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=prunes#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="raisins" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Raisins</td>
+          <td data-label="Amount for 1 BU">16.7 g</td>
+          <td data-label="Carbs / 100 g">72 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=raisins#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="dates" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Dates<span class="food-table__piece"> — 1 pc ≈ 0.5 BU (8 g)</span></td>
+          <td data-label="Amount for 1 BU">17.4 g</td>
+          <td data-label="Carbs / 100 g">69 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="62 · medium" aria-label="62 · medium">62</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=dates#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="dried-figs" data-cat="fruits" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Dried figs</td>
+          <td data-label="Amount for 1 BU">20.7 g</td>
+          <td data-label="Carbs / 100 g">58 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="61 · medium" aria-label="61 · medium">61</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=dried-figs#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="dried-apple" data-cat="fruits" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Fruits &amp; Berries">Dried apple</td>
+          <td data-label="Amount for 1 BU">20.3 g</td>
+          <td data-label="Carbs / 100 g">59 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="41 · low" aria-label="41 · low">41</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=dried-apple#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="orange-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Orange juice</td>
+          <td data-label="Amount for 1 BU">109.1 ml</td>
+          <td data-label="Carbs / 100 ml">11 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=orange-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="apple-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Apple juice</td>
+          <td data-label="Amount for 1 BU">109.1 ml</td>
+          <td data-label="Carbs / 100 ml">11 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="41 · low" aria-label="41 · low">41</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=apple-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="grape-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Grape juice</td>
+          <td data-label="Amount for 1 BU">85.7 ml</td>
+          <td data-label="Carbs / 100 ml">14 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=grape-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cherry-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Cherry juice</td>
+          <td data-label="Amount for 1 BU">100 ml</td>
+          <td data-label="Carbs / 100 ml">12 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="40 · low" aria-label="40 · low">40</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cherry-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pear-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Pear juice</td>
+          <td data-label="Amount for 1 BU">120 ml</td>
+          <td data-label="Carbs / 100 ml">10 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="44 · low" aria-label="44 · low">44</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pear-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="plum-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Plum juice</td>
+          <td data-label="Amount for 1 BU">100 ml</td>
+          <td data-label="Carbs / 100 ml">12 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=plum-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="grapefruit-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Grapefruit juice</td>
+          <td data-label="Amount for 1 BU">150 ml</td>
+          <td data-label="Carbs / 100 ml">8 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="48 · low" aria-label="48 · low">48</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=grapefruit-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="carrot-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Carrot juice</td>
+          <td data-label="Amount for 1 BU">150 ml</td>
+          <td data-label="Carbs / 100 ml">8 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="43 · low" aria-label="43 · low">43</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=carrot-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="beet-juice" data-cat="juices" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Beetroot juice</td>
+          <td data-label="Amount for 1 BU">150 ml</td>
+          <td data-label="Carbs / 100 ml">8 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="64 · medium" aria-label="64 · medium">64</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=beet-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="tomato-juice" data-cat="juices" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Juices">Tomato juice</td>
+          <td data-label="Amount for 1 BU">400 ml</td>
+          <td data-label="Carbs / 100 ml">3 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="38 · low" aria-label="38 · low">38</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=tomato-juice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="milk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Milk</td>
+          <td data-label="Amount for 1 BU">240 ml</td>
+          <td data-label="Carbs / 100 ml">5 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="39 · low" aria-label="39 · low">39</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=milk#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="baked-milk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Baked milk</td>
+          <td data-label="Amount for 1 BU">240 ml</td>
+          <td data-label="Carbs / 100 ml">5 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="40 · low" aria-label="40 · low">40</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=baked-milk#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="kefir" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Kefir</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=kefir#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="ryazhanka" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Ryazhanka (fermented baked milk)</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=ryazhanka#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="soured-milk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Soured milk</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=soured-milk#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="buttermilk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Buttermilk</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=buttermilk#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cream" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Cream</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="30 · low" aria-label="30 · low">30</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cream#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="plain-yogurt" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Plain yogurt</td>
+          <td data-label="Amount for 1 BU">200 ml</td>
+          <td data-label="Carbs / 100 ml">6 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="35 · low" aria-label="35 · low">35</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=plain-yogurt#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="fruit-yogurt" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Fruit yogurt</td>
+          <td data-label="Amount for 1 BU">85.7 g</td>
+          <td data-label="Carbs / 100 g">14 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="41 · low" aria-label="41 · low">41</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=fruit-yogurt#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="condensed-milk" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Condensed milk (unsweetened)</td>
+          <td data-label="Amount for 1 BU">133.3 g</td>
+          <td data-label="Carbs / 100 g">9 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=condensed-milk#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="milk-powder" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Milk powder</td>
+          <td data-label="Amount for 1 BU">24 g</td>
+          <td data-label="Carbs / 100 g">50 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="46 · low" aria-label="46 · low">46</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=milk-powder#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="sweet-curd-mass" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Sweet curd mass</td>
+          <td data-label="Amount for 1 BU">80 g</td>
+          <td data-label="Carbs / 100 g">15 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=sweet-curd-mass#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="glazed-curd-bar" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Glazed curd bar<span class="food-table__piece"> — 1 pc ≈ 1 BU (40 g)</span></td>
+          <td data-label="Amount for 1 BU">40 g</td>
+          <td data-label="Carbs / 100 g">30 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=glazed-curd-bar#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="syrnik" data-cat="dairy" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Syrnik (curd fritter)<span class="food-table__piece"> — 1 pc ≈ 1.4 BU (75 g)</span></td>
+          <td data-label="Amount for 1 BU">54.5 g</td>
+          <td data-label="Carbs / 100 g">22 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=syrnik#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="ice-cream" data-cat="dairy" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Dairy">Ice cream</td>
+          <td data-label="Amount for 1 BU">52.2 g</td>
+          <td data-label="Carbs / 100 g">23 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=ice-cream#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="walnuts" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Walnuts</td>
+          <td data-label="Amount for 1 BU">109.1 g</td>
+          <td data-label="Carbs / 100 g">11 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=walnuts#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="peanuts" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Peanuts</td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=peanuts#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pine-nuts" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Pine nuts</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pine-nuts#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cashew" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Cashews</td>
+          <td data-label="Amount for 1 BU">44.4 g</td>
+          <td data-label="Carbs / 100 g">27 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="25 · low" aria-label="25 · low">25</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cashew#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="almonds" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Almonds</td>
+          <td data-label="Amount for 1 BU">92.3 g</td>
+          <td data-label="Carbs / 100 g">13 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=almonds#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pistachios" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Pistachios</td>
+          <td data-label="Amount for 1 BU">42.9 g</td>
+          <td data-label="Carbs / 100 g">28 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="20 · low" aria-label="20 · low">20</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pistachios#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="hazelnuts" data-cat="nuts" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Nuts">Hazelnuts</td>
+          <td data-label="Amount for 1 BU">70.6 g</td>
+          <td data-label="Carbs / 100 g">17 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="15 · low" aria-label="15 · low">15</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=hazelnuts#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="hamburger" data-cat="fastfood" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Hamburger<span class="food-table__piece"> — 1 pc ≈ 2.5 BU (100 g)</span></td>
+          <td data-label="Amount for 1 BU">40 g</td>
+          <td data-label="Carbs / 100 g">30 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="66 · medium" aria-label="66 · medium">66</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=hamburger#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cheeseburger" data-cat="fastfood" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Cheeseburger<span class="food-table__piece"> — 1 pc ≈ 2.6 BU (105 g)</span></td>
+          <td data-label="Amount for 1 BU">40 g</td>
+          <td data-label="Carbs / 100 g">30 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="66 · medium" aria-label="66 · medium">66</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cheeseburger#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="big-mac" data-cat="fastfood" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Big Mac<span class="food-table__piece"> — 1 pc ≈ 3.6 BU (215 g)</span></td>
+          <td data-label="Amount for 1 BU">60 g</td>
+          <td data-label="Carbs / 100 g">20 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=big-mac#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="chicken-nuggets" data-cat="fastfood" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Chicken nuggets<span class="food-table__piece"> — 1 pc ≈ 1.3 BU (100 g)</span></td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="46 · low" aria-label="46 · low">46</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=chicken-nuggets#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pizza" data-cat="fastfood" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Pizza<span class="food-table__piece"> — 1 pc ≈ 6.3 BU (300 g)</span></td>
+          <td data-label="Amount for 1 BU">48 g</td>
+          <td data-label="Carbs / 100 g">25 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pizza#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="bean-burrito" data-cat="fastfood" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Bean burrito<span class="food-table__piece"> — 1 pc ≈ 4.6 BU (220 g)</span></td>
+          <td data-label="Amount for 1 BU">48 g</td>
+          <td data-label="Carbs / 100 g">25 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=bean-burrito#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cutlet" data-cat="fastfood" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Cutlet (breaded)<span class="food-table__piece"> — 1 pc ≈ 0.8 BU (90 g)</span></td>
+          <td data-label="Amount for 1 BU">120 g</td>
+          <td data-label="Carbs / 100 g">10 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cutlet#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cake-slice" data-cat="fastfood" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Ready meals &amp; fast food">Cake / pie<span class="food-table__piece"> — 1 pc ≈ 3.8 BU (100 g)</span></td>
+          <td data-label="Amount for 1 BU">26.7 g</td>
+          <td data-label="Carbs / 100 g">45 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cake-slice#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="sugar" data-cat="other" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Sugar</td>
+          <td data-label="Amount for 1 BU">12 g</td>
+          <td data-label="Carbs / 100 g">100 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=sugar#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="fructose" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Fructose</td>
+          <td data-label="Amount for 1 BU">12 g</td>
+          <td data-label="Carbs / 100 g">100 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="20 · low" aria-label="20 · low">20</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=fructose#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="honey" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Honey</td>
+          <td data-label="Amount for 1 BU">15 g</td>
+          <td data-label="Carbs / 100 g">80 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=honey#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="jam" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Jam</td>
+          <td data-label="Amount for 1 BU">17.1 g</td>
+          <td data-label="Carbs / 100 g">70 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="55 · low" aria-label="55 · low">55</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=jam#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="marmalade" data-cat="other" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Marmalade sweets</td>
+          <td data-label="Amount for 1 BU">15.6 g</td>
+          <td data-label="Carbs / 100 g">77 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="65 · medium" aria-label="65 · medium">65</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=marmalade#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="caramel" data-cat="other" data-gi="high">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Caramel / hard candy</td>
+          <td data-label="Amount for 1 BU">13.3 g</td>
+          <td data-label="Carbs / 100 g">90 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--high" title="70 · high" aria-label="70 · high">70</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=caramel#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="chocolate" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Chocolate</td>
+          <td data-label="Amount for 1 BU">21.8 g</td>
+          <td data-label="Carbs / 100 g">55 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=chocolate#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="chocolate-candy" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Chocolate candy<span class="food-table__piece"> — 1 pc ≈ 0.8 BU (15 g)</span></td>
+          <td data-label="Amount for 1 BU">20 g</td>
+          <td data-label="Carbs / 100 g">60 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=chocolate-candy#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="pudding" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Pudding</td>
+          <td data-label="Amount for 1 BU">75 g</td>
+          <td data-label="Carbs / 100 g">16 g</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=pudding#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="kissel" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Kissel</td>
+          <td data-label="Amount for 1 BU">92.3 ml</td>
+          <td data-label="Carbs / 100 ml">13 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="50 · low" aria-label="50 · low">50</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=kissel#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="compote" data-cat="other" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Compote (fruit drink)</td>
+          <td data-label="Amount for 1 BU">85.7 ml</td>
+          <td data-label="Carbs / 100 ml">14 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="60 · medium" aria-label="60 · medium">60</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=compote#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="kvass" data-cat="other" data-gi="low">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Kvass</td>
+          <td data-label="Amount for 1 BU">240 ml</td>
+          <td data-label="Carbs / 100 ml">5 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--low" title="45 · low" aria-label="45 · low">45</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=kvass#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="beer-light" data-cat="other" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Light beer</td>
+          <td data-label="Amount for 1 BU">300 ml</td>
+          <td data-label="Carbs / 100 ml">4 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="66 · medium" aria-label="66 · medium">66</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=beer-light#calculator">Use in calculator</a></td>
+        </tr>
+        <tr data-food="cola" data-cat="other" data-gi="mid">
+          <td class="food-table__product" data-label="Product" data-cat-label="Other foods">Sugary soda</td>
+          <td data-label="Amount for 1 BU">109.1 ml</td>
+          <td data-label="Carbs / 100 ml">11 g / 100 ml</td>
+          <td data-label="GI"><span class="gi-badge gi-badge--mid" title="63 · medium" aria-label="63 · medium">63</span></td>
+          <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/en/?food=cola#calculator">Use in calculator</a></td>
+        </tr>
+        <tr class="food-table__empty-row" hidden>
+          <td colspan="5" class="food-table__empty">Nothing found. Try a different search.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</section>
+
+
+<section class="container table-disclaimer">
+  <p><span data-i18n="tablePage.disclaimer">The table provides approximate reference values and does not replace individual medical advice.</span> <a href="/en/disclaimer/" data-i18n="tablePage.disclaimerLink">Medical disclaimer</a></p>
+</section>
+
+<section class="faq-container container" aria-labelledby="table-faq-title">
+  <div class="faq-layout">
+    <div class="section-head" data-reveal>
+      <h2 id="table-faq-title" data-i18n="faq.h2">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details>
+        <summary data-i18n="tablePage.faq1q">How many foods are in the BU table?</summary>
+        <p data-i18n="tablePage.faq1a">167 foods in 11 categories. Each has carbs per 100 g and the grams that equal 1 BU (12 g carbs).</p>
+      </details>
+      <details>
+        <summary data-i18n="tablePage.faq2q">Why does the GI column say “no data”?</summary>
+        <p data-i18n="tablePage.faq2a">For 12 foods a reliable glycemic index is not available in our database — we do not invent values.</p>
+      </details>
+      <details>
+        <summary data-i18n="tablePage.faq3q">Can I print the table?</summary>
+        <p data-i18n="tablePage.faq3a">Yes. The print button opens a print-friendly view without navigation or filters.</p>
+      </details>
+    </div>
+  </div>
+</section>

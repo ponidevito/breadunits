@@ -137,7 +137,7 @@ window.BUC_FOODS = [
   { id: "blueberry",        cat: "fruits",  carbs: 8,  gi: 53, name: { uk: "Чорниця",                 en: "Blueberry",           es: "Arándano" } },
   { id: "lingonberry",      cat: "fruits",  carbs: 8,  gi: 25, name: { uk: "Брусниця",                en: "Lingonberry",         es: "Arándano rojo" } },
   { id: "cranberry",        cat: "fruits",  carbs: 8,  gi: 45, name: { uk: "Журавлина",               en: "Cranberry",           es: "Arándano agrio" } },
-  { id: "gooseberry",       cat: "fruits",  carbs: 10, gi: 25, name: { uk: "Аґрус",                   en: "Gooseberry",          es: "Grosella espinosa" } },
+  { id: "gooseberry",       cat: "fruits",  carbs: 10, gi: 25, name: { uk: "Агрус",                   en: "Gooseberry",          es: "Grosella espinosa" } },
   { id: "blackcurrant",     cat: "fruits",  carbs: 8,  gi: 15, name: { uk: "Чорна смородина",         en: "Blackcurrant",        es: "Grosella negra" } },
   { id: "redcurrant",       cat: "fruits",  carbs: 8,  gi: 25, name: { uk: "Червона смородина",       en: "Redcurrant",          es: "Grosella roja" } },
   { id: "feijoa",           cat: "fruits",  carbs: 13, gi: 35, name: { uk: "Фейхоа",                  en: "Feijoa",              es: "Feijoa" } },
