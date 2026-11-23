@@ -17,11 +17,9 @@
 <section id="food-table" class="container" data-table-full aria-labelledby="table-title">
   <div class="section-head" data-reveal>
     <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
-    <p data-i18n="table.lead">Усі 167 продуктів: скільки грамів містить 1 ХО (12 г вуглеводів), вуглеводи на 100 г і ГІ.</p>
-    <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися
-      залежно від сорту та способу приготування продукту.</p>
-    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55,
-      середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
+    <p data-i18n="table.lead">Усі 167 продуктів: скільки грамів або мл містить 1 ХО (12 г вуглеводів), вуглеводи на 100 г (напої — на 100 мл) і ГІ.</p>
+    <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися залежно від сорту та способу приготування продукту.</p>
+    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55, середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
   </div>
 
   <div class="table-controls" data-reveal>
@@ -48,7 +46,7 @@
           <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
           <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
           <th scope="col" data-i18n="table.col.gi">ГІ</th>
-          <th scope="col"><span class="visually-hidden">Actions</span></th>
+          <th scope="col"><span class="visually-hidden" data-i18n="table.col.action">Дія</span></th>
         </tr>
       </thead>
       <tbody id="food-tbody">
@@ -109,7 +107,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=bread-sticks#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="bagel" data-cat="bakery" data-gi="high">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Бублик<span class="food-table__piece">1 шт ≈ 2.3 ХО (50 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Бублик<span class="food-table__piece"> — 1 шт ≈ 2.3 ХО (50 г)</span></td>
           <td data-label="Кількість на 1 ХО">21.4 г</td>
           <td data-label="Вуглеводи / 100 г">56 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="72 · високий" aria-label="72 · високий">72</span></td>
@@ -151,49 +149,49 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=yeast-dough#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pancake" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Млинець<span class="food-table__piece">1 шт ≈ 0.9 ХО (40 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Млинець<span class="food-table__piece"> — 1 шт ≈ 0.9 ХО (40 г)</span></td>
           <td data-label="Кількість на 1 ХО">42.9 г</td>
           <td data-label="Вуглеводи / 100 г">28 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="66 · середній" aria-label="66 · середній">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pancake#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="oladki" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Оладки<span class="food-table__piece">1 шт ≈ 0.8 ХО (30 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Оладки<span class="food-table__piece"> — 1 шт ≈ 0.8 ХО (30 г)</span></td>
           <td data-label="Кількість на 1 ХО">36.4 г</td>
           <td data-label="Вуглеводи / 100 г">33 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="62 · середній" aria-label="62 · середній">62</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=oladki#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="dumplings-curd" data-cat="bakery" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Вареники з сиром<span class="food-table__piece">1 шт ≈ 0.2 ХО (13 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Вареники з сиром<span class="food-table__piece"> — 1 шт ≈ 0.2 ХО (13 г)</span></td>
           <td data-label="Кількість на 1 ХО">63.2 г</td>
           <td data-label="Вуглеводи / 100 г">19 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=dumplings-curd#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pelmeni" data-cat="bakery" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Пельмені<span class="food-table__piece">1 шт ≈ 0.2 ХО (13 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Пельмені<span class="food-table__piece"> — 1 шт ≈ 0.2 ХО (13 г)</span></td>
           <td data-label="Кількість на 1 ХО">54.5 г</td>
           <td data-label="Вуглеводи / 100 г">22 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pelmeni#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="vatrushka" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Ватрушка<span class="food-table__piece">1 шт ≈ 1.7 ХО (50 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Ватрушка<span class="food-table__piece"> — 1 шт ≈ 1.7 ХО (50 г)</span></td>
           <td data-label="Кількість на 1 ХО">30 г</td>
           <td data-label="Вуглеводи / 100 г">40 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="60 · середній" aria-label="60 · середній">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=vatrushka#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="raisin-bun" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Булочка з родзинками<span class="food-table__piece">1 шт ≈ 1 ХО (25 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Булочка з родзинками<span class="food-table__piece"> — 1 шт ≈ 1 ХО (25 г)</span></td>
           <td data-label="Кількість на 1 ХО">25.5 г</td>
           <td data-label="Вуглеводи / 100 г">47 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="65 · середній" aria-label="65 · середній">65</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=raisin-bun#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="gingerbread" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Пряник<span class="food-table__piece">1 шт ≈ 2.5 ХО (40 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Хліб і випічка">Пряник<span class="food-table__piece"> — 1 шт ≈ 2.5 ХО (40 г)</span></td>
           <td data-label="Кількість на 1 ХО">16.2 г</td>
           <td data-label="Вуглеводи / 100 г">74 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="65 · середній" aria-label="65 · середній">65</span></td>
@@ -312,7 +310,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=sprouted-grain#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="corn-cob" data-cat="cereals" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Кукурудза (качан)<span class="food-table__piece">1 шт ≈ 4.6 ХО (250 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Крупи">Кукурудза (качан)<span class="food-table__piece"> — 1 шт ≈ 4.6 ХО (250 г)</span></td>
           <td data-label="Кількість на 1 ХО">54.5 г</td>
           <td data-label="Вуглеводи / 100 г">22 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="52 · низький" aria-label="52 · низький">52</span></td>
@@ -347,7 +345,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pasta-cooked#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="potato-raw" data-cat="pasta" data-gi="na">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля сира<span class="food-table__piece">1 шт ≈ 1.3 ХО (90 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля сира<span class="food-table__piece"> — 1 шт ≈ 1.3 ХО (90 г)</span></td>
           <td data-label="Кількість на 1 ХО">70.6 г</td>
           <td data-label="Вуглеводи / 100 г">17 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--na">немає даних</span></td>
@@ -361,7 +359,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=potato-boiled#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="potato-jacket" data-cat="pasta" data-gi="high">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля в мундирі<span class="food-table__piece">1 шт ≈ 1 ХО (75 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля в мундирі<span class="food-table__piece"> — 1 шт ≈ 1 ХО (75 г)</span></td>
           <td data-label="Кількість на 1 ХО">75 г</td>
           <td data-label="Вуглеводи / 100 г">16 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="75 · високий" aria-label="75 · високий">75</span></td>
@@ -382,7 +380,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=fried-potato#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="french-fries" data-cat="pasta" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля фрі<span class="food-table__piece">1 шт ≈ 3.3 ХО (115 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Паста й картопля">Картопля фрі<span class="food-table__piece"> — 1 шт ≈ 3.3 ХО (115 г)</span></td>
           <td data-label="Кількість на 1 ХО">35.3 г</td>
           <td data-label="Вуглеводи / 100 г">34 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="63 · середній" aria-label="63 · середній">63</span></td>
@@ -403,14 +401,14 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=potato-chips#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="carrot" data-cat="veggies" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Морква<span class="food-table__piece">1 шт ≈ 0.4 ХО (75 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Морква<span class="food-table__piece"> — 1 шт ≈ 0.4 ХО (75 г)</span></td>
           <td data-label="Кількість на 1 ХО">171.4 г</td>
           <td data-label="Вуглеводи / 100 г">7 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="39 · низький" aria-label="39 · низький">39</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=carrot#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="beetroot" data-cat="veggies" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Буряк<span class="food-table__piece">1 шт ≈ 1 ХО (130 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Буряк<span class="food-table__piece"> — 1 шт ≈ 1 ХО (130 г)</span></td>
           <td data-label="Кількість на 1 ХО">133.3 г</td>
           <td data-label="Вуглеводи / 100 г">9 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="64 · середній" aria-label="64 · середній">64</span></td>
@@ -466,7 +464,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=brussels-sprouts#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="bell-pepper" data-cat="veggies" data-gi="na">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Болгарський перець<span class="food-table__piece">1 шт ≈ 0.5 ХО (120 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Овочі">Болгарський перець<span class="food-table__piece"> — 1 шт ≈ 0.5 ХО (120 г)</span></td>
           <td data-label="Кількість на 1 ХО">240 г</td>
           <td data-label="Вуглеводи / 100 г">5 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--na">немає даних</span></td>
@@ -550,63 +548,63 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=soybeans-dry#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="apple" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Яблуко<span class="food-table__piece">1 шт ≈ 1.4 ХО (150 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Яблуко<span class="food-table__piece"> — 1 шт ≈ 1.4 ХО (150 г)</span></td>
           <td data-label="Кількість на 1 ХО">109.1 г</td>
           <td data-label="Вуглеводи / 100 г">11 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=apple#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pear" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Груша<span class="food-table__piece">1 шт ≈ 1.1 ХО (135 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Груша<span class="food-table__piece"> — 1 шт ≈ 1.1 ХО (135 г)</span></td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="38 · низький" aria-label="38 · низький">38</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pear#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="quince" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Айва<span class="food-table__piece">1 шт ≈ 1.2 ХО (140 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Айва<span class="food-table__piece"> — 1 шт ≈ 1.2 ХО (140 г)</span></td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=quince#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="banana" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Банан<span class="food-table__piece">1 шт ≈ 2.1 ХО (120 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Банан<span class="food-table__piece"> — 1 шт ≈ 2.1 ХО (120 г)</span></td>
           <td data-label="Кількість на 1 ХО">57.1 г</td>
           <td data-label="Вуглеводи / 100 г">21 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="51 · низький" aria-label="51 · низький">51</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=banana#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="orange" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Апельсин<span class="food-table__piece">1 шт ≈ 1.2 ХО (180 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Апельсин<span class="food-table__piece"> — 1 шт ≈ 1.2 ХО (180 г)</span></td>
           <td data-label="Кількість на 1 ХО">150 г</td>
           <td data-label="Вуглеводи / 100 г">8 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="43 · низький" aria-label="43 · низький">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=orange#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="tangerine" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Мандарин<span class="food-table__piece">1 шт ≈ 0.5 ХО (70 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Мандарин<span class="food-table__piece"> — 1 шт ≈ 0.5 ХО (70 г)</span></td>
           <td data-label="Кількість на 1 ХО">150 г</td>
           <td data-label="Вуглеводи / 100 г">8 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="45 · низький" aria-label="45 · низький">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=tangerine#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="grapefruit" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Грейпфрут<span class="food-table__piece">1 шт ≈ 2 ХО (350 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Грейпфрут<span class="food-table__piece"> — 1 шт ≈ 2 ХО (350 г)</span></td>
           <td data-label="Кількість на 1 ХО">171.4 г</td>
           <td data-label="Вуглеводи / 100 г">7 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="25 · низький" aria-label="25 · низький">25</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=grapefruit#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="lemon" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Лимон<span class="food-table__piece">1 шт ≈ 0.2 ХО (90 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Лимон<span class="food-table__piece"> — 1 шт ≈ 0.2 ХО (90 г)</span></td>
           <td data-label="Кількість на 1 ХО">400 г</td>
           <td data-label="Вуглеводи / 100 г">3 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="20 · низький" aria-label="20 · низький">20</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=lemon#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pomegranate" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Гранат<span class="food-table__piece">1 шт ≈ 2.3 ХО (200 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Гранат<span class="food-table__piece"> — 1 шт ≈ 2.3 ХО (200 г)</span></td>
           <td data-label="Кількість на 1 ХО">85.7 г</td>
           <td data-label="Вуглеводи / 100 г">14 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
@@ -641,7 +639,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pineapple#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="mango" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Манго<span class="food-table__piece">1 шт ≈ 2.5 ХО (200 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Манго<span class="food-table__piece"> — 1 шт ≈ 2.5 ХО (200 г)</span></td>
           <td data-label="Кількість на 1 ХО">80 г</td>
           <td data-label="Вуглеводи / 100 г">15 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="51 · низький" aria-label="51 · низький">51</span></td>
@@ -655,35 +653,35 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=papaya#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="kiwi" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Ківі<span class="food-table__piece">1 шт ≈ 0.6 ХО (75 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Ківі<span class="food-table__piece"> — 1 шт ≈ 0.6 ХО (75 г)</span></td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=kiwi#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="peach" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Персик<span class="food-table__piece">1 шт ≈ 1 ХО (120 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Персик<span class="food-table__piece"> — 1 шт ≈ 1 ХО (120 г)</span></td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="42 · низький" aria-label="42 · низький">42</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=peach#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="nectarine" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Нектарин<span class="food-table__piece">1 шт ≈ 1.2 ХО (120 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Нектарин<span class="food-table__piece"> — 1 шт ≈ 1.2 ХО (120 г)</span></td>
           <td data-label="Кількість на 1 ХО">100 г</td>
           <td data-label="Вуглеводи / 100 г">12 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="43 · низький" aria-label="43 · низький">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=nectarine#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="apricot" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Абрикос<span class="food-table__piece">1 шт ≈ 0.2 ХО (30 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Абрикос<span class="food-table__piece"> — 1 шт ≈ 0.2 ХО (30 г)</span></td>
           <td data-label="Кількість на 1 ХО">133.3 г</td>
           <td data-label="Вуглеводи / 100 г">9 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="34 · низький" aria-label="34 · низький">34</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=apricot#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="plum" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Слива<span class="food-table__piece">1 шт ≈ 0.4 ХО (40 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Слива<span class="food-table__piece"> — 1 шт ≈ 0.4 ХО (40 г)</span></td>
           <td data-label="Кількість на 1 ХО">109.1 г</td>
           <td data-label="Вуглеводи / 100 г">11 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="39 · низький" aria-label="39 · низький">39</span></td>
@@ -697,21 +695,21 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cherry-plum#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="persimmon" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Хурма<span class="food-table__piece">1 шт ≈ 2.4 ХО (170 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Хурма<span class="food-table__piece"> — 1 шт ≈ 2.4 ХО (170 г)</span></td>
           <td data-label="Кількість на 1 ХО">70.6 г</td>
           <td data-label="Вуглеводи / 100 г">17 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=persimmon#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="fig-fresh" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Інжир свіжий<span class="food-table__piece">1 шт ≈ 0.7 ХО (50 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Інжир свіжий<span class="food-table__piece"> — 1 шт ≈ 0.7 ХО (50 г)</span></td>
           <td data-label="Кількість на 1 ХО">75 г</td>
           <td data-label="Вуглеводи / 100 г">16 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=fig-fresh#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="avocado" data-cat="fruits" data-gi="na">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Авокадо<span class="food-table__piece">1 шт ≈ 1 ХО (200 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Авокадо<span class="food-table__piece"> — 1 шт ≈ 1 ХО (200 г)</span></td>
           <td data-label="Кількість на 1 ХО">200 г</td>
           <td data-label="Вуглеводи / 100 г">6 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--na">немає даних</span></td>
@@ -774,7 +772,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cranberry#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="gooseberry" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Аґрус</td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Агрус</td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="25 · низький" aria-label="25 · низький">25</span></td>
@@ -823,7 +821,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=raisins#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="dates" data-cat="fruits" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Фініки<span class="food-table__piece">1 шт ≈ 0.5 ХО (8 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Фрукти та ягоди">Фініки<span class="food-table__piece"> — 1 шт ≈ 0.5 ХО (8 г)</span></td>
           <td data-label="Кількість на 1 ХО">17.4 г</td>
           <td data-label="Вуглеводи / 100 г">69 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="62 · середній" aria-label="62 · середній">62</span></td>
@@ -846,126 +844,126 @@
         <tr data-food="orange-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Апельсиновий сік</td>
           <td data-label="Кількість на 1 ХО">109.1 мл</td>
-          <td data-label="Вуглеводи / 100 г">11 г</td>
+          <td data-label="Вуглеводи / 100 мл">11 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=orange-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="apple-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Яблучний сік</td>
           <td data-label="Кількість на 1 ХО">109.1 мл</td>
-          <td data-label="Вуглеводи / 100 г">11 г</td>
+          <td data-label="Вуглеводи / 100 мл">11 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="41 · низький" aria-label="41 · низький">41</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=apple-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="grape-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Виноградний сік</td>
           <td data-label="Кількість на 1 ХО">85.7 мл</td>
-          <td data-label="Вуглеводи / 100 г">14 г</td>
+          <td data-label="Вуглеводи / 100 мл">14 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=grape-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cherry-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Вишневий сік</td>
           <td data-label="Кількість на 1 ХО">100 мл</td>
-          <td data-label="Вуглеводи / 100 г">12 г</td>
+          <td data-label="Вуглеводи / 100 мл">12 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="40 · низький" aria-label="40 · низький">40</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cherry-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pear-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Грушевий сік</td>
           <td data-label="Кількість на 1 ХО">120 мл</td>
-          <td data-label="Вуглеводи / 100 г">10 г</td>
+          <td data-label="Вуглеводи / 100 мл">10 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="44 · низький" aria-label="44 · низький">44</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pear-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="plum-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Сливовий сік</td>
           <td data-label="Кількість на 1 ХО">100 мл</td>
-          <td data-label="Вуглеводи / 100 г">12 г</td>
+          <td data-label="Вуглеводи / 100 мл">12 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="45 · низький" aria-label="45 · низький">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=plum-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="grapefruit-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Грейпфрутовий сік</td>
           <td data-label="Кількість на 1 ХО">150 мл</td>
-          <td data-label="Вуглеводи / 100 г">8 г</td>
+          <td data-label="Вуглеводи / 100 мл">8 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="48 · низький" aria-label="48 · низький">48</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=grapefruit-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="carrot-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Морквяний сік</td>
           <td data-label="Кількість на 1 ХО">150 мл</td>
-          <td data-label="Вуглеводи / 100 г">8 г</td>
+          <td data-label="Вуглеводи / 100 мл">8 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="43 · низький" aria-label="43 · низький">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=carrot-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="beet-juice" data-cat="juices" data-gi="mid">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Буряковий сік</td>
           <td data-label="Кількість на 1 ХО">150 мл</td>
-          <td data-label="Вуглеводи / 100 г">8 г</td>
+          <td data-label="Вуглеводи / 100 мл">8 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="64 · середній" aria-label="64 · середній">64</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=beet-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="tomato-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Соки">Томатний сік</td>
           <td data-label="Кількість на 1 ХО">400 мл</td>
-          <td data-label="Вуглеводи / 100 г">3 г</td>
+          <td data-label="Вуглеводи / 100 мл">3 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="38 · низький" aria-label="38 · низький">38</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=tomato-juice#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Молоко</td>
           <td data-label="Кількість на 1 ХО">240 мл</td>
-          <td data-label="Вуглеводи / 100 г">5 г</td>
+          <td data-label="Вуглеводи / 100 мл">5 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="39 · низький" aria-label="39 · низький">39</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=milk#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="baked-milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Молоко пряжене</td>
           <td data-label="Кількість на 1 ХО">240 мл</td>
-          <td data-label="Вуглеводи / 100 г">5 г</td>
+          <td data-label="Вуглеводи / 100 мл">5 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="40 · низький" aria-label="40 · низький">40</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=baked-milk#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="kefir" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Кефір</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="25 · низький" aria-label="25 · низький">25</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=kefir#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="ryazhanka" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Ряжанка</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="30 · низький" aria-label="30 · низький">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=ryazhanka#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="soured-milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Кисле молоко</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="30 · низький" aria-label="30 · низький">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=soured-milk#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="buttermilk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Маслянка</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="30 · низький" aria-label="30 · низький">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=buttermilk#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cream" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Вершки</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="30 · низький" aria-label="30 · низький">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cream#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="plain-yogurt" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Йогурт без цукру</td>
           <td data-label="Кількість на 1 ХО">200 мл</td>
-          <td data-label="Вуглеводи / 100 г">6 г</td>
+          <td data-label="Вуглеводи / 100 мл">6 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="35 · низький" aria-label="35 · низький">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=plain-yogurt#calculator">У калькулятор</a></td>
         </tr>
@@ -998,14 +996,14 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=sweet-curd-mass#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="glazed-curd-bar" data-cat="dairy" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Сирок глазурований<span class="food-table__piece">1 шт ≈ 1 ХО (40 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Сирок глазурований<span class="food-table__piece"> — 1 шт ≈ 1 ХО (40 г)</span></td>
           <td data-label="Кількість на 1 ХО">40 г</td>
           <td data-label="Вуглеводи / 100 г">30 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=glazed-curd-bar#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="syrnik" data-cat="dairy" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Сирник<span class="food-table__piece">1 шт ≈ 1.4 ХО (75 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Молочні продукти">Сирник<span class="food-table__piece"> — 1 шт ≈ 1.4 ХО (75 г)</span></td>
           <td data-label="Кількість на 1 ХО">54.5 г</td>
           <td data-label="Вуглеводи / 100 г">22 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
@@ -1068,56 +1066,56 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=hazelnuts#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="hamburger" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Гамбургер<span class="food-table__piece">1 шт ≈ 2.5 ХО (100 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Гамбургер<span class="food-table__piece"> — 1 шт ≈ 2.5 ХО (100 г)</span></td>
           <td data-label="Кількість на 1 ХО">40 г</td>
           <td data-label="Вуглеводи / 100 г">30 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="66 · середній" aria-label="66 · середній">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=hamburger#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cheeseburger" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Чізбургер<span class="food-table__piece">1 шт ≈ 2.6 ХО (105 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Чізбургер<span class="food-table__piece"> — 1 шт ≈ 2.6 ХО (105 г)</span></td>
           <td data-label="Кількість на 1 ХО">40 г</td>
           <td data-label="Вуглеводи / 100 г">30 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="66 · середній" aria-label="66 · середній">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cheeseburger#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="big-mac" data-cat="fastfood" data-gi="high">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Біг Мак<span class="food-table__piece">1 шт ≈ 3.6 ХО (215 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Біг Мак<span class="food-table__piece"> — 1 шт ≈ 3.6 ХО (215 г)</span></td>
           <td data-label="Кількість на 1 ХО">60 г</td>
           <td data-label="Вуглеводи / 100 г">20 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--high" title="70 · високий" aria-label="70 · високий">70</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=big-mac#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="chicken-nuggets" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Курячі нагетси<span class="food-table__piece">1 шт ≈ 1.3 ХО (100 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Курячі нагетси<span class="food-table__piece"> — 1 шт ≈ 1.3 ХО (100 г)</span></td>
           <td data-label="Кількість на 1 ХО">75 г</td>
           <td data-label="Вуглеводи / 100 г">16 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="46 · низький" aria-label="46 · низький">46</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=chicken-nuggets#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="pizza" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Піца<span class="food-table__piece">1 шт ≈ 6.3 ХО (300 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Піца<span class="food-table__piece"> — 1 шт ≈ 6.3 ХО (300 г)</span></td>
           <td data-label="Кількість на 1 ХО">48 г</td>
           <td data-label="Вуглеводи / 100 г">25 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="60 · середній" aria-label="60 · середній">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=pizza#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="bean-burrito" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Буріто з квасолею<span class="food-table__piece">1 шт ≈ 4.6 ХО (220 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Буріто з квасолею<span class="food-table__piece"> — 1 шт ≈ 4.6 ХО (220 г)</span></td>
           <td data-label="Кількість на 1 ХО">48 г</td>
           <td data-label="Вуглеводи / 100 г">25 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=bean-burrito#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cutlet" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Котлета<span class="food-table__piece">1 шт ≈ 0.8 ХО (90 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Котлета<span class="food-table__piece"> — 1 шт ≈ 0.8 ХО (90 г)</span></td>
           <td data-label="Кількість на 1 ХО">120 г</td>
           <td data-label="Вуглеводи / 100 г">10 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cutlet#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cake-slice" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Торт / пиріг<span class="food-table__piece">1 шт ≈ 3.8 ХО (100 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Готові страви й фастфуд">Торт / пиріг<span class="food-table__piece"> — 1 шт ≈ 3.8 ХО (100 г)</span></td>
           <td data-label="Кількість на 1 ХО">26.7 г</td>
           <td data-label="Вуглеводи / 100 г">45 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="55 · низький" aria-label="55 · низький">55</span></td>
@@ -1173,7 +1171,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=chocolate#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="chocolate-candy" data-cat="other" data-gi="low">
-          <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Шоколадна цукерка<span class="food-table__piece">1 шт ≈ 0.8 ХО (15 г)</span></td>
+          <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Шоколадна цукерка<span class="food-table__piece"> — 1 шт ≈ 0.8 ХО (15 г)</span></td>
           <td data-label="Кількість на 1 ХО">20 г</td>
           <td data-label="Вуглеводи / 100 г">60 г</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
@@ -1189,35 +1187,35 @@
         <tr data-food="kissel" data-cat="other" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Кисіль</td>
           <td data-label="Кількість на 1 ХО">92.3 мл</td>
-          <td data-label="Вуглеводи / 100 г">13 г</td>
+          <td data-label="Вуглеводи / 100 мл">13 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="50 · низький" aria-label="50 · низький">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=kissel#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="compote" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Компот</td>
           <td data-label="Кількість на 1 ХО">85.7 мл</td>
-          <td data-label="Вуглеводи / 100 г">14 г</td>
+          <td data-label="Вуглеводи / 100 мл">14 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="60 · середній" aria-label="60 · середній">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=compote#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="kvass" data-cat="other" data-gi="low">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Квас</td>
           <td data-label="Кількість на 1 ХО">240 мл</td>
-          <td data-label="Вуглеводи / 100 г">5 г</td>
+          <td data-label="Вуглеводи / 100 мл">5 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--low" title="45 · низький" aria-label="45 · низький">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=kvass#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="beer-light" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Пиво світле</td>
           <td data-label="Кількість на 1 ХО">300 мл</td>
-          <td data-label="Вуглеводи / 100 г">4 г</td>
+          <td data-label="Вуглеводи / 100 мл">4 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="66 · середній" aria-label="66 · середній">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=beer-light#calculator">У калькулятор</a></td>
         </tr>
         <tr data-food="cola" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Продукт" data-cat-label="Інші продукти">Солодка газована вода</td>
           <td data-label="Кількість на 1 ХО">109.1 мл</td>
-          <td data-label="Вуглеводи / 100 г">11 г</td>
+          <td data-label="Вуглеводи / 100 мл">11 г / 100 мл</td>
           <td data-label="ГІ"><span class="gi-badge gi-badge--mid" title="63 · середній" aria-label="63 · середній">63</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/?food=cola#calculator">У калькулятор</a></td>
         </tr>
@@ -1231,6 +1229,10 @@
 
 </section>
 
+
+<section class="container table-disclaimer">
+  <p><span data-i18n="tablePage.disclaimer">Дані таблиці є довідковими та наближеними й не замінюють індивідуальну консультацію лікаря.</span> <a href="/disclaimer/" data-i18n="tablePage.disclaimerLink">Медичне застереження</a></p>
+</section>
 
 <section class="faq-container container" aria-labelledby="table-faq-title">
   <div class="faq-layout">

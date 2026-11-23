@@ -57,6 +57,7 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const { execFileSync } = require("child_process");
 const nodePath = require("path");
+const { createLocalizeStream } = require("./tools/localize-html");
 
 // ─── helper ─────────────────────────────────────────────────
 const onError = (taskName) =>
@@ -91,6 +92,7 @@ function html() {
   return src(path.src.html)
     .pipe(onError("html"))
     .pipe(fileinclude({ prefix: "@@", basepath: "@file" }))
+    .pipe(createLocalizeStream())
     .pipe(
       rename((file) => {
         if (file.basename !== "index" && file.extname === ".html") {

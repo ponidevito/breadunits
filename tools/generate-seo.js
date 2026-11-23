@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const { localizeHtml } = require("./localize-html");
 
 const root = path.resolve(__dirname, "..");
 const srcDir = path.join(root, "src");
@@ -95,6 +96,7 @@ function giBand(gi) {
 
 function buildRows(lang, t, ids, homeUrl) {
   const carbsUnit = t("calc.carbs.suffix");
+  const liquidCarbsUnit = t("calc.carbs.liquid.suffix");
   const weightUnit = t("calc.weight.suffix").split("/")[1].trim();
 
   return ids.map((id) => {
@@ -116,6 +118,8 @@ function buildRows(lang, t, ids, homeUrl) {
         )}</span>`
       : "";
     const unit = food.liquid ? weightUnit : carbsUnit;
+    const carbsLabel = food.liquid ? t("table.col.carbs.liquid") : t("table.col.carbs");
+    const carbsValue = food.liquid ? `${food.carbs} ${liquidCarbsUnit}` : `${food.carbs} ${carbsUnit}`;
     const action = homeUrl
       ? `<a class="link-btn" href="${esc(homeUrl)}?food=${encodeURIComponent(food.id)}#calculator">${esc(t("table.use"))}</a>`
       : `<button type="button" class="link-btn" data-use="${esc(food.id)}">${esc(t("table.use"))}</button>`;
@@ -124,7 +128,7 @@ function buildRows(lang, t, ids, homeUrl) {
       `        <tr data-food="${esc(food.id)}" data-cat="${esc(food.cat)}" data-gi="${band || "na"}">`,
       `          <td class="food-table__product" data-label="${esc(t("table.col.product"))}" data-cat-label="${cat}">${name}${pieceLine}</td>`,
       `          <td data-label="${esc(t("table.col.amount"))}">${amount} ${esc(unit)}</td>`,
-      `          <td data-label="${esc(t("table.col.carbs"))}">${food.carbs} ${esc(carbsUnit)}</td>`,
+      `          <td data-label="${esc(carbsLabel)}">${esc(carbsValue)}</td>`,
       `          <td data-label="${esc(t("table.col.gi"))}">${giCell}</td>`,
       `          <td class="food-table__action">${action}</td>`,
       "        </tr>",
@@ -153,6 +157,7 @@ function renderTable(lang, t, fullPage, homeUrl) {
     .split("@@WRAP_REVEAL_ATTR@@").join(fullPage ? "" : " data-reveal")
     .split("@@LEAD_KEY@@").join(leadKey)
     .split("@@LEAD@@").join(esc(t(leadKey)))
+    .split("@@ACTION@@").join(esc(t("table.col.action")))
     .split("@@ROWS@@").join(buildRows(lang, t, ids, fullPage ? homeUrl : ""))
     .split("@@EMPTY@@").join(esc(t("table.empty")))
     .split("@@MORE@@").join(more);
@@ -186,6 +191,10 @@ function renderTablePage(lang, t) {
     "</section>",
     "",
     renderTable(lang, t, true, config.homeUrl),
+    "",
+    '<section class="container table-disclaimer">',
+    `  <p><span data-i18n="tablePage.disclaimer">${q("tablePage.disclaimer")}</span> <a href="${config.root}/disclaimer/" data-i18n="tablePage.disclaimerLink">${q("tablePage.disclaimerLink")}</a></p>`,
+    "</section>",
     "",
     '<section class="faq-container container" aria-labelledby="table-faq-title">',
     '  <div class="faq-layout">',
@@ -256,8 +265,8 @@ function main() {
     const t = (key) => I18N[lang][key];
     const includePath = path.relative(path.dirname(config.file), path.join(htmlDir, "_seo-document.html")).split(path.sep).join("/");
 
-    write(path.join(htmlDir, `_food-table-${lang}.html`), renderTable(lang, t, false) + "\n");
-    write(path.join(htmlDir, `_table-page-${lang}.html`), renderTablePage(lang, t));
+    write(path.join(htmlDir, `_food-table-${lang}.html`), localizeHtml(renderTable(lang, t, false), lang) + "\n");
+    write(path.join(htmlDir, `_table-page-${lang}.html`), localizeHtml(renderTablePage(lang, t), lang));
 
     const params = [
       `"htmlLang":"${config.htmlLang}"`,

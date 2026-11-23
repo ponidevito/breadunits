@@ -6,7 +6,7 @@
   </ul>
   <div class="section-head">
     <h1 id="page-title" data-i18n="tablePage.h1">Tabla de Unidades de Pan: 167 alimentos</h1>
-    <p data-i18n="tablePage.lead">Referencia completa: gramos de alimento por 1 UP (12 g de carbohidratos), hidratos por 100 g e índice glucémico. Usa la búsqueda y los filtros o imprime la tabla.</p>
+    <p data-i18n="tablePage.lead">Referencia completa: gramos (o ml en bebidas) por 1 UP (12 g de carbohidratos), hidratos por 100 g (por 100 ml en bebidas) e índice glucémico. Usa la búsqueda y los filtros o imprime la tabla.</p>
     <div class="table-hero__actions">
       <button class="btn print-button" id="table-print" type="button" data-i18n="tablePage.print">Imprimir tabla</button>
       <a class="btn btn--ghost" href="https://breadunits.top/es/" data-i18n="tablePage.back">A la calculadora</a>
@@ -16,12 +16,10 @@
 
 <section id="food-table" class="container" data-table-full aria-labelledby="table-title">
   <div class="section-head" data-reveal>
-    <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
-    <p data-i18n="table.lead">Los 167 alimentos: gramos por 1 UP (12 g de carbohidratos), hidratos por 100 g e IG.</p>
-    <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися
-      залежно від сорту та способу приготування продукту.</p>
-    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55,
-      середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
+    <h2 id="table-title" data-i18n="table.h2">Tabla de unidades de pan</h2>
+    <p data-i18n="table.lead">Los 167 alimentos: gramos (o ml en bebidas) por 1 UP (12 g de carbohidratos), hidratos por 100 g (por 100 ml en bebidas) e IG. También se habla de raciones de hidratos de carbono o intercambios de carbohidratos.</p>
+    <p class="table-note" data-i18n="table.note">*Los valores de la tabla son cifras de referencia aproximadas y pueden variar según la variedad y la preparación del alimento.</p>
+    <p class="table-note" data-i18n="table.gi.note">La columna «IG» es un índice glucémico aproximado: bajo ≤ 55, medio 56–69, alto ≥ 70. «sin datos» significa que no hay un valor fiable en la base de datos.</p>
   </div>
 
   <div class="table-controls" data-reveal>
@@ -32,23 +30,23 @@
         <path d="m21 21-4.3-4.3" />
       </svg>
       <input type="search" id="table-search" autocomplete="off"
-        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Пошук продукту…"
-        aria-label="Пошук продукту в таблиці">
+        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Buscar alimento…"
+        aria-label="Buscar alimento en la tabla">
     </div>
     <div class="table-filter" role="group" aria-label="Categories"></div>
     <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
-      aria-label="Фільтр за глікемічним індексом"></div>
+      aria-label="Filtrar por índice glucémico"></div>
   </div>
 
   <div class="table-wrap">
     <table class="food-table">
       <thead>
         <tr>
-          <th scope="col" data-i18n="table.col.product">Продукт</th>
-          <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
-          <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
-          <th scope="col" data-i18n="table.col.gi">ГІ</th>
-          <th scope="col"><span class="visually-hidden">Actions</span></th>
+          <th scope="col" data-i18n="table.col.product">Producto</th>
+          <th scope="col" data-i18n="table.col.amount">Cantidad por 1 UP</th>
+          <th scope="col" data-i18n="table.col.carbs">Carb. / 100 g</th>
+          <th scope="col" data-i18n="table.col.gi">IG</th>
+          <th scope="col"><span class="visually-hidden" data-i18n="table.col.action">Acción</span></th>
         </tr>
       </thead>
       <tbody id="food-tbody">
@@ -109,7 +107,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=bread-sticks#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="bagel" data-cat="bakery" data-gi="high">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bagel<span class="food-table__piece">1 ud ≈ 2.3 UP (50 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bagel<span class="food-table__piece"> — 1 ud ≈ 2.3 UP (50 g)</span></td>
           <td data-label="Cantidad por 1 UP">21.4 g</td>
           <td data-label="Carb. / 100 g">56 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--high" title="72 · alto" aria-label="72 · alto">72</span></td>
@@ -151,49 +149,49 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=yeast-dough#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pancake" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Panqueque<span class="food-table__piece">1 ud ≈ 0.9 UP (40 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Panqueque<span class="food-table__piece"> — 1 ud ≈ 0.9 UP (40 g)</span></td>
           <td data-label="Cantidad por 1 UP">42.9 g</td>
           <td data-label="Carb. / 100 g">28 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="66 · medio" aria-label="66 · medio">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pancake#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="oladki" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Tortitas gruesas<span class="food-table__piece">1 ud ≈ 0.8 UP (30 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Tortitas gruesas<span class="food-table__piece"> — 1 ud ≈ 0.8 UP (30 g)</span></td>
           <td data-label="Cantidad por 1 UP">36.4 g</td>
           <td data-label="Carb. / 100 g">33 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="62 · medio" aria-label="62 · medio">62</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=oladki#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="dumplings-curd" data-cat="bakery" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Vareniki de requesón<span class="food-table__piece">1 ud ≈ 0.2 UP (13 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Vareniki de requesón<span class="food-table__piece"> — 1 ud ≈ 0.2 UP (13 g)</span></td>
           <td data-label="Cantidad por 1 UP">63.2 g</td>
           <td data-label="Carb. / 100 g">19 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=dumplings-curd#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pelmeni" data-cat="bakery" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Pelmeni (empanadillas)<span class="food-table__piece">1 ud ≈ 0.2 UP (13 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Pelmeni (empanadillas)<span class="food-table__piece"> — 1 ud ≈ 0.2 UP (13 g)</span></td>
           <td data-label="Cantidad por 1 UP">54.5 g</td>
           <td data-label="Carb. / 100 g">22 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pelmeni#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="vatrushka" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bollo de requesón<span class="food-table__piece">1 ud ≈ 1.7 UP (50 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bollo de requesón<span class="food-table__piece"> — 1 ud ≈ 1.7 UP (50 g)</span></td>
           <td data-label="Cantidad por 1 UP">30 g</td>
           <td data-label="Carb. / 100 g">40 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="60 · medio" aria-label="60 · medio">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=vatrushka#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="raisin-bun" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bollo con pasas<span class="food-table__piece">1 ud ≈ 1 UP (25 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Bollo con pasas<span class="food-table__piece"> — 1 ud ≈ 1 UP (25 g)</span></td>
           <td data-label="Cantidad por 1 UP">25.5 g</td>
           <td data-label="Carb. / 100 g">47 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="65 · medio" aria-label="65 · medio">65</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=raisin-bun#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="gingerbread" data-cat="bakery" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Pan de jengibre<span class="food-table__piece">1 ud ≈ 2.5 UP (40 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pan y bollería">Pan de jengibre<span class="food-table__piece"> — 1 ud ≈ 2.5 UP (40 g)</span></td>
           <td data-label="Cantidad por 1 UP">16.2 g</td>
           <td data-label="Carb. / 100 g">74 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="65 · medio" aria-label="65 · medio">65</span></td>
@@ -312,7 +310,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=sprouted-grain#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="corn-cob" data-cat="cereals" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Cereales">Mazorca de maíz<span class="food-table__piece">1 ud ≈ 4.6 UP (250 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Cereales">Mazorca de maíz<span class="food-table__piece"> — 1 ud ≈ 4.6 UP (250 g)</span></td>
           <td data-label="Cantidad por 1 UP">54.5 g</td>
           <td data-label="Carb. / 100 g">22 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="52 · bajo" aria-label="52 · bajo">52</span></td>
@@ -347,7 +345,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pasta-cooked#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="potato-raw" data-cat="pasta" data-gi="na">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa (cruda)<span class="food-table__piece">1 ud ≈ 1.3 UP (90 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa (cruda)<span class="food-table__piece"> — 1 ud ≈ 1.3 UP (90 g)</span></td>
           <td data-label="Cantidad por 1 UP">70.6 g</td>
           <td data-label="Carb. / 100 g">17 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--na">sin datos</span></td>
@@ -361,7 +359,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=potato-boiled#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="potato-jacket" data-cat="pasta" data-gi="high">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa con piel<span class="food-table__piece">1 ud ≈ 1 UP (75 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa con piel<span class="food-table__piece"> — 1 ud ≈ 1 UP (75 g)</span></td>
           <td data-label="Cantidad por 1 UP">75 g</td>
           <td data-label="Carb. / 100 g">16 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--high" title="75 · alto" aria-label="75 · alto">75</span></td>
@@ -382,7 +380,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=fried-potato#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="french-fries" data-cat="pasta" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papas fritas<span class="food-table__piece">1 ud ≈ 3.3 UP (115 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papas fritas<span class="food-table__piece"> — 1 ud ≈ 3.3 UP (115 g)</span></td>
           <td data-label="Cantidad por 1 UP">35.3 g</td>
           <td data-label="Carb. / 100 g">34 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="63 · medio" aria-label="63 · medio">63</span></td>
@@ -403,14 +401,14 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=potato-chips#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="carrot" data-cat="veggies" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Zanahoria<span class="food-table__piece">1 ud ≈ 0.4 UP (75 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Zanahoria<span class="food-table__piece"> — 1 ud ≈ 0.4 UP (75 g)</span></td>
           <td data-label="Cantidad por 1 UP">171.4 g</td>
           <td data-label="Carb. / 100 g">7 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="39 · bajo" aria-label="39 · bajo">39</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=carrot#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="beetroot" data-cat="veggies" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Remolacha<span class="food-table__piece">1 ud ≈ 1 UP (130 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Remolacha<span class="food-table__piece"> — 1 ud ≈ 1 UP (130 g)</span></td>
           <td data-label="Cantidad por 1 UP">133.3 g</td>
           <td data-label="Carb. / 100 g">9 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="64 · medio" aria-label="64 · medio">64</span></td>
@@ -466,7 +464,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=brussels-sprouts#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="bell-pepper" data-cat="veggies" data-gi="na">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Pimiento<span class="food-table__piece">1 ud ≈ 0.5 UP (120 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Verduras">Pimiento<span class="food-table__piece"> — 1 ud ≈ 0.5 UP (120 g)</span></td>
           <td data-label="Cantidad por 1 UP">240 g</td>
           <td data-label="Carb. / 100 g">5 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--na">sin datos</span></td>
@@ -550,63 +548,63 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=soybeans-dry#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="apple" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Manzana<span class="food-table__piece">1 ud ≈ 1.4 UP (150 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Manzana<span class="food-table__piece"> — 1 ud ≈ 1.4 UP (150 g)</span></td>
           <td data-label="Cantidad por 1 UP">109.1 g</td>
           <td data-label="Carb. / 100 g">11 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=apple#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pear" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pera<span class="food-table__piece">1 ud ≈ 1.1 UP (135 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pera<span class="food-table__piece"> — 1 ud ≈ 1.1 UP (135 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="38 · bajo" aria-label="38 · bajo">38</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pear#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="quince" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Membrillo<span class="food-table__piece">1 ud ≈ 1.2 UP (140 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Membrillo<span class="food-table__piece"> — 1 ud ≈ 1.2 UP (140 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=quince#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="banana" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Plátano<span class="food-table__piece">1 ud ≈ 2.1 UP (120 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Plátano<span class="food-table__piece"> — 1 ud ≈ 2.1 UP (120 g)</span></td>
           <td data-label="Cantidad por 1 UP">57.1 g</td>
           <td data-label="Carb. / 100 g">21 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="51 · bajo" aria-label="51 · bajo">51</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=banana#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="orange" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Naranja<span class="food-table__piece">1 ud ≈ 1.2 UP (180 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Naranja<span class="food-table__piece"> — 1 ud ≈ 1.2 UP (180 g)</span></td>
           <td data-label="Cantidad por 1 UP">150 g</td>
           <td data-label="Carb. / 100 g">8 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="43 · bajo" aria-label="43 · bajo">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=orange#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="tangerine" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Mandarina<span class="food-table__piece">1 ud ≈ 0.5 UP (70 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Mandarina<span class="food-table__piece"> — 1 ud ≈ 0.5 UP (70 g)</span></td>
           <td data-label="Cantidad por 1 UP">150 g</td>
           <td data-label="Carb. / 100 g">8 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="45 · bajo" aria-label="45 · bajo">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=tangerine#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="grapefruit" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pomelo<span class="food-table__piece">1 ud ≈ 2 UP (350 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pomelo<span class="food-table__piece"> — 1 ud ≈ 2 UP (350 g)</span></td>
           <td data-label="Cantidad por 1 UP">171.4 g</td>
           <td data-label="Carb. / 100 g">7 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="25 · bajo" aria-label="25 · bajo">25</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=grapefruit#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="lemon" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Limón<span class="food-table__piece">1 ud ≈ 0.2 UP (90 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Limón<span class="food-table__piece"> — 1 ud ≈ 0.2 UP (90 g)</span></td>
           <td data-label="Cantidad por 1 UP">400 g</td>
           <td data-label="Carb. / 100 g">3 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="20 · bajo" aria-label="20 · bajo">20</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=lemon#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pomegranate" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Granada<span class="food-table__piece">1 ud ≈ 2.3 UP (200 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Granada<span class="food-table__piece"> — 1 ud ≈ 2.3 UP (200 g)</span></td>
           <td data-label="Cantidad por 1 UP">85.7 g</td>
           <td data-label="Carb. / 100 g">14 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
@@ -641,7 +639,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pineapple#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="mango" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Mango<span class="food-table__piece">1 ud ≈ 2.5 UP (200 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Mango<span class="food-table__piece"> — 1 ud ≈ 2.5 UP (200 g)</span></td>
           <td data-label="Cantidad por 1 UP">80 g</td>
           <td data-label="Carb. / 100 g">15 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="51 · bajo" aria-label="51 · bajo">51</span></td>
@@ -655,35 +653,35 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=papaya#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="kiwi" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Kiwi<span class="food-table__piece">1 ud ≈ 0.6 UP (75 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Kiwi<span class="food-table__piece"> — 1 ud ≈ 0.6 UP (75 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=kiwi#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="peach" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Durazno<span class="food-table__piece">1 ud ≈ 1 UP (120 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Durazno<span class="food-table__piece"> — 1 ud ≈ 1 UP (120 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="42 · bajo" aria-label="42 · bajo">42</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=peach#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="nectarine" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Nectarina<span class="food-table__piece">1 ud ≈ 1.2 UP (120 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Nectarina<span class="food-table__piece"> — 1 ud ≈ 1.2 UP (120 g)</span></td>
           <td data-label="Cantidad por 1 UP">100 g</td>
           <td data-label="Carb. / 100 g">12 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="43 · bajo" aria-label="43 · bajo">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=nectarine#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="apricot" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Albaricoque<span class="food-table__piece">1 ud ≈ 0.2 UP (30 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Albaricoque<span class="food-table__piece"> — 1 ud ≈ 0.2 UP (30 g)</span></td>
           <td data-label="Cantidad por 1 UP">133.3 g</td>
           <td data-label="Carb. / 100 g">9 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="34 · bajo" aria-label="34 · bajo">34</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=apricot#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="plum" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Ciruela<span class="food-table__piece">1 ud ≈ 0.4 UP (40 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Ciruela<span class="food-table__piece"> — 1 ud ≈ 0.4 UP (40 g)</span></td>
           <td data-label="Cantidad por 1 UP">109.1 g</td>
           <td data-label="Carb. / 100 g">11 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="39 · bajo" aria-label="39 · bajo">39</span></td>
@@ -697,21 +695,21 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cherry-plum#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="persimmon" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Caqui<span class="food-table__piece">1 ud ≈ 2.4 UP (170 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Caqui<span class="food-table__piece"> — 1 ud ≈ 2.4 UP (170 g)</span></td>
           <td data-label="Cantidad por 1 UP">70.6 g</td>
           <td data-label="Carb. / 100 g">17 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=persimmon#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="fig-fresh" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Higo (fresco)<span class="food-table__piece">1 ud ≈ 0.7 UP (50 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Higo (fresco)<span class="food-table__piece"> — 1 ud ≈ 0.7 UP (50 g)</span></td>
           <td data-label="Cantidad por 1 UP">75 g</td>
           <td data-label="Carb. / 100 g">16 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=fig-fresh#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="avocado" data-cat="fruits" data-gi="na">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Aguacate<span class="food-table__piece">1 ud ≈ 1 UP (200 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Aguacate<span class="food-table__piece"> — 1 ud ≈ 1 UP (200 g)</span></td>
           <td data-label="Cantidad por 1 UP">200 g</td>
           <td data-label="Carb. / 100 g">6 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--na">sin datos</span></td>
@@ -823,7 +821,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=raisins#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="dates" data-cat="fruits" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Dátiles<span class="food-table__piece">1 ud ≈ 0.5 UP (8 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Dátiles<span class="food-table__piece"> — 1 ud ≈ 0.5 UP (8 g)</span></td>
           <td data-label="Cantidad por 1 UP">17.4 g</td>
           <td data-label="Carb. / 100 g">69 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="62 · medio" aria-label="62 · medio">62</span></td>
@@ -846,126 +844,126 @@
         <tr data-food="orange-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de naranja</td>
           <td data-label="Cantidad por 1 UP">109.1 ml</td>
-          <td data-label="Carb. / 100 g">11 g</td>
+          <td data-label="Carb. / 100 ml">11 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=orange-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="apple-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de manzana</td>
           <td data-label="Cantidad por 1 UP">109.1 ml</td>
-          <td data-label="Carb. / 100 g">11 g</td>
+          <td data-label="Carb. / 100 ml">11 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="41 · bajo" aria-label="41 · bajo">41</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=apple-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="grape-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de uva</td>
           <td data-label="Cantidad por 1 UP">85.7 ml</td>
-          <td data-label="Carb. / 100 g">14 g</td>
+          <td data-label="Carb. / 100 ml">14 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=grape-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cherry-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de cereza</td>
           <td data-label="Cantidad por 1 UP">100 ml</td>
-          <td data-label="Carb. / 100 g">12 g</td>
+          <td data-label="Carb. / 100 ml">12 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="40 · bajo" aria-label="40 · bajo">40</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cherry-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pear-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de pera</td>
           <td data-label="Cantidad por 1 UP">120 ml</td>
-          <td data-label="Carb. / 100 g">10 g</td>
+          <td data-label="Carb. / 100 ml">10 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="44 · bajo" aria-label="44 · bajo">44</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pear-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="plum-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de ciruela</td>
           <td data-label="Cantidad por 1 UP">100 ml</td>
-          <td data-label="Carb. / 100 g">12 g</td>
+          <td data-label="Carb. / 100 ml">12 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="45 · bajo" aria-label="45 · bajo">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=plum-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="grapefruit-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de pomelo</td>
           <td data-label="Cantidad por 1 UP">150 ml</td>
-          <td data-label="Carb. / 100 g">8 g</td>
+          <td data-label="Carb. / 100 ml">8 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="48 · bajo" aria-label="48 · bajo">48</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=grapefruit-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="carrot-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de zanahoria</td>
           <td data-label="Cantidad por 1 UP">150 ml</td>
-          <td data-label="Carb. / 100 g">8 g</td>
+          <td data-label="Carb. / 100 ml">8 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="43 · bajo" aria-label="43 · bajo">43</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=carrot-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="beet-juice" data-cat="juices" data-gi="mid">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de remolacha</td>
           <td data-label="Cantidad por 1 UP">150 ml</td>
-          <td data-label="Carb. / 100 g">8 g</td>
+          <td data-label="Carb. / 100 ml">8 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="64 · medio" aria-label="64 · medio">64</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=beet-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="tomato-juice" data-cat="juices" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Zumos">Zumo de tomate</td>
           <td data-label="Cantidad por 1 UP">400 ml</td>
-          <td data-label="Carb. / 100 g">3 g</td>
+          <td data-label="Carb. / 100 ml">3 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="38 · bajo" aria-label="38 · bajo">38</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=tomato-juice#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Leche</td>
           <td data-label="Cantidad por 1 UP">240 ml</td>
-          <td data-label="Carb. / 100 g">5 g</td>
+          <td data-label="Carb. / 100 ml">5 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="39 · bajo" aria-label="39 · bajo">39</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=milk#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="baked-milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Leche horneada</td>
           <td data-label="Cantidad por 1 UP">240 ml</td>
-          <td data-label="Carb. / 100 g">5 g</td>
+          <td data-label="Carb. / 100 ml">5 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="40 · bajo" aria-label="40 · bajo">40</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=baked-milk#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="kefir" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Kéfir</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="25 · bajo" aria-label="25 · bajo">25</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=kefir#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="ryazhanka" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Leche horneada fermentada</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="30 · bajo" aria-label="30 · bajo">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=ryazhanka#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="soured-milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Leche cortada</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="30 · bajo" aria-label="30 · bajo">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=soured-milk#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="buttermilk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Suero de mantequilla</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="30 · bajo" aria-label="30 · bajo">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=buttermilk#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cream" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Nata</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="30 · bajo" aria-label="30 · bajo">30</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cream#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="plain-yogurt" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Yogur natural</td>
           <td data-label="Cantidad por 1 UP">200 ml</td>
-          <td data-label="Carb. / 100 g">6 g</td>
+          <td data-label="Carb. / 100 ml">6 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=plain-yogurt#calculator">Usar en la calculadora</a></td>
         </tr>
@@ -998,14 +996,14 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=sweet-curd-mass#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="glazed-curd-bar" data-cat="dairy" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Barrita de requesón glaseada<span class="food-table__piece">1 ud ≈ 1 UP (40 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Barrita de requesón glaseada<span class="food-table__piece"> — 1 ud ≈ 1 UP (40 g)</span></td>
           <td data-label="Cantidad por 1 UP">40 g</td>
           <td data-label="Carb. / 100 g">30 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=glazed-curd-bar#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="syrnik" data-cat="dairy" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Buñuelo de requesón<span class="food-table__piece">1 ud ≈ 1.4 UP (75 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Buñuelo de requesón<span class="food-table__piece"> — 1 ud ≈ 1.4 UP (75 g)</span></td>
           <td data-label="Cantidad por 1 UP">54.5 g</td>
           <td data-label="Carb. / 100 g">22 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
@@ -1068,56 +1066,56 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=hazelnuts#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="hamburger" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Hamburguesa<span class="food-table__piece">1 ud ≈ 2.5 UP (100 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Hamburguesa<span class="food-table__piece"> — 1 ud ≈ 2.5 UP (100 g)</span></td>
           <td data-label="Cantidad por 1 UP">40 g</td>
           <td data-label="Carb. / 100 g">30 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="66 · medio" aria-label="66 · medio">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=hamburger#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cheeseburger" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Hamburguesa con queso<span class="food-table__piece">1 ud ≈ 2.6 UP (105 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Hamburguesa con queso<span class="food-table__piece"> — 1 ud ≈ 2.6 UP (105 g)</span></td>
           <td data-label="Cantidad por 1 UP">40 g</td>
           <td data-label="Carb. / 100 g">30 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="66 · medio" aria-label="66 · medio">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cheeseburger#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="big-mac" data-cat="fastfood" data-gi="high">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Big Mac<span class="food-table__piece">1 ud ≈ 3.6 UP (215 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Big Mac<span class="food-table__piece"> — 1 ud ≈ 3.6 UP (215 g)</span></td>
           <td data-label="Cantidad por 1 UP">60 g</td>
           <td data-label="Carb. / 100 g">20 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--high" title="70 · alto" aria-label="70 · alto">70</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=big-mac#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="chicken-nuggets" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Nuggets de pollo<span class="food-table__piece">1 ud ≈ 1.3 UP (100 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Nuggets de pollo<span class="food-table__piece"> — 1 ud ≈ 1.3 UP (100 g)</span></td>
           <td data-label="Cantidad por 1 UP">75 g</td>
           <td data-label="Carb. / 100 g">16 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="46 · bajo" aria-label="46 · bajo">46</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=chicken-nuggets#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="pizza" data-cat="fastfood" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Pizza<span class="food-table__piece">1 ud ≈ 6.3 UP (300 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Pizza<span class="food-table__piece"> — 1 ud ≈ 6.3 UP (300 g)</span></td>
           <td data-label="Cantidad por 1 UP">48 g</td>
           <td data-label="Carb. / 100 g">25 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="60 · medio" aria-label="60 · medio">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=pizza#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="bean-burrito" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Burrito de frijoles<span class="food-table__piece">1 ud ≈ 4.6 UP (220 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Burrito de frijoles<span class="food-table__piece"> — 1 ud ≈ 4.6 UP (220 g)</span></td>
           <td data-label="Cantidad por 1 UP">48 g</td>
           <td data-label="Carb. / 100 g">25 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=bean-burrito#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cutlet" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Filete empanado<span class="food-table__piece">1 ud ≈ 0.8 UP (90 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Filete empanado<span class="food-table__piece"> — 1 ud ≈ 0.8 UP (90 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cutlet#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cake-slice" data-cat="fastfood" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Tarta / pastel<span class="food-table__piece">1 ud ≈ 3.8 UP (100 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Platos preparados y comida rápida">Tarta / pastel<span class="food-table__piece"> — 1 ud ≈ 3.8 UP (100 g)</span></td>
           <td data-label="Cantidad por 1 UP">26.7 g</td>
           <td data-label="Carb. / 100 g">45 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="55 · bajo" aria-label="55 · bajo">55</span></td>
@@ -1173,7 +1171,7 @@
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=chocolate#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="chocolate-candy" data-cat="other" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Bombón de chocolate<span class="food-table__piece">1 ud ≈ 0.8 UP (15 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Bombón de chocolate<span class="food-table__piece"> — 1 ud ≈ 0.8 UP (15 g)</span></td>
           <td data-label="Cantidad por 1 UP">20 g</td>
           <td data-label="Carb. / 100 g">60 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
@@ -1189,35 +1187,35 @@
         <tr data-food="kissel" data-cat="other" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Kissel</td>
           <td data-label="Cantidad por 1 UP">92.3 ml</td>
-          <td data-label="Carb. / 100 g">13 g</td>
+          <td data-label="Carb. / 100 ml">13 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="50 · bajo" aria-label="50 · bajo">50</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=kissel#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="compote" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Compota (bebida)</td>
           <td data-label="Cantidad por 1 UP">85.7 ml</td>
-          <td data-label="Carb. / 100 g">14 g</td>
+          <td data-label="Carb. / 100 ml">14 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="60 · medio" aria-label="60 · medio">60</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=compote#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="kvass" data-cat="other" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Kvas</td>
           <td data-label="Cantidad por 1 UP">240 ml</td>
-          <td data-label="Carb. / 100 g">5 g</td>
+          <td data-label="Carb. / 100 ml">5 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="45 · bajo" aria-label="45 · bajo">45</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=kvass#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="beer-light" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Cerveza rubia</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="66 · medio" aria-label="66 · medio">66</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=beer-light#calculator">Usar en la calculadora</a></td>
         </tr>
         <tr data-food="cola" data-cat="other" data-gi="mid">
           <td class="food-table__product" data-label="Producto" data-cat-label="Otros alimentos">Refresco azucarado</td>
           <td data-label="Cantidad por 1 UP">109.1 ml</td>
-          <td data-label="Carb. / 100 g">11 g</td>
+          <td data-label="Carb. / 100 ml">11 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="63 · medio" aria-label="63 · medio">63</span></td>
           <td class="food-table__action"><a class="link-btn" href="https://breadunits.top/es/?food=cola#calculator">Usar en la calculadora</a></td>
         </tr>
@@ -1231,6 +1229,10 @@
 
 </section>
 
+
+<section class="container table-disclaimer">
+  <p><span data-i18n="tablePage.disclaimer">Los valores de la tabla son de referencia aproximada y no sustituyen el consejo médico individual.</span> <a href="/es/disclaimer/" data-i18n="tablePage.disclaimerLink">Aviso médico</a></p>
+</section>
 
 <section class="faq-container container" aria-labelledby="table-faq-title">
   <div class="faq-layout">

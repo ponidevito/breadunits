@@ -1,11 +1,9 @@
 <section id="food-table" class="container"  aria-labelledby="table-title">
   <div class="section-head" data-reveal>
-    <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
-    <p data-i18n="table.leadPreview">20 alimentos populares: gramos por 1 UP (12 g de carbohidratos), hidratos por 100 g e IG.</p>
-    <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися
-      залежно від сорту та способу приготування продукту.</p>
-    <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55,
-      середній 56–69, високий ≥ 70. «немає даних» означає, що достовірне значення в базі відсутнє.</p>
+    <h2 id="table-title" data-i18n="table.h2">Tabla de unidades de pan</h2>
+    <p data-i18n="table.leadPreview">20 alimentos populares: gramos (o ml en bebidas) por 1 UP (12 g de carbohidratos), hidratos por 100 g (por 100 ml en bebidas) e IG. También se habla de raciones de hidratos de carbono o intercambios de carbohidratos.</p>
+    <p class="table-note" data-i18n="table.note">*Los valores de la tabla son cifras de referencia aproximadas y pueden variar según la variedad y la preparación del alimento.</p>
+    <p class="table-note" data-i18n="table.gi.note">La columna «IG» es un índice glucémico aproximado: bajo ≤ 55, medio 56–69, alto ≥ 70. «sin datos» significa que no hay un valor fiable en la base de datos.</p>
   </div>
 
   <div class="table-controls" data-reveal>
@@ -16,23 +14,23 @@
         <path d="m21 21-4.3-4.3" />
       </svg>
       <input type="search" id="table-search" autocomplete="off"
-        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Пошук продукту…"
-        aria-label="Пошук продукту в таблиці">
+        data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Buscar alimento…"
+        aria-label="Buscar alimento en la tabla">
     </div>
     <div class="table-filter" role="group" aria-label="Categories"></div>
     <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
-      aria-label="Фільтр за глікемічним індексом"></div>
+      aria-label="Filtrar por índice glucémico"></div>
   </div>
 
   <div class="table-wrap" data-reveal>
     <table class="food-table">
       <thead>
         <tr>
-          <th scope="col" data-i18n="table.col.product">Продукт</th>
-          <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
-          <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
-          <th scope="col" data-i18n="table.col.gi">ГІ</th>
-          <th scope="col"><span class="visually-hidden">Actions</span></th>
+          <th scope="col" data-i18n="table.col.product">Producto</th>
+          <th scope="col" data-i18n="table.col.amount">Cantidad por 1 UP</th>
+          <th scope="col" data-i18n="table.col.carbs">Carb. / 100 g</th>
+          <th scope="col" data-i18n="table.col.gi">IG</th>
+          <th scope="col"><span class="visually-hidden" data-i18n="table.col.action">Acción</span></th>
         </tr>
       </thead>
       <tbody id="food-tbody">
@@ -107,7 +105,7 @@
           <td class="food-table__action"><button type="button" class="link-btn" data-use="potato-boiled">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="potato-jacket" data-cat="pasta" data-gi="high">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa con piel<span class="food-table__piece">1 ud ≈ 1 UP (75 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papa con piel<span class="food-table__piece"> — 1 ud ≈ 1 UP (75 g)</span></td>
           <td data-label="Cantidad por 1 UP">75 g</td>
           <td data-label="Carb. / 100 g">16 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--high" title="75 · alto" aria-label="75 · alto">75</span></td>
@@ -121,35 +119,35 @@
           <td class="food-table__action"><button type="button" class="link-btn" data-use="mashed-potato">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="french-fries" data-cat="pasta" data-gi="mid">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papas fritas<span class="food-table__piece">1 ud ≈ 3.3 UP (115 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Pasta y patatas">Papas fritas<span class="food-table__piece"> — 1 ud ≈ 3.3 UP (115 g)</span></td>
           <td data-label="Cantidad por 1 UP">35.3 g</td>
           <td data-label="Carb. / 100 g">34 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--mid" title="63 · medio" aria-label="63 · medio">63</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="french-fries">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="apple" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Manzana<span class="food-table__piece">1 ud ≈ 1.4 UP (150 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Manzana<span class="food-table__piece"> — 1 ud ≈ 1.4 UP (150 g)</span></td>
           <td data-label="Cantidad por 1 UP">109.1 g</td>
           <td data-label="Carb. / 100 g">11 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="apple">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="pear" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pera<span class="food-table__piece">1 ud ≈ 1.1 UP (135 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Pera<span class="food-table__piece"> — 1 ud ≈ 1.1 UP (135 g)</span></td>
           <td data-label="Cantidad por 1 UP">120 g</td>
           <td data-label="Carb. / 100 g">10 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="38 · bajo" aria-label="38 · bajo">38</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="pear">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="banana" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Plátano<span class="food-table__piece">1 ud ≈ 2.1 UP (120 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Plátano<span class="food-table__piece"> — 1 ud ≈ 2.1 UP (120 g)</span></td>
           <td data-label="Cantidad por 1 UP">57.1 g</td>
           <td data-label="Carb. / 100 g">21 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="51 · bajo" aria-label="51 · bajo">51</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="banana">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="orange" data-cat="fruits" data-gi="low">
-          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Naranja<span class="food-table__piece">1 ud ≈ 1.2 UP (180 g)</span></td>
+          <td class="food-table__product" data-label="Producto" data-cat-label="Frutas y bayas">Naranja<span class="food-table__piece"> — 1 ud ≈ 1.2 UP (180 g)</span></td>
           <td data-label="Cantidad por 1 UP">150 g</td>
           <td data-label="Carb. / 100 g">8 g</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="43 · bajo" aria-label="43 · bajo">43</span></td>
@@ -158,21 +156,21 @@
         <tr data-food="milk" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Leche</td>
           <td data-label="Cantidad por 1 UP">240 ml</td>
-          <td data-label="Carb. / 100 g">5 g</td>
+          <td data-label="Carb. / 100 ml">5 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="39 · bajo" aria-label="39 · bajo">39</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="milk">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="kefir" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Kéfir</td>
           <td data-label="Cantidad por 1 UP">300 ml</td>
-          <td data-label="Carb. / 100 g">4 g</td>
+          <td data-label="Carb. / 100 ml">4 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="25 · bajo" aria-label="25 · bajo">25</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="kefir">Usar en la calculadora</button></td>
         </tr>
         <tr data-food="plain-yogurt" data-cat="dairy" data-gi="low">
           <td class="food-table__product" data-label="Producto" data-cat-label="Lácteos">Yogur natural</td>
           <td data-label="Cantidad por 1 UP">200 ml</td>
-          <td data-label="Carb. / 100 g">6 g</td>
+          <td data-label="Carb. / 100 ml">6 g / 100 ml</td>
           <td data-label="IG"><span class="gi-badge gi-badge--low" title="35 · bajo" aria-label="35 · bajo">35</span></td>
           <td class="food-table__action"><button type="button" class="link-btn" data-use="plain-yogurt">Usar en la calculadora</button></td>
         </tr>
@@ -183,7 +181,7 @@
     </table>
   </div>
   <div class="table-more" data-reveal>
-    <a class="table-full-link" href="https://breadunits.top/es/tabla-unidades-de-pan/" data-i18n-attr="aria-label:table.viewFull">
+    <a class="table-full-link" href="https://breadunits.top/es/tabla-unidades-de-pan/" data-i18n-attr="aria-label:table.viewFull" aria-label="Tabla completa de unidades de pan — 167 alimentos">
       <span data-i18n="table.viewFull">Tabla completa de unidades de pan — 167 alimentos</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
         stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13m-5-5 5 5-5 5"/></svg>
