@@ -1,6 +1,6 @@
 {
-  "name": "Bread Units Calculator",
-  "short_name": "BU Calculator",
+  "name": "BreadUnits",
+  "short_name": "BreadUnits",
   "description": "Free online bread units (BU) calculator for food portions.",
   "start_url": "/",
   "display": "standalone",

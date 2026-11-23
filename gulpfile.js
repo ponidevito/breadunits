@@ -55,7 +55,9 @@ const imagemin = require("gulp-imagemin");
 const sourcemaps = require("gulp-sourcemaps");
 const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
+const { Transform } = require("stream");
 const { execFileSync } = require("child_process");
+const fs = require("fs");
 const nodePath = require("path");
 const { createLocalizeStream } = require("./tools/localize-html");
 
@@ -88,6 +90,24 @@ function generateSeo() {
 // index.html -> build/index.html (Ukrainian, default)
 // en.html    -> build/en/index.html   (clean URL /en/)
 // es.html    -> build/es/index.html   (clean URL /es/)
+function inlineCriticalCss() {
+  let critical = "";
+  try { critical = fs.readFileSync(nodePath.join(__dirname, projectFolder, "css", "style.min.css"), "utf8"); } catch (e) { return new Transform({ objectMode: true, transform(f, _, cb) { cb(null, f); } }); }
+  return new Transform({
+    objectMode: true,
+    transform(file, _, cb) {
+      if (file.isBuffer() && /\.html$/.test(file.path)) {
+        let htmlStr = file.contents.toString("utf8");
+        if (htmlStr.includes("/* __CRITICAL_CSS__ */")) {
+          htmlStr = htmlStr.replace("/* __CRITICAL_CSS__ */", () => critical);
+          file.contents = Buffer.from(htmlStr, "utf8");
+        }
+      }
+      cb(null, file);
+    },
+  });
+}
+
 function html() {
   return src(path.src.html)
     .pipe(onError("html"))
@@ -101,11 +121,12 @@ function html() {
         }
       }),
     )
+    .pipe(inlineCriticalCss())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
 
-// ─── CSS ──────────────────────────────────────────────────────────────────────
+// ─── CSS$7 ──────────────────────────────────────────────────────────────────────
 function css() {
   return src(path.src.css)
     .pipe(onError("css"))
@@ -211,8 +232,31 @@ function watchFiles() {
 }
 
 // ─── Експорт задач ───────────────────────────────────────────────────────────
-const build = series(clean, generateSeo, parallel(html, css, js, images, fonts, misc));
-const buildProd = series(clean, generateSeo, parallel(html, css, js, imgOptimize, fonts, misc));
+
+function fixBrand() {
+  const buildDir = nodePath.join(__dirname, projectFolder);
+  function walk(dir) {
+    let results = [];
+    for (const f of fs.readdirSync(dir)) {
+      const p = nodePath.join(dir, f);
+      const s = fs.statSync(p);
+      if (s.isDirectory()) results.push(...walk(p));
+      else if (p.endsWith(".html")) results.push(p);
+    }
+    return results;
+  }
+  for (const f of walk(buildDir)) {
+    let h = fs.readFileSync(f, "utf8");
+    if (h.includes("Diabetes Calculator")) {
+      h = h.split("Diabetes Calculator").join("BreadUnits");
+      fs.writeFileSync(f, h, "utf8");
+    }
+  }
+  return Promise.resolve();
+}
+
+const build = series(clean, generateSeo, css, parallel(html, js, images, fonts, misc), fixBrand);
+const buildProd = series(clean, generateSeo, css, parallel(html, js, imgOptimize, fonts, misc), fixBrand);
 const dev = parallel(build, watchFiles, browserSync);
 
 exports.generateSeo = generateSeo;
@@ -225,6 +269,7 @@ exports.fonts = fonts;
 exports.misc = misc;
 exports.clean = clean;
 exports.build = build;
+exports.fixBrand = fixBrand;
 exports.prod = buildProd;
 exports.watch = dev;
 exports.default = dev;
