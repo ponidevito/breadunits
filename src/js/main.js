@@ -493,7 +493,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 860 && menu.classList.contains("is-open")) close(false);
+      if (window.innerWidth > 1020 && menu.classList.contains("is-open")) close(false);
     });
   }
 
