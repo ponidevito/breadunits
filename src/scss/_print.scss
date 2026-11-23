@@ -18,6 +18,12 @@
   border-color: var(--amber);
 }
 
+:root[data-theme="dark"] .print-button,
+:root[data-theme="dark"] .print-button:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
 @media print {
   @page {
     margin: 12mm;
