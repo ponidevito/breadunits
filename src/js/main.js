@@ -223,8 +223,8 @@
     return (carbsPer100 / 100) * weight / norm;
   }
 
-  function fmt(n) { return n.toFixed(1); }
-  function round1(n) { return Math.round(n * 10) / 10; }
+  function fmt(n) { return n.toFixed(1).replace(".", state.lang === "en" ? "." : ","); }
+  function num1(n) { return String(Math.round(n * 10) / 10).replace(".", state.lang === "en" ? "." : ","); }
 
   var animId = null;
   function animateResult(target) {
@@ -233,7 +233,7 @@
     if (animId) cancelAnimationFrame(animId);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = fmt(target); return; }
     var start = performance.now();
-    var from = parseFloat(el.textContent) || 0;
+    var from = parseFloat(String(el.textContent).replace(",", ".")) || 0;
     var dur = 450;
     function step(now) {
       var p = Math.min(1, (now - start) / dur);
@@ -289,8 +289,8 @@
 
     var f = $("#calc-formula");
     f.textContent = t("calc.formula")
-      .replace("{carbs}", round1(v.carbs))
-      .replace("{weight}", round1(v.weight))
+      .replace("{carbs}", num1(v.carbs))
+      .replace("{weight}", num1(v.weight))
       .replace("{norm}", state.norm)
       .replace("{result}", fmt(xe));
     f.hidden = false;
@@ -502,6 +502,8 @@
     var toggle = $(".nav__toggle");
     var menu = $("#primary-nav");
     if (!toggle || !menu) return;
+    // Same breakpoint as the burger media query in _header.scss.
+    var burgerMq = window.matchMedia("(max-width: 1080px)");
 
     function close(restoreFocus) {
       menu.classList.remove("is-open");
@@ -537,7 +539,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1020 && menu.classList.contains("is-open")) close(false);
+      if (!burgerMq.matches && menu.classList.contains("is-open")) close(false);
     });
   }
 

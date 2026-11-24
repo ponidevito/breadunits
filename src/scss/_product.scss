@@ -302,9 +302,17 @@
     width: 48%;
   }
 
+  /* minmax(0, 1fr): a plain 1fr track grows to the link's nowrap width
+     and pushes the input and link past the card on narrow phones. */
   .mini-calc {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
+  }
+
+  .mini-calc > .link-btn {
+    justify-self: start;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .mini-calc__result {
