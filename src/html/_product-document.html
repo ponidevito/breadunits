@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="@@htmlLang" data-theme="light">
+
+<head>
+  <!-- Google Tag Manager (deferred to reduce render-blocking) -->
+  <script>
+    (function (w, d, s, l, i) {
+      function loadGtm() {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      }
+      if ('requestIdleCallback' in w) { w.requestIdleCallback(loadGtm, { timeout: 3500 }); }
+      else { w.addEventListener('load', function () { w.setTimeout(loadGtm, 1); }); }
+    })(window, document, 'script', 'dataLayer', 'GTM-T7MV3MPJ');
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@@metaTitle</title>
+  <meta name="description" content="@@metaDescription">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f3f0e7">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="canonical" href="@@canonical">
+  <link rel="alternate" hreflang="uk" href="@@altUk">
+  <link rel="alternate" hreflang="en" href="@@altEn">
+  <link rel="alternate" hreflang="es" href="@@altEs">
+  <link rel="alternate" hreflang="x-default" href="@@altUk">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BreadUnits">
+  <meta property="og:title" content="@@metaTitle">
+  <meta property="og:description" content="@@metaDescription">
+  <meta property="og:url" content="@@canonical">
+  <meta property="og:locale" content="@@ogLocale">
+  @@if (htmlLang !== 'uk') {
+  <meta property="og:locale:alternate" content="uk_UA">
+  }
+  @@if (htmlLang !== 'en') {
+  <meta property="og:locale:alternate" content="en_US">
+  }
+  @@if (htmlLang !== 'es') {
+  <meta property="og:locale:alternate" content="es_ES">
+  }
+  <meta property="og:image" content="https://breadunits.top/img/breadunits-banner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="@@metaTitle">
+  <meta name="twitter:description" content="@@metaDescription">
+  <meta name="twitter:image" content="https://breadunits.top/img/breadunits-banner.png">
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/favicon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  @@if (htmlLang === 'uk') {
+  <link rel="preload" href="/fonts/inter-cyrillic-var.woff2" as="font" type="font/woff2" crossorigin>
+  }
+  <!-- Critical CSS inlined by build; remaining CSS loads non-blocking -->
+  <style>/* __CRITICAL_CSS__ */</style>
+  <link rel="preload" href="/css/style.min.css?v=9" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/style.min.css?v=9"></noscript>
+
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("buc-theme");
+        if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BreadUnits",
+    "url": "https://breadunits.top/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any (web browser)",
+    "inLanguage": "@@htmlLang",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "@@metaDescription"
+  }
+  </script>
+</head>
+
+<body data-food-id="@@foodId">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7MV3MPJ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a class="skip-link" href="#product-answer" data-i18n="nav.skipProduct">До відповіді</a>
+
+  <div class="wrapper">
+    @@include('_header.html', {"legal": false, "root": "@@root"})
+
+    <main class="main product-page">
+      @@include('@@bodyPartial')
+    </main>
+
+    @@include('_footer.html', {"root": "@@root"})
+  </div>
+
+  @@include('_app-banner.html')
+
+  <script src="/js/scripts.min.js?v=9" defer></script>
+</body>
+
+</html>

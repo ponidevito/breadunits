@@ -7,6 +7,12 @@
   var DEFAULT_LANG = "uk";
   var I18N = window.BUC_I18N || {};
   var FOODS = window.BUC_FOODS || [];
+  var PRODUCT_SLUGS = window.BUC_PRODUCT_SLUGS || {};
+  var PRODUCT_SECTIONS = {
+    produkty: { en: "foods", es: "alimentos" },
+    foods: { uk: "produkty", es: "alimentos" },
+    alimentos: { uk: "produkty", en: "foods" }
+  };
   var CATS = ["bakery", "cereals", "pasta", "veggies", "legumes", "fruits", "juices", "dairy", "nuts", "fastfood", "other"];
 
   var state = {
@@ -143,6 +149,13 @@
     var path = window.location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "");
     var segs = path.split("/").filter(Boolean);
     var rest = (segs[0] === "en" || segs[0] === "es") ? segs.slice(1) : segs;
+    if (rest.length && PRODUCT_SECTIONS[rest[0]] && PRODUCT_SECTIONS[rest[0]][lang]) {
+      rest = [PRODUCT_SECTIONS[rest[0]][lang]].concat(rest.slice(1));
+    }
+    var foodId = document.body && document.body.getAttribute("data-food-id");
+    if (foodId && rest.length > 1 && PRODUCT_SLUGS[foodId] && PRODUCT_SLUGS[foodId][lang]) {
+      rest[1] = PRODUCT_SLUGS[foodId][lang];
+    }
     if (rest.length && SEO_SLUGS[rest[0]] && SEO_SLUGS[rest[0]][lang]) {
       rest = [SEO_SLUGS[rest[0]][lang]].concat(rest.slice(1));
     }
@@ -453,6 +466,37 @@
     calculate();
   }
 
+  function initMiniCalculator() {
+    var card = $("[data-mini-calc]");
+    if (!card) return;
+    var input = $("[data-mini-weight]", card);
+    var result = $("[data-mini-result]", card);
+    var carbs = num(card.getAttribute("data-carbs"));
+    if (!input || !result || isNaN(carbs)) return;
+    var norm = 12;
+
+    function update() {
+      var weight = num(input.value);
+      var value = isNaN(weight) || weight <= 0 ? 0 : (carbs / 100) * weight / norm;
+      result.textContent = fmt(isFinite(value) ? value : 0);
+    }
+
+    $all("[data-mini-norm]", card).forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        norm = parseInt(btn.getAttribute("data-mini-norm"), 10) === 10 ? 10 : 12;
+        $all("[data-mini-norm]", card).forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle("is-active", active);
+          b.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        update();
+      });
+    });
+
+    input.addEventListener("input", update);
+    update();
+  }
+
   /* ---------------- nav ---------------- */
   function initMenu() {
     var toggle = $(".nav__toggle");
@@ -667,6 +711,7 @@
     initAppBanner();
     applyI18n();
     applyFoodFromUrl();
+    initMiniCalculator();
 
     var y = $("#year");
     if (y) y.textContent = new Date().getFullYear();

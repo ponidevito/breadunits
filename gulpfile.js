@@ -227,36 +227,17 @@ function watchFiles() {
     `${sourceFolder}/js/foods.js`,
     `${sourceFolder}/js/i18n.js`,
     `${sourceFolder}/html/_food-table.html`,
+    `${sourceFolder}/html/_product-document.html`,
     "tools/generate-seo.js",
-  ], series(generateSeo, html));
+    "tools/product-config.js",
+    "tools/product-copy-*.js",
+  ], series(generateSeo, js, html));
 }
 
 // ─── Експорт задач ───────────────────────────────────────────────────────────
 
-function fixBrand() {
-  const buildDir = nodePath.join(__dirname, projectFolder);
-  function walk(dir) {
-    let results = [];
-    for (const f of fs.readdirSync(dir)) {
-      const p = nodePath.join(dir, f);
-      const s = fs.statSync(p);
-      if (s.isDirectory()) results.push(...walk(p));
-      else if (p.endsWith(".html")) results.push(p);
-    }
-    return results;
-  }
-  for (const f of walk(buildDir)) {
-    let h = fs.readFileSync(f, "utf8");
-    if (h.includes("Diabetes Calculator")) {
-      h = h.split("Diabetes Calculator").join("BreadUnits");
-      fs.writeFileSync(f, h, "utf8");
-    }
-  }
-  return Promise.resolve();
-}
-
-const build = series(clean, generateSeo, css, parallel(html, js, images, fonts, misc), fixBrand);
-const buildProd = series(clean, generateSeo, css, parallel(html, js, imgOptimize, fonts, misc), fixBrand);
+const build = series(clean, generateSeo, css, parallel(html, js, images, fonts, misc));
+const buildProd = series(clean, generateSeo, css, parallel(html, js, imgOptimize, fonts, misc));
 const dev = parallel(build, watchFiles, browserSync);
 
 exports.generateSeo = generateSeo;
@@ -269,7 +250,6 @@ exports.fonts = fonts;
 exports.misc = misc;
 exports.clean = clean;
 exports.build = build;
-exports.fixBrand = fixBrand;
 exports.prod = buildProd;
 exports.watch = dev;
 exports.default = dev;
