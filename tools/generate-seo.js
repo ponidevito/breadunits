@@ -138,20 +138,20 @@ const PRODUCT_UI = {
     disclaimer: "Дані на сторінці довідкові й не замінюють консультацію лікаря.",
     disclaimerLink: "Медичне застереження",
     title: (name) => `${name}: скільки хлібних одиниць (ХО), вуглеводи, ГІ | BreadUnits`,
-    description: (food, unit, bu100, amount, giText) =>
-      `${food.name.uk}: ${fmt(bu100)} ХО на 100 ${unit}, ${fmt(amount)} ${unit} на 1 ХО (12 г вуглеводів), ${food.carbs} г вуглеводів на 100 ${unit}. ГІ: ${giText}.`,
-    h1: (name) => `Скільки хлібних одиниць у ${name}`,
-    faq: (food, name, unit, bu100, bu10, amount, giText, giBandLabel) => [
+    description: (lang, food, unit, bu100, amount, giText) =>
+      `${food.name.uk}: ${fmt(bu100, lang)} ХО на 100 ${unit}, ${fmt(amount, lang)} ${unit} на 1 ХО (12 г вуглеводів), ${food.carbs} г вуглеводів на 100 ${unit}. ГІ: ${giText}.`,
+    h1: (loc, prep) => `Скільки хлібних одиниць ${prep} ${loc}`,
+    faq: (lang, food, gen, loc, prep, unit, bu100, bu10, amount, giText, giBandLabel) => [
       {
-        q: `Скільки ХО в 100 ${unit} ${name}?`,
-        a: `У 100 ${unit} ${name} — ${food.carbs} г вуглеводів. Це ${fmt(bu100)} ХО за норми 12 г або ${fmt(bu10)} ХО за норми 10 г.`,
+        q: `Скільки ХО в 100 ${unit} ${gen}?`,
+        a: `У 100 ${unit} ${gen} — ${food.carbs} г вуглеводів. Це ${fmt(bu100, lang)} ХО за норми 12 г або ${fmt(bu10, lang)} ХО за норми 10 г.`,
       },
       {
-        q: `Скільки ${unit} ${name} відповідає 1 ХО?`,
-        a: `За норми 12 г вуглеводів 1 ХО відповідає ${fmt(amount)} ${unit} ${name}. За норми 10 г — ${fmt((10 * 100) / food.carbs)} ${unit}.`,
+        q: `Скільки ${unit} ${gen} відповідає 1 ХО?`,
+        a: `За норми 12 г вуглеводів 1 ХО відповідає ${fmt(amount, lang)} ${unit} ${gen}. За норми 10 г — ${fmt((10 * 100) / food.carbs, lang)} ${unit}.`,
       },
       {
-        q: `Який глікемічний індекс у ${name}?`,
+        q: `Який глікемічний індекс ${prep} ${loc}?`,
         a: giBandLabel
           ? `ГІ цього продукту — ${food.gi} (${giBandLabel}). Показник є орієнтовним і не є індивідуальною рекомендацією.`
           : `Для цього продукту достовірне значення ГІ в базі відсутнє — у таблиці вказано «немає даних».`,
@@ -189,27 +189,27 @@ const PRODUCT_UI = {
     normLabel: "1 BU equals",
     resultLabel: "Result",
     calcButton: "Open in the full calculator",
-    articleTitle: (name) => `How ${name} affects blood sugar: portions and pairings`,
+    articleTitle: (subject, plural) => `How ${subject} ${plural ? "affect" : "affects"} blood sugar: portions and pairings`,
     faqTitle: "Questions about this food",
     relatedTitle: "Related foods",
     relatedMore: "Full BU table",
     disclaimer: "The figures on this page are for reference only and do not replace medical advice.",
     disclaimerLink: "Medical disclaimer",
     title: (name) => `${name}: Bread Units (BU), Carbs & GI | BreadUnits`,
-    description: (food, unit, bu100, amount, giText) =>
-      `${food.name.en}: ${fmt(bu100)} BU per 100 ${unit}, ${fmt(amount)} ${unit} per 1 BU (12 g carbs), ${food.carbs} g carbs per 100 ${unit}. GI: ${giText}.`,
-    h1: (name) => `How many bread units in ${name}`,
-    faq: (food, name, unit, bu100, bu10, amount, giText, giBandLabel) => [
+    description: (lang, food, unit, bu100, amount, giText) =>
+      `${food.name.en}: ${fmt(bu100, lang)} BU per 100 ${unit}, ${fmt(amount, lang)} ${unit} per 1 BU (12 g carbs), ${food.carbs} g carbs per 100 ${unit}. GI: ${giText}.`,
+    h1: (subject) => `How many bread units in ${subject}`,
+    faq: (lang, food, phrase, plural, unit, bu100, bu10, amount, giText, giBandLabel) => [
       {
-        q: `How many BU are in 100 ${unit} of ${name}?`,
-        a: `100 ${unit} of ${name} contains ${food.carbs} g of carbs. That is ${fmt(bu100)} BU at the 12 g norm or ${fmt(bu10)} BU at the 10 g norm.`,
+        q: `How many BU are in 100 ${unit} of ${phrase}?`,
+        a: `100 ${unit} of ${phrase} contains ${food.carbs} g of carbs. That is ${fmt(bu100, lang)} BU at the 12 g norm or ${fmt(bu10, lang)} BU at the 10 g norm.`,
       },
       {
-        q: `How much ${name} makes 1 BU?`,
-        a: `At the 12 g carb norm, 1 BU corresponds to ${fmt(amount)} ${unit} of ${name}. At 10 g it is ${fmt((10 * 100) / food.carbs)} ${unit}.`,
+        q: plural ? `How many ${phrase} make 1 BU?` : `How much ${phrase} makes 1 BU?`,
+        a: `At the 12 g carb norm, 1 BU corresponds to ${fmt(amount, lang)} ${unit} of ${phrase}. At 10 g it is ${fmt((10 * 100) / food.carbs, lang)} ${unit}.`,
       },
       {
-        q: `What is the glycemic index of ${name}?`,
+        q: `What is the glycemic index of ${phrase}?`,
         a: giBandLabel
           ? `The GI listed for this food is ${food.gi} (${giBandLabel}). It is an approximate reference value, not an individual recommendation.`
           : `A reliable GI value is not available for this food in our database — the table shows “no data”.`,
@@ -247,27 +247,27 @@ const PRODUCT_UI = {
     normLabel: "1 UP equivale a",
     resultLabel: "Resultado",
     calcButton: "Abrir en la calculadora completa",
-    articleTitle: (name) => `Cómo influye ${name} en el azúcar: raciones y combinaciones`,
+    articleTitle: (subject, plural) => `Cómo ${plural ? "influyen" : "influye"} ${subject} en el azúcar: raciones y combinaciones`,
     faqTitle: "Preguntas sobre este alimento",
     relatedTitle: "Alimentos similares",
     relatedMore: "Tabla completa de UP",
     disclaimer: "Los datos de esta página son orientativos y no sustituyen la consulta médica.",
     disclaimerLink: "Aviso médico",
     title: (name) => `${name}: unidades de pan (UP), carbohidratos e IG | BreadUnits`,
-    description: (food, unit, bu100, amount, giText) =>
-      `${food.name.es}: ${fmt(bu100)} UP por 100 ${unit}, ${fmt(amount)} ${unit} por 1 UP (12 g de hidratos), ${food.carbs} g de hidratos por 100 ${unit}. IG: ${giText}.`,
-    h1: (name) => `Cuántas unidades de pan tiene ${name}`,
-    faq: (food, name, unit, bu100, bu10, amount, giText, giBandLabel) => [
+    description: (lang, food, unit, bu100, amount, giText) =>
+      `${food.name.es}: ${fmt(bu100, lang)} UP por 100 ${unit}, ${fmt(amount, lang)} ${unit} por 1 UP (12 g de hidratos), ${food.carbs} g de hidratos por 100 ${unit}. IG: ${giText}.`,
+    h1: (subject, plural) => `Cuántas unidades de pan ${plural ? "tienen" : "tiene"} ${subject}`,
+    faq: (lang, food, phrase, plural, unit, bu100, bu10, amount, giText, giBandLabel) => [
       {
-        q: `¿Cuántas UP hay en 100 ${unit} de ${name}?`,
-        a: `100 ${unit} de ${name} aportan ${food.carbs} g de hidratos. Son ${fmt(bu100)} UP con la norma de 12 g o ${fmt(bu10)} UP con la de 10 g.`,
+        q: `¿Cuántas UP hay en 100 ${unit} de ${phrase}?`,
+        a: `100 ${unit} de ${phrase} aportan ${food.carbs} g de hidratos. Son ${fmt(bu100, lang)} UP con la norma de 12 g o ${fmt(bu10, lang)} UP con la de 10 g.`,
       },
       {
-        q: `¿Cuánto ${name} equivale a 1 UP?`,
-        a: `Con la norma de 12 g de hidratos, 1 UP corresponde a ${fmt(amount)} ${unit} de ${name}. Con 10 g, a ${fmt((10 * 100) / food.carbs)} ${unit}.`,
+        q: plural ? `¿Cuántas ${phrase} equivalen a 1 UP?` : `¿Cuánto ${phrase} equivale a 1 UP?`,
+        a: `Con la norma de 12 g de hidratos, 1 UP corresponde a ${fmt(amount, lang)} ${unit} de ${phrase}. Con 10 g, a ${fmt((10 * 100) / food.carbs, lang)} ${unit}.`,
       },
       {
-        q: `¿Cuál es el índice glucémico de ${name}?`,
+        q: `¿Cuál es el índice glucémico de ${phrase}?`,
         a: giBandLabel
           ? `El IG indicado para este alimento es ${food.gi} (${giBandLabel}). Es una cifra orientativa, no una recomendación individual.`
           : `No hay un valor fiable de IG para este alimento en nuestra base de datos: la tabla indica «sin datos».`,
@@ -285,8 +285,8 @@ function esc(value) {
     .replace(/'/g, "&#39;");
 }
 
-function fmt(value) {
-  return Number(Number(value).toFixed(1)).toString();
+function fmt(value, lang) {
+  return Number(Number(value).toFixed(1)).toString().replace(".", lang === "en" ? "." : ",");
 }
 
 function giBand(gi) {
@@ -304,7 +304,7 @@ function buildRows(lang, t, ids, homeUrl) {
   return ids.map((id) => {
     const food = FOODS.filter((item) => item.id === id)[0];
     if (!food) throw new Error(`Unknown food id in table preview: ${id}`);
-    const amount = fmt((100 * 12) / food.carbs);
+    const amount = fmt((100 * 12) / food.carbs, lang);
     const name = esc(food.name[lang]);
     const cat = esc(t("cat." + food.cat));
     const band = giBand(food.gi);
@@ -315,7 +315,7 @@ function buildRows(lang, t, ids, homeUrl) {
     const pieceLine = food.piece
       ? `<span class="food-table__piece">${esc(
           t("table.piece")
-            .replace("{bu}", fmt((food.piece * food.carbs) / 100 / 12))
+            .replace("{bu}", fmt((food.piece * food.carbs) / 100 / 12, lang))
             .replace("{g}", String(food.piece)),
         )}</span>`
       : "";
@@ -419,6 +419,10 @@ function lowerFirst(value) {
   return String(value).charAt(0).toLowerCase() + String(value).slice(1);
 }
 
+function ukPrep(loc) {
+  return /^[аеєиіїоуюяАЕЄИІЇОУЮЯ]/.test(loc) ? "в" : "у";
+}
+
 function unitFor(lang, liquid) {
   if (!liquid) return lang === "uk" ? "г" : "g";
   return lang === "uk" ? "мл" : "ml";
@@ -440,23 +444,57 @@ function relatedProducts(food) {
 
 function productFacts(lang, food, copy) {
   const ui = PRODUCT_UI[lang];
+  const forms = food.forms;
+  const required = [
+    ["uk.loc", forms && forms.uk && forms.uk.loc],
+    ["uk.gen", forms && forms.uk && forms.uk.gen],
+    ["en.phrase", forms && forms.en && forms.en.phrase],
+    ["en.subject", forms && forms.en && forms.en.subject],
+    ["es.phrase", forms && forms.es && forms.es.phrase],
+    ["es.subject", forms && forms.es && forms.es.subject],
+  ];
+  required.forEach(([key, value]) => {
+    if (typeof value !== "string" || !value.trim()) throw new Error(`Missing explicit ${key} form for ${food.id}`);
+  });
+  if (!forms.en || typeof forms.en.plural !== "boolean") throw new Error(`Missing explicit en.plural form for ${food.id}`);
+  if (!forms.es || typeof forms.es.plural !== "boolean") throw new Error(`Missing explicit es.plural form for ${food.id}`);
+
   const name = food.name[lang];
   const liquid = Boolean(food.liquid);
   const band = giBand(food.gi);
   const bandKey = band ? { low: "giLow", mid: "giMid", high: "giHigh" }[band] : null;
   const bandLabel = bandKey ? ui[bandKey] : "";
-  const bu100 = fmt(food.carbs / 12);
-  const bu10 = fmt(food.carbs / 10);
-  const amount = fmt((100 * 12) / food.carbs);
-  const amount10 = fmt((100 * 10) / food.carbs);
+  const unit = unitFor(lang, liquid);
+  const bu100 = fmt(food.carbs / 12, lang);
+  const bu10 = fmt(food.carbs / 10, lang);
+  const amount = fmt((100 * 12) / food.carbs, lang);
+  const amount10 = fmt((100 * 10) / food.carbs, lang);
   const giText = band ? `${food.gi} (${bandLabel})` : ui.giNoData;
+
+  let h1;
+  let articleTitle;
+  let faq;
+  if (lang === "uk") {
+    const prep = ukPrep(forms.uk.loc);
+    h1 = ui.h1(forms.uk.loc, prep);
+    articleTitle = ui.articleTitle(lowerFirst(name));
+    faq = ui.faq(lang, food, forms.uk.gen, forms.uk.loc, prep, unit, bu100, bu10, amount, giText, bandLabel);
+  } else if (lang === "en") {
+    h1 = ui.h1(forms.en.subject);
+    articleTitle = ui.articleTitle(forms.en.subject, forms.en.plural);
+    faq = ui.faq(lang, food, forms.en.phrase, forms.en.plural, unit, bu100, bu10, amount, giText, bandLabel);
+  } else {
+    h1 = ui.h1(forms.es.subject, forms.es.plural);
+    articleTitle = ui.articleTitle(forms.es.subject, forms.es.plural);
+    faq = ui.faq(lang, food, forms.es.phrase, forms.es.plural, unit, bu100, bu10, amount, giText, bandLabel);
+  }
 
   return {
     ui,
     name,
     lowerName: lowerFirst(name),
     liquid,
-    unit: unitFor(lang, liquid),
+    unit,
     carbGram: lang === "uk" ? "г" : "g",
     bu100,
     bu10,
@@ -465,11 +503,11 @@ function productFacts(lang, food, copy) {
     band,
     bandLabel,
     giText,
-    h1: ui.h1(lowerFirst(name)),
-    articleTitle: ui.articleTitle(lowerFirst(name)),
-    faq: ui.faq(food, lowerFirst(name), unitFor(lang, liquid), bu100, bu10, amount, giText, bandLabel),
+    h1,
+    articleTitle,
+    faq,
     metaTitle: ui.title(name),
-    metaDescription: ui.description(food, unitFor(lang, liquid), bu100, amount, giText),
+    metaDescription: ui.description(lang, food, unit, bu100, amount, giText),
     paragraphs: copy[lang],
   };
 }
@@ -487,7 +525,7 @@ function renderProductBody(lang, food, facts) {
   ];
   if (food.piece) {
     rows.push(
-      `        <tr><th scope="row">${q(ui.statPiece)}</th><td>${fmt((food.piece * food.carbs) / 100 / 12)} ${ui.unit} · ${q(ui.pieceNote(food.piece))}</td></tr>`,
+      `        <tr><th scope="row">${q(ui.statPiece)}</th><td>${fmt((food.piece * food.carbs) / 100 / 12, lang)} ${ui.unit} · ${q(ui.pieceNote(food.piece))}</td></tr>`,
     );
   }
 
