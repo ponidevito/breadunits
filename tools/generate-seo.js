@@ -286,7 +286,8 @@ function esc(value) {
 }
 
 function fmt(value, lang) {
-  return Number(Number(value).toFixed(1)).toString().replace(".", lang === "en" ? "." : ",");
+  const numeric = Number(String(value).replace(",", "."));
+  return numeric.toFixed(1).replace(".", lang === "en" ? "." : ",");
 }
 
 function giBand(gi) {
