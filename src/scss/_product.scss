@@ -7,14 +7,12 @@
 }
 
 .product-hero h1 {
-  max-width: 17ch;
   margin: 0;
   font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4.6rem);
   line-height: 1.04;
 }
 
 .product-hero__lead {
-  max-width: 62ch;
   margin-top: 1.25rem;
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.18rem);
 }
@@ -209,7 +207,6 @@
 }
 
 .product-article__body {
-  max-width: 78ch;
   font-size: 1rem;
 }
 
@@ -279,10 +276,6 @@
 }
 
 @media (max-width: 767.98px) {
-  .product-hero h1 {
-    max-width: none;
-  }
-
   .product-stats {
     grid-template-columns: 1fr;
     border-left: 1px solid var(--line-strong);
