@@ -80,6 +80,18 @@
   border-right: 1px solid var(--line);
 }
 
+/* Desktop shows the abbreviation (ГІ / GI / IG); the full name stays in the
+   accessible name and in the burger menu. */
+.nav__label-full {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .nav a:hover {
   text-decoration: none;
   color: var(--amber);
@@ -294,14 +306,11 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Compact desktop nav: the longest locale (ES) needs ~660px of links. */
-@media (max-width: 1160px) {
+/* Compact desktop nav. Measured link widths of the longest locale (ES):
+   ~814px at full size, ~686px compact. Full size needs >= 1210px of viewport. */
+@media (max-width: 1240px) {
   .site-header__inner {
-    gap: 0.75rem;
-  }
-
-  .nav {
-    justify-content: flex-end;
+    gap: 1.25rem;
   }
 
   .nav a {
@@ -310,8 +319,9 @@
   }
 }
 
-/* Burger menu: below this width the links no longer fit next to brand + tools. */
-@media (max-width: 1020px) {
+/* Burger menu: compact ES links + brand + tools need ~1035px; keep a margin.
+   Keep in sync with burgerMq in main.js (initMenu). */
+@media (max-width: 1080px) {
   .site-header__inner {
     grid-template-columns: minmax(0, 1fr) auto;
   }
@@ -356,6 +366,19 @@
 
   .nav a:last-child {
     border-right: 0;
+  }
+
+  .nav__label-full {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  .nav__label-short {
+    display: none;
   }
 }
 

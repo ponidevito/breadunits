@@ -257,24 +257,38 @@ const PRODUCT_UI = {
     description: (lang, food, unit, bu100, amount, giText) =>
       `${food.name.es}: ${fmt(bu100, lang)} UP por 100 ${unit}, ${fmt(amount, lang)} ${unit} por 1 UP (12 g de hidratos), ${food.carbs} g de hidratos por 100 ${unit}. IG: ${giText}.`,
     h1: (subject, plural) => `Cuántas unidades de pan ${plural ? "tienen" : "tiene"} ${subject}`,
-    faq: (lang, food, phrase, plural, unit, bu100, bu10, amount, giText, giBandLabel) => [
-      {
-        q: `¿Cuántas UP hay en 100 ${unit} de ${phrase}?`,
-        a: `100 ${unit} de ${phrase} aportan ${food.carbs} g de hidratos. Son ${fmt(bu100, lang)} UP con la norma de 12 g o ${fmt(bu10, lang)} UP con la de 10 g.`,
-      },
-      {
-        q: plural ? `¿Cuántas ${phrase} equivalen a 1 UP?` : `¿Cuánto ${phrase} equivale a 1 UP?`,
-        a: `Con la norma de 12 g de hidratos, 1 UP corresponde a ${fmt(amount, lang)} ${unit} de ${phrase}. Con 10 g, a ${fmt((10 * 100) / food.carbs, lang)} ${unit}.`,
-      },
-      {
-        q: `¿Cuál es el índice glucémico de ${phrase}?`,
-        a: giBandLabel
-          ? `El IG indicado para este alimento es ${food.gi} (${giBandLabel}). Es una cifra orientativa, no una recomendación individual.`
-          : `No hay un valor fiable de IG para este alimento en nuestra base de datos: la tabla indica «sin datos».`,
-      },
-    ],
+    faq: (lang, food, form, unit, bu100, bu10, amount, giText, giBandLabel) => {
+      const { phrase, plural } = form;
+      const feminine = esFeminine(form);
+      const howMuch = plural ? (feminine ? "Cuántas" : "Cuántos") : feminine ? "Cuánta" : "Cuánto";
+      // "de" + definite article: del pan blanco, de la manzana, de las uvas
+      const ofThe = plural ? (feminine ? "de las" : "de los") : feminine ? "de la" : "del";
+      return [
+        {
+          q: `¿Cuántas UP hay en 100 ${unit} de ${phrase}?`,
+          a: `100 ${unit} de ${phrase} aportan ${food.carbs} g de hidratos. Son ${fmt(bu100, lang)} UP con la norma de 12 g o ${fmt(bu10, lang)} UP con la de 10 g.`,
+        },
+        {
+          q: `¿${howMuch} ${phrase} ${plural ? "equivalen" : "equivale"} a 1 UP?`,
+          a: `Con la norma de 12 g de hidratos, 1 UP corresponde a ${fmt(amount, lang)} ${unit} de ${phrase}. Con 10 g, a ${fmt((10 * 100) / food.carbs, lang)} ${unit}.`,
+        },
+        {
+          q: `¿Cuál es el índice glucémico ${ofThe} ${phrase}?`,
+          a: giBandLabel
+            ? `El IG indicado para este alimento es ${food.gi} (${giBandLabel}). Es una cifra orientativa, no una recomendación individual.`
+            : `No hay un valor fiable de IG para este alimento en nuestra base de datos: la tabla indica «sin datos».`,
+        },
+      ];
+    },
   },
 };
+
+// Grammatical gender of a Spanish food name, read from the article of its
+// subject form in foods.js ("la manzana", "las uvas", "un plátano").
+// "el azúcar" stays masculine, as used with "cuánto" and "del".
+function esFeminine(form) {
+  return /^(la|las|una|unas)\s/i.test(form.subject || "");
+}
 
 function esc(value) {
   return String(value)
@@ -487,7 +501,7 @@ function productFacts(lang, food, copy) {
   } else {
     h1 = ui.h1(forms.es.subject, forms.es.plural);
     articleTitle = ui.articleTitle(forms.es.subject, forms.es.plural);
-    faq = ui.faq(lang, food, forms.es.phrase, forms.es.plural, unit, bu100, bu10, amount, giText, bandLabel);
+    faq = ui.faq(lang, food, forms.es, unit, bu100, bu10, amount, giText, bandLabel);
   }
 
   return {

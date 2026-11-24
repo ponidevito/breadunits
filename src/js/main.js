@@ -502,6 +502,8 @@
     var toggle = $(".nav__toggle");
     var menu = $("#primary-nav");
     if (!toggle || !menu) return;
+    // Same breakpoint as the burger media query in _header.scss.
+    var burgerMq = window.matchMedia("(max-width: 1080px)");
 
     function close(restoreFocus) {
       menu.classList.remove("is-open");
@@ -537,7 +539,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 1020 && menu.classList.contains("is-open")) close(false);
+      if (!burgerMq.matches && menu.classList.contains("is-open")) close(false);
     });
   }
 
