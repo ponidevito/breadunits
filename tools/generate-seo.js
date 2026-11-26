@@ -488,21 +488,25 @@ function productFacts(lang, food, copy) {
 
   let h1;
   let articleTitle;
-  let faq;
+  let baseFaq;
   if (lang === "uk") {
     const prep = ukPrep(forms.uk.loc);
     h1 = ui.h1(forms.uk.loc, prep);
-    articleTitle = ui.articleTitle(lowerFirst(name));
-    faq = ui.faq(lang, food, forms.uk.gen, forms.uk.loc, prep, unit, bu100, bu10, amount, giText, bandLabel);
+    articleTitle = (copy.title && copy.title[lang]) || ui.articleTitle(lowerFirst(name));
+    baseFaq = ui.faq(lang, food, forms.uk.gen, forms.uk.loc, prep, unit, bu100, bu10, amount, giText, bandLabel);
   } else if (lang === "en") {
     h1 = ui.h1(forms.en.subject);
-    articleTitle = ui.articleTitle(forms.en.subject, forms.en.plural);
-    faq = ui.faq(lang, food, forms.en.phrase, forms.en.plural, unit, bu100, bu10, amount, giText, bandLabel);
+    articleTitle = (copy.title && copy.title[lang]) || ui.articleTitle(forms.en.subject, forms.en.plural);
+    baseFaq = ui.faq(lang, food, forms.en.phrase, forms.en.plural, unit, bu100, bu10, amount, giText, bandLabel);
   } else {
     h1 = ui.h1(forms.es.subject, forms.es.plural);
-    articleTitle = ui.articleTitle(forms.es.subject, forms.es.plural);
-    faq = ui.faq(lang, food, forms.es, unit, bu100, bu10, amount, giText, bandLabel);
+    articleTitle = (copy.title && copy.title[lang]) || ui.articleTitle(forms.es.subject, forms.es.plural);
+    baseFaq = ui.faq(lang, food, forms.es, unit, bu100, bu10, amount, giText, bandLabel);
   }
+  const customFaq = copy.faq && Array.isArray(copy.faq[lang]) ? copy.faq[lang] : [];
+  const faq = customFaq.length ? [...customFaq, baseFaq[0]] : baseFaq;
+
+  validateProductCopy(lang, food, copy, faq);
 
   return {
     ui,
@@ -525,6 +529,29 @@ function productFacts(lang, food, copy) {
     metaDescription: ui.description(lang, food, unit, bu100, amount, giText),
     paragraphs: copy[lang],
   };
+}
+
+function validateProductCopy(lang, food, copy, faq) {
+  const paras = copy[lang];
+  if (!Array.isArray(paras) || paras.length < 3) {
+    throw new Error(`Expected >= 3 paragraphs for ${food.id} (${lang})`);
+  }
+  const fullText = paras.join(" ") + " " + faq.map((item) => item.q + " " + item.a).join(" ");
+  if (!fullText.includes(String(food.carbs))) {
+    throw new Error(`Product copy for ${food.id} (${lang}) does not mention carbs value ${food.carbs}`);
+  }
+  if (food.piece) {
+    const expectedPieceBu = fmt((food.piece * food.carbs) / 100 / 12, lang);
+    if (!fullText.includes(expectedPieceBu)) {
+      throw new Error(`Product copy for ${food.id} (${lang}) missing expected piece BU ${expectedPieceBu}`);
+    }
+    const tenthBug = ((food.piece * food.carbs) / 1000 / 12).toFixed(1).replace(".", lang === "en" ? "." : ",");
+    const unitPattern = lang === "uk" ? "ХО" : lang === "en" ? "BU" : "UP";
+    const bugRegex = new RegExp(`(^|[^\\d.,])${tenthBug.replace(".", "\\.")}\\s*${unitPattern}\\b`);
+    if (tenthBug !== expectedPieceBu && bugRegex.test(fullText)) {
+      throw new Error(`Product copy for ${food.id} (${lang}) contains 10x-smaller piece BU bug (${tenthBug} ${unitPattern})`);
+    }
+  }
 }
 
 function renderProductBody(lang, food, facts) {
