@@ -82,7 +82,7 @@ const PAGES = {
 };
 
 const PRODUCT_PATHS = { uk: "produkty", en: "foods", es: "alimentos" };
-const PRODUCT_LAST_MOD = "2026-11-24";
+const PRODUCT_LAST_MOD = "2026-11-26";
 const PRODUCT_BY_ID = PRODUCTS.reduce((map, product) => {
   map[product.id] = product;
   return map;
@@ -338,7 +338,7 @@ function buildRows(lang, t, ids, homeUrl) {
     const carbsLabel = food.liquid ? t("table.col.carbs.liquid") : t("table.col.carbs");
     const carbsValue = food.liquid ? `${food.carbs} ${liquidCarbsUnit}` : `${food.carbs} ${carbsUnit}`;
     const action = homeUrl
-      ? `<a class="link-btn" href="${esc(homeUrl)}?food=${encodeURIComponent(food.id)}#calculator">${esc(t("table.use"))}</a>`
+      ? `<a class="link-btn" href="${esc(homeUrl)}#food=${encodeURIComponent(food.id)}">${esc(t("table.use"))}</a>`
       : `<button type="button" class="link-btn" data-use="${esc(food.id)}">${esc(t("table.use"))}</button>`;
     const nameHtml = PRODUCT_BY_ID[food.id]
       ? `<a class="food-table__link" href="${esc(productUrl(lang, food.id))}">${name}</a>`
@@ -636,7 +636,7 @@ function renderProductBody(lang, food, facts) {
     '    <div class="mini-calc__result" aria-live="polite">',
     `      <strong data-mini-result>${facts.bu100}</strong><span>${ui.unit}</span>`,
     "    </div>",
-    `    <a class="link-btn" href="${config.homeUrl}?food=${encodeURIComponent(food.id)}#calculator">${q(ui.calcButton)}</a>`,
+    `    <a class="link-btn" href="${config.homeUrl}#food=${encodeURIComponent(food.id)}">${q(ui.calcButton)}</a>`,
     "  </div>",
     "</section>",
     "",
@@ -750,7 +750,7 @@ function write(file, content) {
 
 function generateSitemap() {
   const groups = [
-    { urls: ["/", "/en/", "/es/"], lastmod: "2026-11-22", changefreq: "monthly", priority: ["1.0", "0.9", "0.9"] },
+    { urls: ["/", "/en/", "/es/"], lastmod: "2026-11-26", changefreq: "monthly", priority: ["1.0", "0.9", "0.9"] },
     { urls: ["/about/", "/en/about/", "/es/about/"], lastmod: "2026-11-22", changefreq: "yearly", priority: ["0.4", "0.4", "0.4"] },
     { urls: ["/contact/", "/en/contact/", "/es/contact/"], lastmod: "2026-11-22", changefreq: "yearly", priority: ["0.3", "0.3", "0.3"] },
     { urls: ["/privacy/", "/en/privacy/", "/es/privacy/"], lastmod: "2026-11-22", changefreq: "yearly", priority: ["0.2", "0.2", "0.2"] },
@@ -761,7 +761,7 @@ function generateSitemap() {
         "/en/bread-unit-table/",
         "/es/tabla-unidades-de-pan/",
       ],
-      lastmod: "2026-11-23",
+      lastmod: "2026-11-26",
       changefreq: "monthly",
       priority: ["0.8", "0.8", "0.8"],
     },

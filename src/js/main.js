@@ -452,10 +452,22 @@
     if (calc) calc.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function applyFoodFromUrl() {
+  function readFoodIdFromUrl() {
+    var hash = window.location.hash || "";
+    var match = hash.match(/^#food=([^&]+)/);
+    if (match) {
+      try { return decodeURIComponent(match[1]); } catch (e) { return match[1]; }
+    }
+    if (window.URLSearchParams) {
+      return new URLSearchParams(window.location.search).get("food");
+    }
+    return null;
+  }
+
+  function applyFoodFromUrl(shouldScroll) {
     var select = $("#calc-food");
-    if (!select || !window.URLSearchParams) return;
-    var id = new URLSearchParams(window.location.search).get("food");
+    if (!select) return;
+    var id = readFoodIdFromUrl();
     if (!id || !getFood(id)) return;
     var food = getFood(id);
     select.value = id;
@@ -464,6 +476,10 @@
     if (weight && !num(weight.value)) weight.value = food.piece || 100;
     setMode("food");
     calculate();
+    if (shouldScroll) {
+      var calc = document.getElementById("calculator");
+      if (calc) calc.scrollIntoView({ behavior: "auto", block: "start" });
+    }
   }
 
   function initMiniCalculator() {
@@ -712,7 +728,8 @@
     initBackToCalc();
     initAppBanner();
     applyI18n();
-    applyFoodFromUrl();
+    applyFoodFromUrl(true);
+    window.addEventListener("hashchange", function () { applyFoodFromUrl(true); });
     initMiniCalculator();
 
     var y = $("#year");
